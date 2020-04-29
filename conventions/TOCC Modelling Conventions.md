@@ -1,7 +1,10 @@
 # TOCC Modelling Conventions
+
+__This is currently a draft under review__
+
 ## Logical Data Model
-###Overview
-The TOCC will use UML Class Diagrams as the primary graphical notation for documenting relationships among data concepts. The diagrams are informative in nature; the accompanying text provides the formal definition of each data concept.  
+### Overview
+The TOCC will use UML Class Diagrams as the primary graphical notation for documenting relationships among data concepts. The diagrams __and associated text?__ are informative in nature; the formal definition of each data concept is provided by the associated ~~text~~ __description logic__.  
 
 The rules defined here are generally consistent with and an extension of the rules defined in ISO 14817-1:2015.
 
@@ -116,7 +119,7 @@ Every data concept defined within the model shall be formally defined with stati
 
 For example, every data element can be associated with a name and a definition. The name and definition are examples of metadata that is permanently defined for the data element and does not vary from one instance of a data element and another; these are two types of static metadata. By comparison, the type of sensor used to make a measurement is also metadata, but as the value of this meta will vary between different types of sensors, the metadata is considered dynamic and must be incorporated into the logical data model rather than in the documentation of the data element.
 
-####Class Metadata
+#### Class Metadata
 For the purpose of the TOCC logical data model, the following static metadata shall be recorded for classes:
 
 * Data concept type (i.e., shall always be "class")
