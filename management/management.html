@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>City Data Model Management</title>
+    <script src='https://www.w3.org/Tools/respec/respec-w3c' class='remove' async></script>
+    <script class='remove'>
+      var respecConfig = {
+        specStatus: "ED",
+		wg: "Transportation Ontology Coordinating Committee",
+        editors: [{
+          name: "Kenneth Vaughn",
+          url: "https://www.trevilon.com",
+        }],
+        github: "w3c/",
+	    localBiblio: {
+			"ISO42010": {
+				title: "Systems and software engineering — Architecture description",
+				href: "https://www.iso.org/standard/50508.html",
+				status: "Published",
+				publisher: "ISO/IEC/IEEE",
+				isoNumber: "ISO 42010:2011",
+				rawDate: "2011-12"
+			},
+			"Hilliard": {
+				title: "Architecture Viewpoint Template for ISO/IEC/IEEE 42010",
+				href: "http://www.iso-architecture.org/ieee-1471/templates/42010-vp-template.pdf",
+				status: "Published",
+				publisher: "Rich Hilliard",
+				rawDate: "Version 2.2"
+			},
+			"Rozanski": {
+				title: "Software Systems Architecture - Second Edition: Working with Stakeholders Using Viewpoints and Perspectives",
+				href: "https://www.viewpoints-and-perspectives.info/home/book/",
+				status: "Published",
+				publisher: "Rozanski and Woods"
+			},
+			"DoDAF": {
+				title: "Department of Defense Architecture Framework Version 2.02",
+				href: "https://dodcio.defense.gov/Library/DoD-Architecture-Framework/",
+				status: "Published",
+				publisher: "U.S. Department of Defense",
+				rawDate: "2010-08"
+			},
+			"TOGAF": {
+				title: "TOGAF — The Open Group Architecture Framework, Version 8.1.1",
+				href: "https://pubs.opengroup.org/architecture/togaf8-doc/arch/toc.html",
+				status: "Published",
+				publisher: "The Open Group"
+			},
+			"Evergreen": {
+				title: "Evergreen Standards",
+				href: "https://www.w3.org/wiki/Evergreen_Standards",
+				status: "Published",
+				publisher: "W3C"
+			},
+			"Zachman": {
+				title: "Zachman Framework",
+				href: "https://www.zachman.com/images/ZI_PIcs/ZF3.0.jpg",
+				status: "Published",
+			},
+			
+		}
+      };
+    </script>
+  </head>
+  <body>
+    <section id='abstract'>
+      <p>
+        This document defines the management rules for the City Data Model Collaborative Environment. This document is intended to be an Evergreen Standard [[Evergreen]].
+      </p>
+    </section>
+    <section id='sotd'>
+    </section>
+    <section id='conformance'>
+    </section>
+	<section>
+		<h2>Scope</h2>
+		<p>This document is intended to define the governance and framework for the City Data Model Collaborative Environment.
+	</section>
+    <section>
+      <h2>Terms and Definitions</h2>
+	  <dt>data model</dt>
+	  <dd>definition</dd>
+    </section>
+	<section>
+		<h2>Overview</h2>
+		The general process for adding content to the City Data model is shown below:
+		<figure id="Process">
+				<img src="process.png" />
+				<figcaption>Process for Adding Content</figcaption>
+			</figure>
+	</section>
+	<section>
+		<h2>Governance</h2>
+		<section>
+			<h3>Partitions</h3>
+			<p>This section will discuss the logical partitions of the City Data Model Collaborative Environment. The major partitions are expected to include:</p>
+			<ul>
+				<li>Collaborative Elements: Elements of the environment that are developed, approved, and maintained collaboratively under the auspices of the W3C according to the governance structure defined by this document. </li>
+				<li>Submitted Elements: Elements of the environment that have been contributed by other entities as input that should be considered when developing, approving, and maintaining the Collaborative Elements. Submitted elements to the environment often only provide partial specifications with the full content provided as a reference to an external document, which might fall under a more restrictive copyright. </li>
+			</ul>
+			<p>It is envisioned that all elements of the City Data Model, except for the Physical Data Model elements, will be collaborative elements. Further, it is envisioned that all elements within the Physical Data Model will be submitted elements; however, it is expected that the Physical Data Model will include submittals from multiple sources, which will need to be distinguished from each other and managed in a hierarchical tree. For example, it is likely that all ISO submittals will use a standard copyright statement, but when considering a submittal we will need to consider which technical committee and standard it represents.</p>
+		</section>
+		<section>
+			<h3>Copyright</h3>
+			<p>This section will discuss the copyright for the collaborative environment. It will separately address copyright issues related to submitted elements and collaborative elements.</p>
+		</section>
+		<section>
+			<h3>Participation</h3>
+			<p>This section will discuss who is able to submit contributions, discuss contributions, and approve content.</p>
+		</section>
+		<section>
+			<h3>Maturity Levels of Elements</h3>
+			<p>The City Data Model will define terms, classes, properties, associations, etc. and the model will evolve over time. Many diagrams contained within the model will need to depict multiple model elements and not all of the model elements will necessarily be at the same level of maturity. Each element (e.g., term, class, property) defined within the model will mature according to its own development cycle and this maturity status will be recorded in the element's metadata. The defined maturity levels for elements of the model are shown below.
+			<figure id="Maturity">
+				<img src="maturity.png" />
+				<figcaption>Maturity Levels of Model Elements</figcaption>
+			</figure>
+		</section>
+	</section>
+	<section>
+		<h2>Framework</h2>
+		<p>The framework specification contained in this specification conforms to ISO 42010 [[ISO42010]]. The viewpoint specifications are based on the Viewpoint Specification Template [[Hilliard]]. The Information Viewpoint specification was developed in consideration of the specifications defined in Software Systems Architecture [[Rozanski]], the Department of Defense Architecture Framework [[DoDAF]], The Open Group Architecture Framework [[TOGAF]], and the Zachman Framework [[Zachman]].</p> 
+		<section>
+			<h3>Use Case Viewpoint</h3>
+			<section>
+				<h4>Overview</h4>
+			</section>
+			<section>
+				<h4>Concerns and Stakeholders</h4>
+				<p>Example stakeholders might include [[Rozanski]]:</p>
+				<ul>
+					<li>Acquirers</li>
+					<li>Assessors</li>
+					<li>Communicators</li>
+					<li>Developers</li>
+					<li>Maintainers</li>
+					<li>Production Engineers</li>
+					<li>Suppliers</li>
+					<li>Support Staff</li>
+					<li>System Administrators</li>
+					<li>Testers</li>
+					<li>Users</li>
+				</ul>
+			</section>
+			<section>
+				<h4>Model Kinds</h4>
+			</section>
+			<section>
+				<h4>Use Case Specification</h4> 
+				<section>
+					<h5>Conventions</h5>
+				</section>
+				<section>
+					<h5>Operations</h5>
+				</section>
+				<section>
+					<h5>Correspondence Rules</h5>
+				</section>
+			</section>
+			<section>
+				<h4>Operations on Views</h4>
+			</section>
+			<section>
+				<h4>Correspondence Rules</h4>
+			</section>
+			<section>
+				<h4>Examples</h4>
+			</section>
+			<section>
+				<h4>Notes</h4>
+			</section>
+			<section>
+				<h4>Sources</h4>
+			</section>
+		</section>
+		<section>
+			<h3>Information Viewpoint</h3>
+			<section>
+				<h4>Overview</h4>
+			</section>
+			<section>
+				<h4>Concerns and Stakeholders</h4>
+			</section>
+			<section>
+				<h4>Model Kinds</h4>
+			</section>
+			<section>
+				<h4>Conceptual Data Model</h4>
+			</section>
+			<section>
+				<h4>Logical Data Model</h4>
+				<section>
+					<h5>Conventions</h5>
+				</section>
+				<section>
+					<h5>Operations</h5>
+				</section>
+				<section>
+					<h5>Correspondence Rules</h5>
+				</section>
+			</section>
+			<section>
+				<h4>Physical Data Model</h4>
+				<section>
+					<h5>Conventions</h5>
+				</section>
+				<section>
+					<h5>Operations</h5>
+				</section>
+				<section>
+					<h5>Correspondence Rules</h5>
+				</section>
+			</section>
+			<section>
+				<h4>Operations on Views</h4>
+				<section>
+					<h5>Conventions</h5>
+				</section>
+				<section>
+					<h5>Operations</h5>
+				</section>
+				<section>
+					<h5>Correspondence Rules</h5>
+				</section>
+			</section>
+			<section>
+				<h4>Correspondence Rules</h4>
+			</section>
+			<section>
+				<h4>Examples</h4>
+			</section>
+			<section>
+				<h4>Notes</h4>
+			</section>
+			<section>
+				<h4>Sources</h4>
+			</section>
+		</section>
+	</section>
+
+  </body>
+</html>
