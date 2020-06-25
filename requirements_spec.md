@@ -3,10 +3,10 @@
 The purpose of this document is to identify the functionality required to support the standards coordination activities undertaken and designed by the TOCC.
 
 ## Goal
-The goal of the TOCC is to coordinate and align existing transportation-related standards. A key output of this work should be the emergence of a core model for the concepts that are shared across intersecting standards, as well as the identification for how the different standards intersect.
+The goal of the TOCC is to coordinate and identify alignment between existing transportation-related standards. A key output of this work should be the emergence of a core model for the concepts that are shared across intersecting standards, as well as the identification for how the different standards intersect.
 
 ## Functional Requirements
-To support coordination and alignment of existing standards, the following functions are required:
+To support collaboration for convergence on the core elements of a data model for transportation, the following functions are required:
 1. Specification of use cases to provide context and motivate the need for elements of a standard.
 2. Specify (parts of) standards - specifically data models - at the level of classes and properties.
 3. Enable definition of classes and properties with DL and UML.
