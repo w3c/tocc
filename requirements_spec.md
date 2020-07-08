@@ -10,6 +10,7 @@ To support collaboration for convergence on the core elements of a data model fo
 1. Specification of use cases to provide context and motivate the need for elements of a standard.
 2. Specify (parts of) standards - specifically data models - at the level of classes and properties.
    * This should include the specification of provenance information regarding the origins of the models, including any copyright/licensing information.
+   * Question: the definition of a class/property includes a collection of material (e.g. diagrams, axioms, use cases). Should the provenance and licensing information be at the class/property level or optionally for each type of input? Perhaps provenance should be at the class/property level and then licensing can be defined for each element as required?
 3. Enable definition of classes and properties with DL and UML.
    * These definitions will be reproduced directly from the standards when available (see 2). If such definitions are not specified in the standard, then the definitions will be designed based on the user's interpretation of the standard.
    * Question: do we need to require *both* DL and UML definitions or is an OWL/DL definition sufficient assuming our objective is to identify a core (ontology) model)?
