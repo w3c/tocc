@@ -13,7 +13,7 @@ To support collaboration for convergence on the core elements of a data model fo
 3. Enable definition of classes and properties with DL and UML.
    * These definitions will be reproduced directly from the standards when available (see 2). If such definitions are not specified in the standard, then the definitions will be designed based on the user's interpretation of the standard.
    * Question: do we need to require *both* DL and UML definitions or is an OWL/DL definition sufficient assuming our objective is to identify a core (ontology) model)?
-   * Question: should this take the form of individual class and property definitions, or would a design pattern approach be more effective?
+   * Question: can we frame these definitions as ontology design patterns (ODPs) or mini-modules?
 4. Enable specification of the relationship between model elements and use cases. 
 5. Enable specification of relationships between classes and properties - within and between standards.
    * Relationships within a standard will typically be part of the (domain) model.
