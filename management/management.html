@@ -1,0 +1,2476 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>City Data Model Management</title>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" async=""></script>
+    <script class="remove">
+      var respecConfig = {
+        specStatus: "ED",
+		wg: "Transportation Ontology Coordinating Committee",
+        editors: [{
+          name: "Kenneth Vaughn",
+          url: "https://www.trevilon.com",
+        }],
+        github: "w3c/",
+	    localBiblio: {
+			"ISO42010": {
+				title: "Systems and software engineering — Architecture description",
+				href: "https://www.iso.org/standard/50508.html",
+				status: "Published",
+				publisher: "ISO/IEC/IEEE",
+				isoNumber: "ISO 42010:2011",
+				rawDate: "2011-12"
+			},
+			"Hilliard": {
+				title: "Architecture Viewpoint Template for ISO/IEC/IEEE 42010",
+				href: "http://www.iso-architecture.org/ieee-1471/templates/42010-vp-template.pdf",
+				status: "Published",
+				publisher: "Rich Hilliard",
+				rawDate: "Version 2.2"
+			},
+			"Rozanski": {
+				title: "Software Systems Architecture - Second Edition: Working with Stakeholders Using Viewpoints and Perspectives",
+				href: "https://www.viewpoints-and-perspectives.info/home/book/",
+				status: "Published",
+				publisher: "Rozanski and Woods"
+			},
+			"DoDAF": {
+				title: "Department of Defense Architecture Framework Version 2.02",
+				href: "https://dodcio.defense.gov/Library/DoD-Architecture-Framework/",
+				status: "Published",
+				publisher: "U.S. Department of Defense",
+				rawDate: "2010-08"
+			},
+			"ISO10746": {
+				title: "Reference Model of Open Distributed Processing",
+				href: "http://www.rm-odp.net",
+				status: "Published",
+				publisher: "IEO/IEC/ITU",
+				rawDate: "2009-10"
+			},
+			"TOGAF": {
+				title: "TOGAF — The Open Group Architecture Framework, Version 8.1.1",
+				href: "https://pubs.opengroup.org/architecture/togaf8-doc/arch/toc.html",
+				status: "Published",
+				publisher: "The Open Group"
+			},
+			"Evergreen": {
+				title: "Evergreen Standards",
+				href: "https://www.w3.org/wiki/Evergreen_Standards",
+				status: "Published",
+				publisher: "W3C"
+			},
+			"Zachman": {
+				title: "Zachman Framework",
+				href: "https://www.zachman.com/images/ZI_PIcs/ZF3.0.jpg",
+				status: "Published",
+			},
+			"Federal": {
+				title: "Federal Enterprise Architecture Framework",
+				href: "https://obamawhitehouse.archives.gov/sites/default/files/omb/assets/egov_docs/fea_v2.pdf",
+				status: "Published",
+			},
+			"Gartner": {
+				title: "Gartner Methodology",
+				href: "https://www.zachman.com/images/ZI_PIcs/ZF3.0.jpg",
+				status: "Published",
+			},
+			"IDEF": {
+				title: "Itegration Definition for Function Modeling",
+				href: "www.itl.nist.gov/fipspubs/idef1x.doc",
+				status: "Published",
+			},
+			"UML": {
+				title: "Unified Modeling Language",
+				href: "http://www.omg.org/spec/UML/",
+				status: "Published",
+			},
+			"ISO11179": {
+				title: "ISO/IEC 11179",
+				href: "http://www.iso.org/iso/home.htm",
+				status: "Published",
+			},
+			"Dublin": {
+				title: "Dublin Core",
+				href: "http://dublincore.org/",
+				status: "Published",
+			},
+			"ARC-IT": {
+				title: "Architecture Reference for Cooperative and Intelligent Transportation",
+				href: "http://arc-it.net/",
+				status: "Published",
+				},
+			"NIAF": {
+				title: "Australian National ITS Architecture Framework",
+				href: "https://austroads.com.au",
+				status: "Published",
+				},
+			
+		}
+      };
+    </script>
+  </head>
+  <body>
+    <section id="abstract">
+      <p> This document defines the management rules for the City Data
+        Model Collaborative Environment. This document is intended to be
+        an Evergreen Standard [[Evergreen]]. </p>
+    </section>
+    <section id="sotd"> </section>
+    <section id="conformance"> </section>
+    <section>
+      <h2>Scope</h2>
+      <p>This document is intended to define the governance and
+        framework for the City Data Model Collaborative Environment.<br>
+      </p>
+    </section>
+    <section>
+      <h2>Terms and Definitions</h2>
+      <dt>data</dt>
+      <dd>general term - we prefer data element or data instance to be
+        precise<br>
+      </dd>
+      <dt>data model</dt>
+      <dd>definition</dd>
+      <dt>data instance<br>
+      </dt>
+      <dd>realization of a data element</dd>
+      <dt>data element</dt>
+      <dd>definition of a property of a class with a abstract syntax</dd>
+      <dt>information</dt>
+      <dd>text</dd>
+      <dt>knowledge</dt>
+      <dd>text</dd>
+      <dt>wisdom</dt>
+      <dd>text<br>
+      </dd>
+    </section>
+    <section>
+      <h2>Overview</h2>
+      The general process for adding content to the City Data model is
+      shown below:
+      <figure id="Process"> <img src="process.png"> <figcaption>Process
+
+
+
+
+
+
+
+
+
+
+
+
+          for Adding Content</figcaption> </figure>
+    </section>
+    <section>
+      <h2>Governance</h2>
+      <section>
+        <h3>Partitions</h3>
+        <p>This section will discuss the logical partitions of the City
+          Data Model Collaborative Environment. The major partitions are
+          expected to include:</p>
+        <ul>
+          <li>Collaborative Elements: Elements of the environment that
+            are developed, approved, and maintained collaboratively
+            under the auspices of the W3C according to the governance
+            structure defined by this document. </li>
+          <li>Submitted Elements: Elements of the environment that have
+            been contributed by other entities as input that should be
+            considered when developing, approving, and maintaining the
+            Collaborative Elements. Submitted elements to the
+            environment often only provide partial specifications with
+            the full content provided as a reference to an external
+            document, which might fall under a more restrictive
+            copyright. </li>
+        </ul>
+        <p>It is envisioned that all elements of the City Data Model,
+          except for the Physical Data Model elements, will be
+          collaborative elements. Further, it is envisioned that all
+          elements within the Physical Data Model will be submitted
+          elements; however, it is expected that the Physical Data Model
+          will include submittals from multiple sources, which will need
+          to be distinguished from each other and managed in a
+          hierarchical tree. For example, it is likely that all ISO
+          submittals will use a standard copyright statement, but when
+          considering a submittal we will need to consider which
+          technical committee and standard it represents.</p>
+      </section>
+      <section>
+        <h3>Copyright</h3>
+        <p>This section will discuss the copyright for the collaborative
+          environment. It will separately address copyright issues
+          related to submitted elements and collaborative elements.</p>
+      </section>
+      <section>
+        <h3>Participation</h3>
+        <p>This section will discuss who is able to submit
+          contributions, discuss contributions, and approve content.</p>
+      </section>
+      <section>
+        <h3>Maturity Levels of Elements</h3>
+        <p>The City Data Model will define terms, classes, properties,
+          associations, etc. and the model will evolve over time. Many
+          diagrams contained within the model will need to depict
+          multiple model elements and not all of the model elements will
+          necessarily be at the same level of maturity. Each element
+          (e.g., term, class, property) defined within the model will
+          mature according to its own development cycle and this
+          maturity status will be recorded in the element's metadata.
+          The defined maturity levels for elements of the model are
+          shown below. </p>
+        <figure id="Maturity"> <img src="maturity.png"> <figcaption>Maturity
+
+
+
+
+
+
+
+
+
+
+
+
+            Levels of Model Elements</figcaption> </figure>
+      </section>
+    </section>
+    <section>
+      <h2>Framework</h2>
+      <p>The framework specification contained in this specification
+        conforms to an <i>architecture framework</i> as specified in
+        ISO 42010 [[ISO42010]]. Specifically, the document identifies a
+        set of <i>stakeholders</i> and their <i>concerns</i> and
+        defines <i>viewpoints</i> that frame these concerns. The
+        viewpoints are defined using <i>model kinds</i>, which specify
+        modeling conventions to be used for specific presentations of
+        the data.</p>
+      <p>An <i>architecture description</i> based on this framework
+        will develop <i>models</i> conforming to the model kinds
+        defined by this document and group the models into <i>views</i>
+        that correspond to the viewpoints defined in this document. <br>
+      </p>
+      <p>The viewpoint specifications are based on the Viewpoint
+        Specification Template [[Hilliard1]]. <br>
+      </p>
+      <p>The Use Case Viewpoint specification has been developed in
+        consideration of&nbsp; based on [[Hiiliard2]], [[Kruchten]],
+        [[IEEE2413]], <br>
+      </p>
+      <p>The Information Viewpoint specification was developed in
+        consideration of the specifications defined in Software Systems
+        Architecture [[Rozanski]], the Department of Defense
+        Architecture Framework [[DoDAF]], The Open Group Architecture
+        Framework [[TOGAF]], and the Zachman Framework [[Zachman]].</p>
+      <section>
+        <h3>Use Case Viewpoint</h3>
+        <section>
+          <h4>Overview</h4>
+          <p>Also known as enterprise viewpoint<br>
+          </p>
+        </section>
+        <section>
+          <h4>Concerns and Stakeholders</h4>
+          <p>Example stakeholders might include [[Rozanski]]:</p>
+          <ul>
+            <li>Acquirers</li>
+            <li>Assessors</li>
+            <li>Communicators</li>
+            <li>Developers</li>
+            <li>Maintainers</li>
+            <li>Production Engineers</li>
+            <li>Suppliers</li>
+            <li>Support Staff</li>
+            <li>System Administrators</li>
+            <li>Testers</li>
+            <li>Users</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Model Kinds</h4>
+        </section>
+        <section>
+          <h4>Use Case Specification</h4>
+          <section>
+            <h5>Conventions</h5>
+            <table style=" text-align: left; width: 100%;"
+              cellspacing="2" cellpadding="2" border="1">
+              <tbody>
+                <tr>
+                  <th style=" vertical-align: top;">Field<br>
+                  </th>
+                  <th style=" vertical-align: top;">Description<br>
+                  </th>
+                  <th style=" vertical-align: top;">Conformance<br>
+                  </th>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Name<br>
+                  </td>
+                  <td style="vertical-align: top;">Name of service
+                    package<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Summary<br>
+                  </td>
+                  <td style="vertical-align: top;">Short description
+                    (&lt;= 280 characters)<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Description<br>
+                  </td>
+                  <td style="vertical-align: top;">Extended description<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Goal<br>
+                  </td>
+                  <td style="vertical-align: top;">Value
+                    Proposition(s)Bullet list with value proposition(s)
+                    of the Validation:<br>
+                    <ul>
+                      <li>«Value Proposition #1 in the form ["Verb"]
+                        "direct object"»</li>
+                      <li>«Value Proposition #2 in the form ["Verb"]
+                        "direct object"»</li>
+                      <li>«Value Proposition #3 in the form ["Verb"]
+                        "direct object"»</li>
+                      <li>…</li>
+                    </ul>
+                    Examples:<br>
+                    <ul>
+                      <li>[Increase] Yield</li>
+                      <li>[Reduce] Pesticide Use</li>
+                      <li>[Improve] Water Quality</li>
+                      <li>[Reduce] Scrap parts</li>
+                    </ul>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Business
+                    rules/Assumptions<br>
+                  </td>
+                  <td style="vertical-align: top;">Constraints as
+                    specified by the stakeholders<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Technology
+                    constraints<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Stakeholders<br>
+                  </td>
+                  <td style="vertical-align: top;">Parties that are
+                    interested in this use case<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Domain<br>
+                  </td>
+                  <td style="vertical-align: top;">Major domain (e.g.,
+                    ITS)<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Subdomain</td>
+                  <td style="vertical-align: top;">Area of domain that
+                    this use case represents (e.g., Vehicle safety)<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Geographic scope<br>
+                  </td>
+                  <td style="vertical-align: top;">How large of an area
+                    an implementation of this use case affects<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Technical scope<br>
+                  </td>
+                  <td style="vertical-align: top;">Defines the
+                    boundaries of the system<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Actors<br>
+                  </td>
+                  <td style="vertical-align: top;">Identify each<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Services</td>
+                  <td style="vertical-align: top;">Required services
+                    that are directly used<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Extensions<br>
+                  </td>
+                  <td style="vertical-align: top;">Areas where the
+                    services can be extended with optional features<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Inclusions<br>
+                  </td>
+                  <td style="vertical-align: top;">Additional services
+                    that are included in the listed services and
+                    extensions<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Concerns addressed<br>
+                  </td>
+                  <td style="vertical-align: top;">Are we covering all
+                    of the key concerns? <br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Context diagram<br>
+                  </td>
+                  <td style="vertical-align: top;">A graphical image
+                    depicting the use case (e.g., graphic of cars
+                    interacting)<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Use Case diagram<br>
+                  </td>
+                  <td style="vertical-align: top;">UML use case diagram<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Scenarios<br>
+                  </td>
+                  <td style="vertical-align: top;">
+                    <table style=" text-align: left; width: 100%;"
+                      cellspacing="2" cellpadding="2" border="1">
+                      <tbody>
+                        <tr>
+                          <td style="vertical-align: top;">Scenario Name<br>
+                          </td>
+                          <td style="vertical-align: top;">Name of
+                            scenario<br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="vertical-align: top;">Pre-conditions<br>
+                          </td>
+                          <td style="vertical-align: top;"><br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="vertical-align: top;">Triggers<br>
+                          </td>
+                          <td style="vertical-align: top;"><br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="vertical-align: top;">Event Flow<br>
+                          </td>
+                          <td style="vertical-align: top;"><br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="vertical-align: top;">Post-conditions<br>
+                          </td>
+                          <td style="vertical-align: top;"><br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="vertical-align: top;">Exceptions<br>
+                          </td>
+                          <td style="vertical-align: top;">Highlighted,
+                            potential undesirable outcomes identifying
+                            positions within flow of events where they
+                            can occur<br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="vertical-align: top;">Sequence
+                            diagram<br>
+                          </td>
+                          <td style="vertical-align: top;"><br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="vertical-align: top;"><br>
+                          </td>
+                          <td style="vertical-align: top;"><br>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Information
+                    requirements<br>
+                  </td>
+                  <td style="vertical-align: top;">Should eventually
+                    become hyperlinks to the defined data concepts<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Issues<br>
+                  </td>
+                  <td style="vertical-align: top;">Primarily to track
+                    issues during development<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">References<br>
+                  </td>
+                  <td style="vertical-align: top;">Source materials used
+                    to develop this use case<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Version<br>
+                  </td>
+                  <td style="vertical-align: top;">Date<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Modification History<br>
+                  </td>
+                  <td style="vertical-align: top;">Might use github for
+                    this<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Status<br>
+                  </td>
+                  <td style="vertical-align: top;">Approval status<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Application notes<br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                  <td style="vertical-align: top;"><br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Based on Richard Hilliard e-mail<br>
+            </p>
+          </section>
+          <section>
+            <h5>Operations</h5>
+          </section>
+          <section>
+            <h5>Correspondence Rules</h5>
+          </section>
+        </section>
+        <section>
+          <h4>Operations on Views</h4>
+        </section>
+        <section>
+          <h4>Correspondence Rules</h4>
+        </section>
+        <section>
+          <h4>Examples</h4>
+        </section>
+        <section>
+          <h4>Notes</h4>
+        </section>
+        <section>
+          <h4>Sources</h4>
+        </section>
+      </section>
+      <section>
+        <h3>Information Viewpoint</h3>
+        <section>
+          <h4>Overview</h4>
+          <p>Content currently reflects IEEE 2413<br>
+          </p>
+        </section>
+        <section>
+          <h4>Stakeholders</h4>
+          <ol>
+            <li>Designers</li>
+            <li>Developers/integrators</li>
+            <li>Vendors/suppliers</li>
+            <li>Installers</li>
+            <li>Operators</li>
+            <li>Users</li>
+            <li>Maintainers</li>
+            <li>Standardization bodies</li>
+          </ol>
+          <p>Above based on IEEE 2413<br>
+          </p>
+          <ol>
+            <li>mobile user<br>
+            </li>
+            <li>field user</li>
+            <li>center user</li>
+            <li>operator</li>
+            <li>acquirer</li>
+            <li>maintainer</li>
+            <li>developer</li>
+            <li>tester</li>
+            <li>application developer</li>
+            <li>device developer</li>
+          </ol>
+          <p>Above based on Core System -- System Architecture Document
+            (SAD) an ITS document<br>
+          </p>
+          <ol>
+            <li>Data custodian</li>
+            <li>Data steward</li>
+            <li>System/service developers</li>
+            <li>System/service maintainers</li>
+            <li>End users</li>
+            <li>Managers/directors<br>
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h4>Concerns</h4>
+          <p>The stakeholder concerns framed by the information
+            viewpoint include:<br>
+          </p>
+          <table style=" text-align: left; width: 100%;" cellspacing="2"
+            cellpadding="2" border="1">
+            <tbody>
+              <tr>
+                <th style="vertical-align: top; text-align: center;">Topic<br>
+                </th>
+                <th style="vertical-align: top; text-align: center;">Concern<br>
+                </th>
+                <th style="vertical-align: top; text-align: center;">Addressed
+
+
+
+                  by<br>
+                </th>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Definition<br>
+                </td>
+                <td style="vertical-align: top;">What are the
+                  definitions of the major business terms?<br>
+                </td>
+                <td style="vertical-align: top;">Conceptual data model:
+                  Entity definition<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Definition </td>
+                <td style="vertical-align: top;">How do business terms
+                  relate to one another?<br>
+                </td>
+                <td style="vertical-align: top;">Conceptual data model:
+                  OWL specification<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Definition </td>
+                <td style="vertical-align: top;">What does each data
+                  element mean?<br>
+                </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Definition </td>
+                <td style="vertical-align: top;">How does each data
+                  element relate to other data elements? (including
+                  dynamic metadata)<br>
+                </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Class Model<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Definition </td>
+                <td style="vertical-align: top;">Does the data have
+                  safety-of-life implications?<br>
+                </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Definition </td>
+                <td style="vertical-align: top;">What, if any, state
+                  behavior relationships are there for data and classes?<br>
+                </td>
+                <td style="vertical-align: top;">&nbsp;Logical data
+                  model: State Machine<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Definition </td>
+                <td style="vertical-align: top;">What is the
+                  representational form of the data within data
+                  exchanges? <br>
+                </td>
+                <td style="vertical-align: top;">Physical data model:
+                  data specification<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Definition </td>
+                <td style="vertical-align: top;">How is data transformed
+                  from one data exchange format into another?</td>
+                <td style="vertical-align: top;">Data traceability model<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Definition </td>
+                <td style="vertical-align: top;">How can the information
+                  view be extended to support additional domain or
+                  implementation-specific data?<br>
+                </td>
+                <td style="vertical-align: top;">Operations on Views<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Definition<br>
+                </td>
+                <td style="vertical-align: top;">What are the key
+                  sources for the data definition? </td>
+                <td style="vertical-align: top;">Logical data model:
+                  data element specification<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Standardization<br>
+                </td>
+                <td style="vertical-align: top;">What interface
+                  standards include this data element? </td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Standardization </td>
+                <td style="vertical-align: top;">Does the data element
+                  need to be shared in an interoperable fashion? (or
+                  perhaps proprietary or out of scope)<br>
+                </td>
+                <td style="vertical-align: top;">???<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Standardization </td>
+                <td style="vertical-align: top;">What functions use this
+                  data element?<br>
+                </td>
+                <td style="vertical-align: top;">Correspondence rule:
+                  users<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Standardization </td>
+                <td style="vertical-align: top;">What known
+                  gaps/overlaps exist between the defined use cases and
+                  the existing data definitions?<br>
+                </td>
+                <td style="vertical-align: top;">Correspondence rule:
+                  issues </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Analytics<br>
+                </td>
+                <td style="vertical-align: top;">Does the data represent
+                  aggregated/fused data? <br>
+                </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Analytics </td>
+                <td style="vertical-align: top;">Who has what rights to
+                  specific aggregated/fused data?<br>
+                </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Analytics </td>
+                <td style="vertical-align: top;">What dynamic metadata
+                  exists regarding the employed analytic methods used to
+                  produce the aggregated/fused data?<br>
+                </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Class Model </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Analytics </td>
+                <td style="vertical-align: top;">Can the algorithms and
+                  parameters used to aggregate/fuse the data be
+                  controlled?<br>
+                </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Class Model </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Rights<br>
+                </td>
+                <td style="vertical-align: top;">Who owns the data? </td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Rights </td>
+                <td style="vertical-align: top;">What rights does a user
+                  of the data have? </td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Rights </td>
+                <td style="vertical-align: top;">What restrictions are
+                  there on the data (sharing, derived data, etc.)? </td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Rights </td>
+                <td style="vertical-align: top;">What responsibilities
+                  does a data provider have? </td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Rights </td>
+                <td style="vertical-align: top;">What responsibilities
+                  does a data consumer have? </td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Rights </td>
+                <td style="vertical-align: top;">How are ownership and
+                  usage rights controlled, expressed, and exchanged? </td>
+                <td style="vertical-align: top;">???<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Rights </td>
+                <td style="vertical-align: top;">What external policies
+                  and legislation needs to be considered for the data?
+                  (e.g., GDPR) </td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Usage<br>
+                </td>
+                <td style="vertical-align: top;">What information
+                  transfers use the data? </td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Confidentiality<br>
+                </td>
+                <td style="vertical-align: top;">Does the data represent
+                  sensitive information (e.g., personally identifiable
+                  information)? </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Confidentiality </td>
+                <td style="vertical-align: top;">What level of data
+                  access control is needed? </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Confidentiality<br>
+                </td>
+                <td style="vertical-align: top;">How is data access
+                  controlled?<br>
+                </td>
+                <td style="vertical-align: top;">???<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Confidentiality </td>
+                <td style="vertical-align: top;">What cybersecurity and
+                  data privacy standards apply? (NITS WP-692 Item 15) </td>
+                <td style="vertical-align: top;">Correspondence rule<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Quality<br>
+                </td>
+                <td style="vertical-align: top;">What are the data
+                  accuracy requirements? </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Quality </td>
+                <td style="vertical-align: top;">How is data quality
+                  captured (e.g., sensor issues, conflicts among inputs,
+                  etc)? </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Quality </td>
+                <td style="vertical-align: top;">What measures are
+                  needed to detect and quash bad data? </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Quality<br>
+                </td>
+                <td style="vertical-align: top;">What are the
+                  constraints on data values?<br>
+                </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Quality </td>
+                <td style="vertical-align: top;">How are constraints on
+                  data values enforced (i.e., prevent buffer overflow,
+                  invalid content, etc.)? </td>
+                <td style="vertical-align: top;">???<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Quality </td>
+                <td style="vertical-align: top;">How is bad or missing
+                  data reported? </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Integrity<br>
+                </td>
+                <td style="vertical-align: top;">How is the data
+                  protected from unauthorized modification? </td>
+                <td style="vertical-align: top;">???<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Integrity </td>
+                <td style="vertical-align: top;">How does a receiver
+                  validate that the information was produced by a
+                  legitimate source? (e.g., a MAP message sent by an
+                  RSU) </td>
+                <td style="vertical-align: top;">???<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Integrity </td>
+                <td style="vertical-align: top;">How quickly does the
+                  data age? </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Integrity </td>
+                <td style="vertical-align: top;">How is the data kept up
+                  to date? </td>
+                <td style="vertical-align: top;">???<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Integrity </td>
+                <td style="vertical-align: top;">How is outdated data
+                  flagged? </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Integrity</td>
+                <td style="vertical-align: top;">How are inputs from
+                  multiple sources handled?</td>
+                <td style="vertical-align: top;">Logical data model:
+                  Class Model ??<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Integrity</td>
+                <td style="vertical-align: top;">How is data
+                  synchronized and conflicts resolved among multiple
+                  entities?</td>
+                <td style="vertical-align: top;">Logical data model:
+                  Class Model ??</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Availability<br>
+                </td>
+                <td style="vertical-align: top;">What data is required
+                  and under what conditions?</td>
+                <td style="vertical-align: top;">Correspondence rule<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Availability</td>
+                <td style="vertical-align: top;">What are the latency
+                  requirements for the data?</td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Accountability<br>
+                </td>
+                <td style="vertical-align: top;">Who last edited the
+                  data?</td>
+                <td style="vertical-align: top;">Logical data model:
+                  Class Model </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Accountability</td>
+                <td style="vertical-align: top;">When was the data last
+                  updated?</td>
+                <td style="vertical-align: top;">Logical data model:
+                  Class Model </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Accountability</td>
+                <td style="vertical-align: top;">Who has accessed the
+                  data?</td>
+                <td style="vertical-align: top;">Logical data model:
+                  Class Model </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Accountability</td>
+                <td style="vertical-align: top;">Who is responsible for
+                  data quality?</td>
+                <td style="vertical-align: top;">Correspondence rule<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Accountability</td>
+                <td style="vertical-align: top;">Are there penalties for
+                  bad behavior (e.g., releasing data)? Who
+                  decides/enforces? What are options?</td>
+                <td style="vertical-align: top;">Correspondence rule<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Lifecycle<br>
+                </td>
+                <td style="vertical-align: top;">Who produces/writes the
+                  data?</td>
+                <td style="vertical-align: top;">Correspondence rule<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Lifecycle</td>
+                <td style="vertical-align: top;">Who consumes/reads the
+                  data?</td>
+                <td style="vertical-align: top;">Correspondence rule</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Lifecycle</td>
+                <td style="vertical-align: top;">Where is the data
+                  stored (if at all)?</td>
+                <td style="vertical-align: top;">Correspondence rule</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Lifecycle</td>
+                <td style="vertical-align: top;">What persistence
+                  requirements exist for the data?</td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Lifecycle</td>
+                <td style="vertical-align: top;">How is the data (and
+                  all copies) destroyed?</td>
+                <td style="vertical-align: top;">Logical data model:
+                  State machine<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Conformance<br>
+                </td>
+                <td style="vertical-align: top;">What data must be
+                  supported by a device and under what conditions (e.g.,
+                  for which services)?</td>
+                <td style="vertical-align: top;">Correspondence rule<br>
+                </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Conformance</td>
+                <td style="vertical-align: top;">What metadata must be
+                  supported and under what conditions?</td>
+                <td style="vertical-align: top;">Correspondence rule</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Conformance</td>
+                <td style="vertical-align: top;">What auditing trails
+                  are required?</td>
+                <td style="vertical-align: top;">Correspondence rule</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Evolution<br>
+                </td>
+                <td style="vertical-align: top;">How has the data model
+                  changed over time?</td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Evolution</td>
+                <td style="vertical-align: top;">How does each data
+                  element relate to older versions?</td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Evolution</td>
+                <td style="vertical-align: top;">What service was the
+                  data originally designed for?</td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Evolution</td>
+                <td style="vertical-align: top;">What is the
+                  evolutionary history of the data element?</td>
+                <td style="vertical-align: top;">Correspondence rule </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Evolution<br>
+                </td>
+                <td style="vertical-align: top;">What is the status of
+                  the data definition?<br>
+                </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Evolution </td>
+                <td style="vertical-align: top;">When was the definition
+                  last modified?<br>
+                </td>
+                <td style="vertical-align: top;">Logical data model:
+                  Data element specification </td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Data Evolution </td>
+                <td style="vertical-align: top;">What was the last
+                  change to the data definition?<br>
+                </td>
+                <td style="vertical-align: top;">Correspondence rule</td>
+              </tr>
+            </tbody>
+          </table>
+          <ul>
+          </ul>
+        </section>
+        <section>
+          <h4>Anti-Concerns</h4>
+          <p>This viewpoint is not concerned with the following:<br>
+          </p>
+          <ul>
+            <li>What operations can be supported for each data element
+              or class?<br>
+            </li>
+            <li>How is data accessed/exchanged with internal and
+              external systems?</li>
+            <li>How are access control rights are maintained (e.g.,
+              removing rights for a terminated employee)?</li>
+            <li>What are the physical infrastructure requirements (e.g.,
+              for data storage)?</li>
+            <li>What are the costs involved in deploying, operating and
+              maintaining the data?<br>
+            </li>
+            <li>What potential legal liability is associated with
+              maintaining data stores?</li>
+            <li>How are data sources located?</li>
+            <li>How are data ownership and access right conflicts
+              resolved?</li>
+            <li>How does a user gain permission to access the data?</li>
+          </ul>
+          <p>These issues are left for domain or implementation-specific
+            documentation.<br>
+          </p>
+          <h4>Model Kinds</h4>
+        </section>
+        <section>
+          <h4>Conceptual Data Model Kind<br>
+          </h4>
+          <p>A formal ontology that covers major business entities<br>
+            Rroughly equivalent to IEEE 2413 semantic model kind<br>
+          </p>
+        </section>
+        <section>
+          <section>
+            <h5>Conventions<br>
+            </h5>
+            <p>Graphically depicted in UML<br>
+              Normatively captured in RDF/XML (or perhaps we want to use
+              the Functional-Style syntax defined in the OWL2
+              specification as it is more concise?)<br>
+            </p>
+            <p>Mandatory static metadata for each entity and
+              relationship includes:<br>
+            </p>
+            <ul>
+              <li>Name</li>
+              <li>English Definition</li>
+              <li>OWL specification</li>
+              <li>???<br>
+              </li>
+            </ul>
+            <p>Optional static metadata for each entity and relationship
+              includes<br>
+            </p>
+            <ul>
+              <li>???<br>
+              </li>
+            </ul>
+            <p>Mark has suggested (I think) that we do not worry about
+              treating relationships as their own entities. Do we need
+              to define specializations and other relationships among
+              relationship types?<br>
+            </p>
+          </section>
+          <section>
+            <h5>Operations</h5>
+          </section>
+          <section>
+            <h5>Correspondence Rules</h5>
+          </section>
+          <h4>Logical Data Model Kind<br>
+          </h4>
+          <p>UML class diagram; three variations<br>
+          </p>
+          <ul>
+            <li>Class focus</li>
+            <li>Information flow focus (Information flow model kind of
+              IEEE 2413)<br>
+            </li>
+            <li>Component - Information flow focus</li>
+          </ul>
+          <p>Attributes to be considered (somewhere)<br>
+          </p>
+          <ul>
+            <li>Does the data need to be stored with supplemental
+              authentication information? E.g., an RSU might broadcast a
+              MAP message to vehicles, but that MAP message must be
+              signed by a mapping authority<br>
+            </li>
+          </ul>
+          <ul>
+          </ul>
+          <section>
+            <h5>Conventions</h5>
+            <p>Data element specification includes:<br>
+            </p>
+            <ul>
+              <li>Definition <br>
+              </li>
+              <li>See ISO 14817-1<br>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h5>Operations</h5>
+          </section>
+          <section>
+            <h5>Correspondence Rules</h5>
+          </section>
+        </section>
+        <section>
+          <h4><span style="color: rgb(255, 0, 0);">Information structure
+              model kind</span></h4>
+          <p><span style="color: rgb(255, 0, 0);">SysML Internal Block
+              Diagram</span><span style="color: rgb(255, 0, 0);"><br>
+            </span><span style="color: rgb(255, 0, 0);">IEEE 2413</span><br>
+          </p>
+          <h4>Traceability Data Model Kind</h4>
+          <p>traces from physical to logical<br>
+            class based<br>
+          </p>
+          <h4>Physical Data Model</h4>
+          <p>UML Class Diagram<br>
+            Information flow based<br>
+          </p>
+          <section>
+            <h5>Conventions</h5>
+          </section>
+          <section>
+            <h5>Operations</h5>
+          </section>
+          <section>
+            <h5>Correspondence Rules</h5>
+          </section>
+        </section>
+        <section>
+          <h4>Data Ownership Model Kind</h4>
+          <p>[[Rozanski]] provides the following <br>
+            <meta http-equiv="Content-Type" content="text/html;
+              charset=UTF-8">
+          </p>
+          <p>
+            <title>RozanskiAndWoods-Architecture-Description-Template</title>
+          </p>
+          <div class="page" title="Page 14">
+            <div class="layoutArea">
+              <div class="column">
+                <p><span style="font-size: 11.000000pt; font-family:
+                    'Arial'; font-style: italic; color: rgb(0.000000%,
+                    0.000000%, 50.196080%)">If data is owned by more
+                    than one entity or part of the system, define who
+                    owns which pieces of the data and explain how any
+                    resulting problems will be handled. </span></p>
+                <p><span style="font-size: 11.000000pt; font-family:
+                    'Arial'; font-style: italic; color: rgb(0.000000%,
+                    0.000000%, 50.196080%)">In the example below, it can
+                    be seen that there are issues with entity 4 which
+                    can be updated by System D which is not the owner.
+                    The AD should explain how this inconsistency will be
+                    managed. </span></p>
+              </div>
+            </div>
+            <meta http-equiv="Content-Type" content="text/html;
+              charset=UTF-8">
+            <table class="MsoNormalTable"
+              style="border-collapse:collapse;border:none;mso-border-alt:solid
+              windowtext .5pt; mso-yfti-tbllook:480;mso-padding-alt:0in
+              5.4pt 0in 5.4pt;mso-border-insideh: .5pt solid
+              windowtext;mso-border-insidev:.5pt solid windowtext"
+              cellspacing="0" cellpadding="0" border="1">
+              <thead> <tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+                  <td style="width:85.2pt;border:solid windowtext 1.0pt;
+                    mso-border-alt:solid windowtext
+                    .5pt;background:black;padding:0in 5.4pt 0in 5.4pt"
+                    valign="top" width="114">
+                    <p class="MsoNormal" style="page-break-after:avoid"><span
+                        class="InstructionText"><b><span
+                            style="font-size:10.0pt;
+                            color:white;font-style:normal;mso-bidi-font-style:italic"
+                            lang="EN-GB">Entity<o:p></o:p></span></b></span></p>
+                  </td>
+                  <td style="width:85.2pt;border:solid windowtext 1.0pt;
+                    border-left:none;mso-border-left-alt:solid
+                    windowtext .5pt;mso-border-alt: solid windowtext
+                    .5pt;background:black;padding:0in 5.4pt 0in 5.4pt"
+                    valign="top" width="114">
+                    <p class="MsoNormal"
+                      style="text-align:center;page-break-after: avoid"
+                      align="center"><span class="InstructionText"><b><span
+                            style="font-size:
+                            10.0pt;color:white;font-style:normal;mso-bidi-font-style:italic"
+                            lang="EN-GB">System A<o:p></o:p></span></b></span></p>
+                  </td>
+                  <td style="width:85.2pt;border:solid windowtext 1.0pt;
+                    border-left:none;mso-border-left-alt:solid
+                    windowtext .5pt;mso-border-alt: solid windowtext
+                    .5pt;background:black;padding:0in 5.4pt 0in 5.4pt"
+                    valign="top" width="114">
+                    <p class="MsoNormal"
+                      style="text-align:center;page-break-after: avoid"
+                      align="center"><span class="InstructionText"><b><span
+                            style="font-size:
+                            10.0pt;color:white;font-style:normal;mso-bidi-font-style:italic"
+                            lang="EN-GB">System B<o:p></o:p></span></b></span></p>
+                  </td>
+                  <td style="width:85.25pt;border:solid windowtext
+                    1.0pt; border-left:none;mso-border-left-alt:solid
+                    windowtext .5pt;mso-border-alt: solid windowtext
+                    .5pt;background:black;padding:0in 5.4pt 0in 5.4pt"
+                    valign="top" width="114">
+                    <p class="MsoNormal"
+                      style="text-align:center;page-break-after: avoid"
+                      align="center"><span class="InstructionText"><b><span
+                            style="font-size:
+                            10.0pt;color:white;font-style:normal;mso-bidi-font-style:italic"
+                            lang="EN-GB">System C<o:p></o:p></span></b></span></p>
+                  </td>
+                  <td style="width:85.25pt;border:solid windowtext
+                    1.0pt; border-left:none;mso-border-left-alt:solid
+                    windowtext .5pt;mso-border-alt: solid windowtext
+                    .5pt;background:black;padding:0in 5.4pt 0in 5.4pt"
+                    valign="top" width="114">
+                    <p class="MsoNormal"
+                      style="text-align:center;page-break-after: avoid"
+                      align="center"><span class="InstructionText"><b><span
+                            style="font-size:
+                            10.0pt;color:white;font-style:normal;mso-bidi-font-style:italic"
+                            lang="EN-GB">System D<o:p></o:p></span></b></span></p>
+                  </td>
+                </tr>
+              </thead> <tbody>
+                <tr style="mso-yfti-irow:1">
+                  <td style="width:85.2pt;border:solid windowtext 1.0pt;
+                    border-top:none;mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-alt:solid windowtext .5pt;
+                    padding:0in 5.4pt 0in 5.4pt" valign="top"
+                    width="114">
+                    <p class="MsoNormal"><span class="InstructionText"><b><span
+style="font-size:10.0pt;font-style:normal;mso-bidi-font-style:italic"
+                            lang="EN-GB">entity 1<o:p></o:p></span></b></span></p>
+                  </td>
+                  <td style="width:85.2pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">MASTER<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.2pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">r/o copy<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.25pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">reader<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.25pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">reader<o:p></o:p></span></span></p>
+                  </td>
+                </tr>
+                <tr style="mso-yfti-irow:2">
+                  <td style="width:85.2pt;border:solid windowtext 1.0pt;
+                    border-top:none;mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-alt:solid windowtext .5pt;
+                    padding:0in 5.4pt 0in 5.4pt" valign="top"
+                    width="114">
+                    <p class="MsoNormal"><span class="InstructionText"><b><span
+style="font-size:10.0pt;font-style:normal;mso-bidi-font-style:italic"
+                            lang="EN-GB">entity 2<o:p></o:p></span></b></span></p>
+                  </td>
+                  <td style="width:85.2pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">reader<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.2pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">MASTER<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.25pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">none<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.25pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">reader<o:p></o:p></span></span></p>
+                  </td>
+                </tr>
+                <tr style="mso-yfti-irow:3">
+                  <td style="width:85.2pt;border:solid windowtext 1.0pt;
+                    border-top:none;mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-alt:solid windowtext .5pt;
+                    padding:0in 5.4pt 0in 5.4pt" valign="top"
+                    width="114">
+                    <p class="MsoNormal"><span class="InstructionText"><b><span
+style="font-size:10.0pt;font-style:normal;mso-bidi-font-style:italic"
+                            lang="EN-GB">entity 3<o:p></o:p></span></b></span></p>
+                  </td>
+                  <td style="width:85.2pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">none<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.2pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">reader<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.25pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">MASTER<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.25pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">reader<o:p></o:p></span></span></p>
+                  </td>
+                </tr>
+                <tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes">
+                  <td style="width:85.2pt;border:solid windowtext 1.0pt;
+                    border-top:none;mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-alt:solid windowtext .5pt;
+                    padding:0in 5.4pt 0in 5.4pt" valign="top"
+                    width="114">
+                    <p class="MsoNormal"><span class="InstructionText"><b><span
+style="font-size:10.0pt;font-style:normal;mso-bidi-font-style:italic"
+                            lang="EN-GB">entity 4<o:p></o:p></span></b></span></p>
+                  </td>
+                  <td style="width:85.2pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">MASTER<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.2pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">none<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.25pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt;font-style:
+                          normal;mso-bidi-font-style:italic"
+                          lang="EN-GB">none<o:p></o:p></span></span></p>
+                  </td>
+                  <td style="width:85.25pt;border-top:none;border-left:
+                    none;border-bottom:solid windowtext
+                    1.0pt;border-right:solid windowtext 1.0pt;
+                    mso-border-top-alt:solid windowtext
+                    .5pt;mso-border-left-alt:solid windowtext .5pt;
+                    mso-border-alt:solid windowtext .5pt;padding:0in
+                    5.4pt 0in 5.4pt" valign="top" width="114">
+                    <p class="MsoNormal" style="text-align:center"
+                      align="center"><span class="InstructionText"><span
+                          style="font-size:10.0pt" lang="EN-GB">reader<br>
+                          updater<br>
+                          deleter<o:p></o:p></span></span></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <meta name="ProgId" content="Word.Document">
+            <meta name="Generator" content="Microsoft Word 15">
+            <meta name="Originator" content="Microsoft Word 15">
+            <link rel="File-List"
+href="file:////Users/kvaughn/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_filelist.xml">
+            <!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+            <link rel="themeData"
+href="file:////Users/kvaughn/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_themedata.thmx">
+            <link rel="colorSchemeMapping"
+href="file:////Users/kvaughn/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_colorschememapping.xml">
+            <!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:DoNotShowPropertyChanges/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="0" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+            <style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"ＭＳ 明朝";
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536870145 1791491579 134217746 0 131231 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1107305727 0 0 415 0;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536870145 1791491579 134217746 0 131231 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:"MS Mincho";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-GB;
+	mso-fareast-language:JA;}
+span.InstructionText
+	{mso-style-name:"Instruction Text";
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	color:navy;
+	font-style:italic;
+	mso-bidi-font-style:normal;
+	text-decoration:underline;
+	text-underline:single;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	mso-fareast-font-family:"MS Mincho";}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]--><!--StartFragment--><!--EndFragment--></div>
+          <h4>Information Lifecycle Model Kind</h4>
+          <h4>Timeliness and Latency<span style="font-weight: normal;"></span>
+            Model Kind<br>
+          </h4>
+          <span style="font-weight: normal;">If information needs to be
+            copied around the system or is updated regularly, explain
+            how timeliness and latency requirements will be addressed.</span><span
+            style="font-weight: normal;"></span><br>
+          <h4>Archive and Retention</h4>
+          Explain how will archive and retention requirements will be
+          met by the system.<br>
+          <h4>Operations on Views</h4>
+          <h4> Correspondence Rules</h4>
+          <span style="font-weight: bold;">Primary</span><br>
+          Information is produced by functions<br>
+          Data (of Information) is consumed by the logical structure of
+          functions (per RA for Space Data Systems)<br>
+          <br>
+          <span style="font-weight: bold;">Secondary<br>
+          </span>Enterprise, Functional, Physical, and Communication
+          Viewpoints might all reference data that might need to be
+          stored in the system; when these links are needed, there will
+          be information flows in the Physical View. We could include
+          hyperlinks to these other views - but more likely (esp. given
+          the connection between two systems) the link from the Smart
+          City Data Model will be only to the Information Flows of
+          remote Communication Views and the local Use Case View.<br>
+        </section>
+        <section>
+          <h4>Examples</h4>
+        </section>
+        <section>
+          <h4>Notes</h4>
+        </section>
+        <section>
+          <h4>Sources</h4>
+        </section>
+      </section>
+    </section>
+  </body>
+</html>
