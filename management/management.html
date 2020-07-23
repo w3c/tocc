@@ -164,6 +164,8 @@
 
 
 
+
+
           for Adding Content</figcaption> </figure>
     </section>
     <section>
@@ -235,6 +237,8 @@
 
 
 
+
+
             Levels of Model Elements</figcaption> </figure>
       </section>
     </section>
@@ -248,6 +252,11 @@
         viewpoints are defined using <i>model kinds</i>, which specify
         modeling conventions to be used for specific presentations of
         the data.</p>
+      <p>According to ISO/IEC/IEEE 42010, an architecture viewpoint
+        establishes "the conventions for the construction,
+        interpretation, and use of architecture views to frame specific
+        system concerns."<br>
+      </p>
       <p>An <i>architecture description</i> based on this framework
         will develop <i>models</i> conforming to the model kinds
         defined by this document and group the models into <i>views</i>
@@ -293,7 +302,8 @@
           <h4>Model Kinds</h4>
         </section>
         <section>
-          <h4>Use Case Specification</h4>
+          <h4><span style="background-color: rgb(255, 255, 102);">Use
+              Case</span> Specification</h4>
           <section>
             <h5>Conventions</h5>
             <table style=" text-align: left; width: 100%;"
@@ -649,53 +659,46 @@
         <h3>Information Viewpoint</h3>
         <section>
           <h4>Overview</h4>
-          <p>Content currently reflects IEEE 2413<br>
+          <p>The Information Viewpoint frames how stakeholder concerns
+            related to information will be addressed, especially those
+            related to the structure, semantics, ownership, latency, and
+            retention of information.<br>
           </p>
         </section>
         <section>
           <h4>Stakeholders</h4>
+          <p>The Information Viewpoint considers concerns from the
+            following stakeholders:<br>
+          </p>
           <ol>
-            <li>Designers</li>
-            <li>Developers/integrators</li>
-            <li>Vendors/suppliers</li>
-            <li>Installers</li>
-            <li>Operators</li>
-            <li>Users</li>
+            <li>Data custodians</li>
+            <li>Data stewards</li>
+            <li>Designers, developers, and integrators<br>
+            </li>
+            <li>System managers<br>
+            </li>
+            <li>Users, including</li>
+            <ol>
+              <li>End users</li>
+              <li>Field support users</li>
+              <li>System operators</li>
+              <li>Administrative users<br>
+              </li>
+            </ol>
             <li>Maintainers</li>
+            <li>Testers<br>
+            </li>
             <li>Standardization bodies</li>
-          </ol>
-          <p>Above based on IEEE 2413<br>
-          </p>
-          <ol>
-            <li>mobile user<br>
-            </li>
-            <li>field user</li>
-            <li>center user</li>
-            <li>operator</li>
-            <li>acquirer</li>
-            <li>maintainer</li>
-            <li>developer</li>
-            <li>tester</li>
-            <li>application developer</li>
-            <li>device developer</li>
-          </ol>
-          <p>Above based on Core System -- System Architecture Document
-            (SAD) an ITS document<br>
-          </p>
-          <ol>
-            <li>Data custodian</li>
-            <li>Data steward</li>
-            <li>System/service developers</li>
-            <li>System/service maintainers</li>
-            <li>End users</li>
-            <li>Managers/directors<br>
+            <li>Privacy advocates<br>
             </li>
           </ol>
-        </section>
+          Concerns</section>
         <section>
-          <h4>Concerns</h4>
-          <p>The stakeholder concerns framed by the information
-            viewpoint include:<br>
+          <p>The following table identifies the stakeholder concerns
+            considered in the development of this viewpoint frames. Each
+            concern is categorized into a generalized topic area and
+            includes a reference to the model kind where the concern is
+            addressed. <br>
           </p>
           <table style=" text-align: left; width: 100%;" cellspacing="2"
             cellpadding="2" border="1">
@@ -709,7 +712,9 @@
 
 
 
-                  by<br>
+
+
+                  by Model Kind<br>
                 </th>
               </tr>
               <tr>
@@ -718,8 +723,7 @@
                 <td style="vertical-align: top;">What are the
                   definitions of the major business terms?<br>
                 </td>
-                <td style="vertical-align: top;">Conceptual data model:
-                  Entity definition<br>
+                <td style="vertical-align: top;">Vocabulary<br>
                 </td>
               </tr>
               <tr>
@@ -727,8 +731,7 @@
                 <td style="vertical-align: top;">How do business terms
                   relate to one another?<br>
                 </td>
-                <td style="vertical-align: top;">Conceptual data model:
-                  OWL specification<br>
+                <td style="vertical-align: top;">Ontology<br>
                 </td>
               </tr>
               <tr>
@@ -736,8 +739,8 @@
                 <td style="vertical-align: top;">What does each data
                   element mean?<br>
                 </td>
-                <td style="vertical-align: top;">Logical data model:
-                  Data element specification<br>
+                <td style="vertical-align: top;">Data Dictionary:
+                  Definition<br>
                 </td>
               </tr>
               <tr>
@@ -746,8 +749,7 @@
                   element relate to other data elements? (including
                   dynamic metadata)<br>
                 </td>
-                <td style="vertical-align: top;">Logical data model:
-                  Class Model<br>
+                <td style="vertical-align: top;">Logical Data Model<br>
                 </td>
               </tr>
               <tr>
@@ -755,8 +757,7 @@
                 <td style="vertical-align: top;">Does the data have
                   safety-of-life implications?<br>
                 </td>
-                <td style="vertical-align: top;">Logical data model:
-                  Data element specification<br>
+                <td style="vertical-align: top;">Data Dictionary: Usage<br>
                 </td>
               </tr>
               <tr>
@@ -764,8 +765,7 @@
                 <td style="vertical-align: top;">What, if any, state
                   behavior relationships are there for data and classes?<br>
                 </td>
-                <td style="vertical-align: top;">&nbsp;Logical data
-                  model: State Machine<br>
+                <td style="vertical-align: top;">State Machine<br>
                 </td>
               </tr>
               <tr>
@@ -774,15 +774,15 @@
                   representational form of the data within data
                   exchanges? <br>
                 </td>
-                <td style="vertical-align: top;">Physical data model:
-                  data specification<br>
+                <td style="vertical-align: top;">Physical Data Model<br>
                 </td>
               </tr>
               <tr>
                 <td style="vertical-align: top;">Data Definition </td>
                 <td style="vertical-align: top;">How is data transformed
                   from one data exchange format into another?</td>
-                <td style="vertical-align: top;">Data traceability model<br>
+                <td style="vertical-align: top;">Logical Data Model:
+                  Physical Representation<br>
                 </td>
               </tr>
               <tr>
@@ -799,8 +799,7 @@
                 </td>
                 <td style="vertical-align: top;">What are the key
                   sources for the data definition? </td>
-                <td style="vertical-align: top;">Logical data model:
-                  data element specification<br>
+                <td style="vertical-align: top;">Data Dictionary: <br>
                 </td>
               </tr>
               <tr>
@@ -1221,7 +1220,8 @@
         </section>
         <section>
           <h4>Anti-Concerns</h4>
-          <p>This viewpoint is not concerned with the following:<br>
+          <p>This viewpoint does not attempt to frame the following
+            stakeholder concerns:<br>
           </p>
           <ul>
             <li>What operations can be supported for each data element
@@ -1243,48 +1243,75 @@
               resolved?</li>
             <li>How does a user gain permission to access the data?</li>
           </ul>
-          <p>These issues are left for domain or implementation-specific
-            documentation.<br>
+          <p>These issues are left for domain, solution, or
+            implementation-specific documentation.<br>
           </p>
-          <h4>Model Kinds</h4>
         </section>
         <section>
-          <h4>Conceptual Data Model Kind<br>
-          </h4>
-          <p>A formal ontology that covers major business entities<br>
-            Rroughly equivalent to IEEE 2413 semantic model kind<br>
+          <h4>Model Kinds</h4>
+          <p>According to ISO/IEC/IEEE 42010, concerns are framed by
+            viewpoints by using one or more model kinds, where a model
+            kind establishes the conventions for a type of modeling. The
+            model kind governs the development of a model, which
+            addresses some portion of the stakeholder concerns that are
+            framed by the viewpoint. The Information Viewpoint consists
+            of the following model kinds:<br>
           </p>
+          <ul>
+            <li>Vocabulary Model Kind</li>
+            <li>Ontology Model Kind</li>
+            <li>Data Dictionary Model Kind</li>
+            <li>Logical Data Model Kind</li>
+            <li>Physical Data Model Kind</li>
+            <li>Data Ownership Model Kind<br>
+            </li>
+            <li>Information Lifecycle Model Kind<br>
+            </li>
+            <li>Timeliness and Latency Model Kind<br>
+            </li>
+            <li>Archive and Retention Model Kind<br>
+            </li>
+          </ul>
         </section>
         <section>
           <section>
+            <h4>Vocabulary Model Kind<br>
+            </h4>
+            <p>The Vocabulary Model Kind is used to provide formal
+              definitions of key business terms. Formal definitions
+              should be developed according to the principles defined in
+              ISO 704. <br>
+              Roughly equivalent to IEEE 2413 semantic model kind<br>
+            </p>
+          </section>
+          <section>
             <h5>Conventions<br>
             </h5>
-            <p>Graphically depicted in UML<br>
-              Normatively captured in RDF/XML (or perhaps we want to use
-              the Functional-Style syntax defined in the OWL2
-              specification as it is more concise?)<br>
-            </p>
-            <p>Mandatory static metadata for each entity and
-              relationship includes:<br>
-            </p>
+            The Conceptual Data Concept Model Kind is presented as a
+            template providing the following static metadata for each
+            business entity<span style="background-color: rgb(255, 255,
+              102);"> (and relationship?). </span><br>
             <ul>
               <li>Name</li>
               <li>English Definition</li>
-              <li>OWL specification</li>
-              <li>???<br>
-              </li>
             </ul>
             <p>Optional static metadata for each entity and relationship
               includes<br>
             </p>
             <ul>
-              <li>???<br>
+              <li>Preferred Synonym(s)</li>
+              <li>Admitted Synonym(s)</li>
+              <li>Deprecated Synonym(s)<br>
+              </li>
+              <li>Note(s)</li>
+              <li>Example(s)<br>
               </li>
             </ul>
-            <p>Mark has suggested (I think) that we do not worry about
-              treating relationships as their own entities. Do we need
-              to define specializations and other relationships among
-              relationship types?<br>
+            <p><span style="background-color: rgb(255, 255, 102);">Mark
+                has suggested (I think) that we do not worry about
+                treating relationships as their own entities. Do we need
+                to define specializations and other relationships among
+                relationship types?</span><br>
             </p>
           </section>
           <section>
@@ -1292,10 +1319,487 @@
           </section>
           <section>
             <h5>Correspondence Rules</h5>
+            <p>Each business entity shall trace to <span
+                style="background-color: rgb(255, 255, 102);">one</span>
+              entry within the Logical Data Dictionary (LDD). The tool
+              should default to having the link point to a class in the
+              Logical Data Dictionary having the identical name of the
+              business entity with the option to override this link to
+              another class or LDD entry.</p>
+          </section>
+          <h4>Ontology Model Kind<br>
+          </h4>
+          <p>The Conceptual Data Model Kind is used to specify
+            relationships among common business terms. It is roughly
+            equivalent to IEEE 2413 semantic model kind.<br>
+          </p>
+        </section>
+        <section>
+          <section>
+            <h5>Conventions<br>
+            </h5>
+            <p>The Conceptual Data Model Kind is graphically represented
+              using <span style="background-color: rgb(255, 255, 102);">UML
+
+                class diagrams</span> and formally defined using <span
+                style="background-color: rgb(255, 255, 102);">RDF/XML</span>
+              (or perhaps we want to use the Functional-Style syntax
+              defined in the OWL2 specification as it is more concise?).
+              It is expected that there will be one (or perhaps a small
+              number of) RDF/XML file(s) while there will be a large
+              number of Conceptual Data Model diagrams.&nbsp; <br>
+            </p>
+            <p>UML class diagrams should be limited to no more than 20
+              classes.<br>
+              Define a UML class diagram profile<br>
+            </p>
+            Operations</section>
+          <section> </section>
+          <section>
+            <h5>Correspondence Rules</h5>
+            <p>Each Conceptual Data Model diagram shall be traced to the
+              Conceptual Data Concept Model elements representing the
+              concepts contained within the diagram. <br>
+            </p>
+          </section>
+          <h4>Data Dictionary Model Kind<br>
+          </h4>
+          <p>The Data Dictionary Model Kind is used to specify static
+            metadata about data concepts. Data concepts include:</p>
+          <ul>
+            <li>Class<br>
+            </li>
+            <li>Data object: characteristic of a class with an explicit
+              value domain<br>
+            </li>
+            <li>Value domain: expression of the range of values that a
+              characteristic can have</li>
+            <li>Information object: logical grouping of data elements
+              that is useful for information storage or transfer</li>
+          </ul>
+          <p>NOTE: A data object might be elemental in nature and
+            represent a single indivisible concept (e.g.,
+            Vehicle.speed:measure-mps), in which case it is a data
+            element. Alternatively, a data object might represent a
+            composition of information (e.g.,
+            Vehicle.position:GeoLocation3D, which includes a latitude,
+            longitude, and elevation), in which case it represents an
+            association role to another class.<br>
+          </p>
+          <section>
+            <h5>Conventions</h5>
+            <p>Data concept specifications can include the following
+              static metadata based on type. Within the table, an "M"
+              indicates that the metadata is mandatory, an "O" indicates
+              that it is optional, and a "N/A" indicates that it is not
+              applicable to the type of data concept. Metadata items
+              that are shown in italics indicate that the values
+              represent correspondences to another architectural
+              element. Metadata options that are shown with an optional
+              plural name indicate that multiple instances of the
+              metadata item are allowed.<br>
+            </p>
+            <table style=" text-align: left; width: 100%;"
+              cellspacing="2" cellpadding="2" border="1">
+              <tbody>
+                <tr>
+                  <td style="vertical-align: top;">Metadata<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">Class<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">Data
+                    Object<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">Value
+                    Domain<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">Information
+                    Object<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Data Concept Type<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Identifier<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Version<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Revision<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Name<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Definition<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Note(s)<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Inspiration<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Business Entity</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Generalized Class</span><span
+                      style="font-style: italic;"><span
+                        style="background-color: rgb(255, 255, 102);">(es)</span></span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Abstract</td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Property(ies)</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">State Machine</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Parent Class</span></td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Multiplicity</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="background-color: rgb(255, 255, 102);">Accuracy</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;"><span
+                      style="background-color: rgb(255, 255, 102);">?</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;"><span
+                      style="background-color: rgb(255, 255, 102);">N/A</span></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="background-color: rgb(255, 255, 102);">Aging
+                      Rate</span></td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;"><span
+                      style="background-color: rgb(255, 255, 102);">?</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;"><span
+                      style="background-color: rgb(255, 255, 102);">N/A</span></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Value Domain</span></td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Reverse Association
+                      Role</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Usage: service(s)</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;"><span
+                      style="background-color: rgb(255, 255, 102);">M</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">M</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Usage: external
+                      link(s)</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;"><span
+                      style="background-color: rgb(255, 255, 102);">O</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;"><span
+                        style="background-color: rgb(255, 255, 102);">Physical
+                        Representation(s)</span></span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Datatype</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Format</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Unit of Measure</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Valid Value Rule</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Constraint</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Precursor(s)</span></td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Successor(s)</span></td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">O<br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Data Elements(s)</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><span
+                      style="font-style: italic;">Information Flow(s)</span><br>
+                  </td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">N/A</td>
+                  <td style="vertical-align: top; text-align: center;">M<br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <h5><span style="background-color: rgb(102, 255, 255);">Signer
+                - metadata to be added for each information transfer(?)</span><span
+                style="background-color: rgb(102, 255, 255);"><br>
+              </span></h5>
+            <p><span style="background-color: rgb(102, 255, 255);">This
+                identifies the physical object that has the authority to
+                issue the information object (i.e., which indicates who
+                should sign the information object).</span>&nbsp; <br>
+            </p>
+            <h5>Inspiration</h5>
+            <p>Identifies the This includes both the identifier and name
+              of a service that uses the information as well as an
+              assessment of how safety-critical the information is.<br>
+            </p>
+            <h5>Usage: service</h5>
+            <p>This includes both the identifier and name of a service
+              that uses the information as well as an assessment of how
+              safety-critical the information is.<br>
+            </p>
+            <h5>Usage: external link</h5>
+            <p>This provides a link to an external resource that
+              identifies an architectural element that relies upon this
+              information; it is coupled with an assessment of how
+              safety-critical the information is within the context of
+              that usage. Examples of external resources that might use
+              information defined within the information view include:<br>
+            </p>
+            <ul>
+              <li>A functional view process</li>
+              <li>A functional view data store<br>
+              </li>
+              <li>A deployment view information flow (e.g., which might
+                identify sources and sinks for the flow)<br>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h5>Physical Representation<br>
+            </h5>
+            <p>This includes both the name of a corresponding data
+              element contained in a Physical Data Model coupled with a
+              (preferably mathematical) definition of how to transform
+              the Physical Data Model data element into the Logical Data
+              Model data element.<br>
+            </p>
+            <h5>Operations</h5>
           </section>
           <h4>Logical Data Model Kind<br>
           </h4>
-          <p>UML class diagram; three variations<br>
+          <p>The Logical Data Model Kind is used to specify
+            relationships among entries contained within the LDD. <br>
+            UML class diagram; three variations<br>
           </p>
           <ul>
             <li>Class focus</li>
@@ -1340,10 +1844,20 @@
               Diagram</span><span style="color: rgb(255, 0, 0);"><br>
             </span><span style="color: rgb(255, 0, 0);">IEEE 2413</span><br>
           </p>
-          <h4>Traceability Data Model Kind</h4>
-          <p>traces from physical to logical<br>
-            class based<br>
-          </p>
+          <h4>State Machine Model Kind</h4>
+          <p>The State Machine Model Kind is used to specify the
+            behavior of a class as it transitions among various states.</p>
+          <h5>Conventions</h5>
+          The state machine shall be defined using a UML State Machine
+          diagram accompanied by text explaining the bahavior of the
+          class within each state and the characteristics of each state
+          transition. <br>
+          <h5>Operation</h5>
+          <br>
+          <h5>Correspondence Rules</h5>
+          <br>
+          <br>
+          <p> </p>
           <h4>Physical Data Model</h4>
           <p>UML Class Diagram<br>
             Information flow based<br>
@@ -2446,6 +2960,15 @@ div.WordSection1
           met by the system.<br>
           <h4>Operations on Views</h4>
           <h4> Correspondence Rules</h4>
+          <p>All information referenced in other views shall be
+            consistent with the content of the Information View.<br>
+          </p>
+          <p>All information referenced in other views should be traced
+            to elements within the Information View. The "should" within
+            this statement allows for the preferred development process
+            where use cases are defined prior to developing the detailed
+            data definitions. <br>
+          </p>
           <span style="font-weight: bold;">Primary</span><br>
           Information is produced by functions<br>
           Data (of Information) is consumed by the logical structure of
