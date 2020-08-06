@@ -19,15 +19,14 @@ To support collaboration for convergence on the core elements of a data model fo
    * Relationships within a standard will typically be part of the (domain) model.
    * Relationships across standards will typically describe how the concepts are related.
 6. Support for discussion on submitted content: use cases, definitions, and proposed relationships.
-   * Question: One discussion thread per use case / class / property / definition / relationship or do we want multiple threads to separate discussion on separate topics?
-   * Question: Do we need a capability to discuss topics that are not easily focussed on one element or do we then just pick the best guess?
+   * One discussion thread will be available per page
+   * In addition, a discussion thread will be made available for general comments/discussion.
 7. Support navigation through and review of submitted content.
-8. Support for some level of sanity checking for input.
+8. Support for some level of automated sanity checking for input (e.g. required fields, input types).
 9. Support for some level of user approval / membership control.
 10. Support to enforce agreed-upon workflow (governance process).
 11. Support for displaying where the different topics are in the process flow (e.g., using a kanban/project board or similar).
-12. Publication of the core model of shared concepts (defined classes and properties).
-   * Question: Does this include support for continued development of the core model?
+12. Publication of the approved collaboratory model in an OWL file.
 
 ## Non-functional Requirements
 It is critical that the system and process be easy to use and participate in, in order to minimize barriers to participation and encourage quality contributions. To achieve this, the following characteristics are required:
