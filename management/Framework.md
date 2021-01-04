@@ -123,33 +123,39 @@ Example stakeholders might include [Rozanski]:
 
 |Concern|Addressed by Model Kind|
 |-------|-----------------------|
-|What are the use cases that are driving the data definitions?|Use Case Specification: name, summary, description, and illustration|
+|What are the use cases that are driving the data definitions?|Use Case Specification: Use case, Summary, Description, and Illustration|
 |Is the use case definition collaboratory or copyrighted elsewhere?|License information|
 |What is the context of this use case?|Use Case Specification: domain, sub-domain, goal|
-|Who are the stakeholders for this use case?|Use Case Specification: actors and other stakeholders|
-|What data needs to be provided by actors?|This is a very high-level description, for example, "origin location, destination location, and travel preferences". Details can be hashed out later and shown in the diagrams <span style="background:yellow">Where do we declare our system boundary? I propose that each use case should define its own system boundary as narrow as possible. For example, in the case of "Routes for Travellers" the suggested route is likely to consider current traffic conditions. The current traffic conditions could be determined by a number of means (e.g., sensors in the field, video image processing, Bluetooth travel times, cellular-based travel times), each of which have slighly different architectures. From the point of this use case, it doesn't matter - the only thing that is important is that a "Transporation Information Center" provides current network conditions and how that data is obtained is irrelavent. A different use case might need more details and would define a different system boundary </span>|
-|What data needs to be provided to actors?|This is a very high-level description, for example, "route, travel times, and costs". Details can be hashed out later and shown in the diagrams |
-|<span style="background:yellow">What data needs to be generated/accessed internally to the smart city system?</span>|This is a very high-level description, for example, "current traffic conditions, current transit performance, and current shared vehicle availability". Details can be hashed out later and shown in the diagrams <span style="background:yellow">If we define internal flows, we need to define internal elements and this is no longer a use case specification - but perhaps what we are trying to achieve is primarily standardizing data among major system components. Thus, perhaps we need at least a high-level deployment viewpoint that at least identifies the major system components that we will consider in our analysis</span>|
-|What are the flow of events for each scenario associated with each use case?||
-|What are the outstanding issues with this use case?||
-|What is the source of this use case?||
-|What standards/specifications exist related to this use case?||
-|How has this use case evolved over time?||
+|Who are the stakeholders for this use case?|Use Case Specification: participants and other stakeholders|
+|What data needs to be provided by participants?|Use Case Specification: Information requirements<br /><br /><span style="background:yellow">Do we really need to separate input/output? Where do we declare our system boundary? I propose that each use case should define its own system boundary as narrow as possible. For example, in the case of "Routes for Travellers" the suggested route is likely to consider current traffic conditions. The current traffic conditions could be determined by a number of means (e.g., sensors in the field, video image processing, Bluetooth travel times, cellular-based travel times), each of which have slighly different architectures. From the point of this use case, it doesn't matter - the only thing that is important is that a "Transporation Information Center" provides current network conditions and how that data is obtained is irrelavent. A different use case might need more details and would define a different system boundary </span>|
+|What data needs to be provided to participants?|Use Case Specification: Information requirements|
+|<span style="background:yellow">What data needs to be generated/accessed internally to the smart city system?</span>|TBD<br /><br /><span style="background:yellow">If we define internal flows, we need to define internal elements and this is no longer a use case specification - but perhaps what we are trying to achieve is primarily standardizing data among major system components. Thus, perhaps we need at least a high-level deployment viewpoint that at least identifies the major system components that we will consider in our analysis. Actually, the best way to handle this within the scope of our environment is to define a separate use case where the boundary changes so that one of the component systems is defined as an actor.</span>|
+|What are the flow of events for each scenario associated with each use case?|Use Case Specification: Scenarios|
+|What are the outstanding issues with this use case?|Use Case Specification:Issues|
+|What is the source of this use case?|Use Case Specification:source|
+|What standards/specifications exist related to this use case?|Use case specification:specifications|
+|How has this use case evolved over time?|Modification history, Version|
+|What is the approval status of this use case?|Use Case Specification:Status||
 
 #### Concerns not addressed
 
 This viewpoint does not attempt to frame the following stakeholder
 concerns:
 
-#### Model Kinds
+<span style="background:yellow">Any?</span>
 
-Use Case Diagram
-Use Case Specification
-Information flow class diargams
+####Model Kinds
 
-#### Use Case Specification
+The Usage Viewpoint includes two model kinds:
 
-##### Main Specification
+- Use case model kind
+- Scenario model kind
+
+Each use case model shall be associated with one or more scenario models, which provide additional details about the use case; scenario models are generally specific to a single use case.
+
+#### Use Case Model Kind
+
+The use case model kind provides a template that is to be used to define all use cases defined within the Usage View. The template is defined as follows:
 
 |Field|Description|Conformance|
 |-----|-----------|-----------|
@@ -171,35 +177,75 @@ Information flow class diargams
 |<span style="background:yellow">Extensions|Areas where the services can be extended with optional features|
 |<span style="background:yellow">Inclusions|Additional services that are included in the listed services and extensions|
 |<span style="background:yellow">Use Case diagram</span>|UML use case diagram|
-|Scenarios|Name of scenario (reference to scenario table)<span style="background:yellow">Do we need more than the main flow for our limited purposes?</span>|
-|Information requirements|Should eventually become hyperlinks to the defined data concepts|
+|Scenarios|Name of scenario (reference to scenario table)<span style="background:yellow">Do we need more than the main flow for our limited purposes?</span><br /><br />Alternate flows should probably only be included when they result in additional relevant data. |
+|Information requirements|This is a very high-level description, for example, "origin location, destination location, and travel preferences". Details can be hashed out later and shown in the diagrams; this can be updated later to provide correspondence linkages to the defined data concepts in the Information View|
 |Issues|Primarily to track issues during development|
-|References|Source materials used to develop this use case|
+|Source|Source materials used to develop this use case|
 |Version|Date|
 |Modification History|Might use github for this|
 |Status|Approval status|
-|Application notes||
-|Information Flow Class Diagram||Optional|
+|Notes||
+|<span style="background:yellow">Information Flow Class Diagram</span>||Optional|
+|Specifications|Link to reference architectures, standards and other resources that rely upon this use case definition||
 |License information|Indicate the owner and provide a reference to the copyright information|Mandatory|
 
-##### Scenario Specification (Might appear multiple times)
+##### Operations for Use Case Models
+
+When initially creating a use case model, the following fields shall be populated, as a minimum, prior to considering the use case definition complete:
+
+- Domain
+- Subdomain
+- Use case
+- Summary 
+- Description
+- Goal
+- Participants
+- Other stakeholders
+- At least one scenario
+
+##### Correspondence Rules for Use Case Models
+
+Each use case model shall correspond to at least one scenario model. All corresponding scenario models shall be linked via the Scenarios field of the use case model.
+
+#### Scenario Model Kind
+
 |Field|Description|Conformance|
 |-----|-----------|-----------|
-|Scenario Name|Name of scenario|
-|Pre-conditions||
-|Triggers||
-|Event Flow||
-|Post-conditions||
-|Exceptions|Highlighted, potential undesirable outcomes identifying positions within flow of events where they can occur <span style="background:yellow">Perhaps we roll this table into the main table and use this field to explain any data that might be needed in alternate flows?</span>|
+|Use case|Link to the use case model|
+|Scenario name|Name of scenario|
+|Pre-conditions|Any conditions that must be true prior to this scenario occuring|
+|Triggers|Event(s) that cause this scenario to occur|
+|Event flow|The sequence of events that occur during this scenario|
+|Post-conditions|Any conditions that must be true after the completion of this scenario|
+|Exceptions|Highlighted, potential undesirable outcomes identifying positions within the flow of events where they can occur <span style="background:yellow">Perhaps we roll this table into the main table and use this field to explain any data that might be needed in alternate flows?</span>|
 |Interaction diagram|<span style="background:yellow">This is really a deployment view model kind</span>|
 
-##### Operations
+##### Operations for Scenario Models
 
-##### Correspondence Rules
+All of the fields of the scenario model should be populated upon creating the model, but in some cases, some information might not apply. At a minimum, the following fields should be populated for all scenarios:
 
-#### Operations on Views
+- Use case
+- Scenario name
+- Event flow
 
-#### Correspondence Rules
+##### Correspondence Rules for Scenario Models
+
+Each scenario model shall be associated with at least (and typically only) one use case model. The use case model(s) shall be linked via the Use Case field of the scenario model.
+
+#### Operations for Usage Views
+
+When creating a new usage view, care should be taken to create a system where use cases can be catalogued in a manner that users can easily search and find use cases of interest. This should likely be done by standardizing the list of domains and subdomains.
+
+#### Correspondence Rules for Usage Views
+
+The usage view includes the following correspondence rules with other views and resources:
+
+- The domain and subdomain values used within each use case model should be selected from pre-defined lists
+- Participants and other stakeholders should be defined in a separately maintained list
+- The source should cite a publicly available document
+- The specicifications shall cite an entry in the specification view
+- The information flow class diagram shall be a diagram showing only those elements from the Information View that are relevant to this use case
+- The interaction diagram of the scenario model might also be contained within a deployment or similar view of another reference architecture
 
 #### Example
 |Field|Value|
