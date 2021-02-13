@@ -16,7 +16,7 @@ The CDMRA formally defines the CDM; the other components of the CDMRA are only d
 
 ### Purpose of the CDM
 
-The CDM A city data model enables city software applications to share information, plan, coordinate, and execute city tasks, and support decision making, by providing a precise, unambiguous representation of information and knowledge commonly shared within and across city services.
+The CDM enables city software applications to share information, plan, coordinate, and execute city tasks, and support decision making, by providing a precise, unambiguous representation of information and knowledge commonly shared within and across city services.
 
 ### Scope of services covered by the CDMRA (and CDM)
 
@@ -54,9 +54,9 @@ The Use Case View also includes hyperlinks into the Information View, which prov
 
 The various parts of the CDMRA are summarized in Figure 1.
 
-![](CDAOverview.png)
+![](CDMRAOverview.png)
 
-_Figure 1: City Data Architecture Overview_
+_Figure 1: City Data Model and Reference Architecture Overview_
 
 ## Terms and definitions
 
@@ -94,7 +94,7 @@ The framework specification contained in this specification conforms to an *arch
 
 According to ISO/IEC/IEEE [ISO 42010](ISO42010), an architecture viewpoint establishes "the conventions for the construction, interpretation, and use of architecture views to frame specific system concerns."
 
-An *architecture description* based on this framework will develop *models* conforming to the model kinds defined by this document and group the models into *views* that correspond to the viewpoints defined in this document. 
+An *architecture description* based on this framework will develop *models* conforming to the model kinds defined by this document and group the models into *views* that correspond to the viewpoints defined in this document. As multiple viewpoints might share similar concerns, the same model kinds and models can be referenced by multiple viewpoints and views.
 
 The viewpoint specifications are based on the [Viewpoint Specification Template](Hilliard1). 
 
@@ -123,19 +123,19 @@ Example stakeholders might include [Rozanski]:
 
 |Concern|Addressed by Model Kind|
 |-------|-----------------------|
-|What are the use cases that are driving the data definitions?|Use Case Specification: Use case, Summary, Description, and Illustration|
-|Is the use case definition collaboratory or copyrighted elsewhere?|License information|
+|What are the use cases that are driving the data definitions?|Use Case Specification: use case, summary, description, and illustration|
+|Is the use case definition collaboratory or copyrighted elsewhere?|Use Case Specification: license information|
 |What is the context of this use case?|Use Case Specification: domain, sub-domain, goal|
 |Who are the stakeholders for this use case?|Use Case Specification: participants and other stakeholders|
-|What data needs to be provided by participants?|Use Case Specification: Information requirements<br /><br /><span style="background:yellow">Do we really need to separate input/output? Where do we declare our system boundary? I propose that each use case should define its own system boundary as narrow as possible. For example, in the case of "Routes for Travellers" the suggested route is likely to consider current traffic conditions. The current traffic conditions could be determined by a number of means (e.g., sensors in the field, video image processing, Bluetooth travel times, cellular-based travel times), each of which have slighly different architectures. From the point of this use case, it doesn't matter - the only thing that is important is that a "Transporation Information Center" provides current network conditions and how that data is obtained is irrelavent. A different use case might need more details and would define a different system boundary </span>|
-|What data needs to be provided to participants?|Use Case Specification: Information requirements|
+|What data needs to be provided by participants?|Use Case Specification: information requirements<br /><br /><span style="background:yellow">Do we really need to separate input/output? Where do we declare our system boundary? I propose that each use case should define its own system boundary as narrow as possible. For example, in the case of "Routes for Travellers" the suggested route is likely to consider current traffic conditions. The current traffic conditions could be determined by a number of means (e.g., sensors in the field, video image processing, Bluetooth travel times, cellular-based travel times), each of which have slighly different architectures. From the point of this use case, it doesn't matter - the only thing that is important is that a "Transporation Information Center" provides current network conditions and how that data is obtained is irrelavent. A different use case might need more details and would define a different system boundary </span>|
+|What data needs to be provided to participants?|Use Case Specification: information requirements<br />Information Flow Class Diagram|
 |<span style="background:yellow">What data needs to be generated/accessed internally to the smart city system?</span>|TBD<br /><br /><span style="background:yellow">If we define internal flows, we need to define internal elements and this is no longer a use case specification - but perhaps what we are trying to achieve is primarily standardizing data among major system components. Thus, perhaps we need at least a high-level deployment viewpoint that at least identifies the major system components that we will consider in our analysis. Actually, the best way to handle this within the scope of our environment is to define a separate use case where the boundary changes so that one of the component systems is defined as an actor.</span>|
-|What are the flow of events for each scenario associated with each use case?|Use Case Specification: Scenarios|
-|What are the outstanding issues with this use case?|Use Case Specification:Issues|
-|What is the source of this use case?|Use Case Specification:source|
+|What are the flow of events for each scenario associated with each use case?|Use Case Specification: scenarios<br />Scenario Specification|
+|What are the outstanding issues with this use case?|Use Case Specification:issues, notes|
+|What is the source of this use case?|Use Case Specification:references|
 |What standards/specifications exist related to this use case?|Use case specification:specifications|
-|How has this use case evolved over time?|Modification history, Version|
-|What is the approval status of this use case?|Use Case Specification:Status||
+|How has this use case evolved over time?|Use Case Specification:Modification history, version|
+|What is the approval status of this use case?|Use Case Specification:status||
 
 #### Concerns not addressed
 
@@ -146,12 +146,24 @@ concerns:
 
 ####Model Kinds
 
-The Usage Viewpoint includes two model kinds:
+The Usage Viewpoint includes three model kinds:
 
 - Use case model kind
 - Scenario model kind
+- Information flow class diagram model kind
 
-Each use case model shall be associated with one or more scenario models, which provide additional details about the use case; scenario models are generally specific to a single use case.
+Each use case shall be associated with one use case model. Each use case model shall be associated with one or more scenario models, which provide additional details about the use case; scenario models are generally specific to a single use case. Each use case model may be associated with zero or more information flow class diagram models, which depict the information from the CDM that is used by the use case; information flow class diagram models are often associated with multiple use cases. 
+
+Information flow class diagram models depict the content of the City Data Model; thus, the typical work flow is:
+
+1. The use case specification is developed
+2. A notional information flow class diagram is conceptualized (i.e., might not be shown within the CDMRA)
+3. The notional information flow class diagram is harmonized with the existing content of the CDM (i.e., part of the Information View); this might entail adding new data elements to the CDM, revising existing data elements, and revising the notional information flow class diagram model to conform to the revised CDM
+4. Developing a final information flow class diagram model 
+5. Linking the information flow class diagram model to the use case specification
+
+Thus, initial versions of a use case model are likely not to include an information flow class diagram model or might only include a notional diagram. However, once fully specified, the use case model should provide a link to the information flow class diagram model, which will be fully consistent with the content of the CDM. The information flow class diagram model kind is a part of both the Use Case Viewpoint and the Information Viewpoint and is formally defined in the Information Viewpoint section. 
+
 
 #### Use Case Model Kind
 
@@ -160,7 +172,7 @@ The use case model kind provides a template that is to be used to define all use
 |Field|Description|Conformance|
 |-----|-----------|-----------|
 |Domain|Major domain (e.g., ITS)|
-|Subdomain|Area of domain that this use case represents (e.g., Vehicle safety)|
+|Subdomain|Area of domain that this use case represents - defined by domain; might be multi-level|
 |Use case |Name of use case <span style="background:yellow">We could perhaps combine the domain, subdomain, and use case into one hierarchical field</span>||
 |Summary|Short description (\<= 280 characters)|
 |Description|A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed.|
@@ -180,7 +192,7 @@ The use case model kind provides a template that is to be used to define all use
 |Scenarios|Name of scenario (reference to scenario table)<span style="background:yellow">Do we need more than the main flow for our limited purposes?</span><br /><br />Alternate flows should probably only be included when they result in additional relevant data. |
 |Information requirements|This is a very high-level description, for example, "origin location, destination location, and travel preferences". Details can be hashed out later and shown in the diagrams; this can be updated later to provide correspondence linkages to the defined data concepts in the Information View|
 |Issues|Primarily to track issues during development|
-|Source|Source materials used to develop this use case|
+|References|Source materials used to develop this use case|
 |Version|Date|
 |Modification History|Might use github for this|
 |Status|Approval status|
@@ -234,7 +246,7 @@ Each scenario model shall be associated with at least (and typically only) one u
 
 #### Operations for Usage Views
 
-When creating a new usage view, care should be taken to create a system where use cases can be catalogued in a manner that users can easily search and find use cases of interest. This should likely be done by standardizing the list of domains and subdomains.
+When creating a new usage view, care should be taken to create a system where use cases can be catalogued in a manner that users can easily search and find use cases of interest. This should likely be done by standardizing the list of domains and subdomains. For example, in the case of the ITS domain, use cases should be categorized according to the services groupings defined in ISO 14813-1.
 
 #### Correspondence Rules for Usage Views
 
@@ -252,13 +264,13 @@ The usage view includes the following correspondence rules with other views and 
 |-----|-----------|
 |Domain|ITS|
 |Subdomain|Traveller information:Multi-modal trip planning|
-|Use case |Plan a multi-modal trip||
-|Summary|A traveler wants to travel from an origin to a destination using the most efficient route given his/her preferences.|
-|Description|A traveler wishes to plan and possible reserve a trip from an origin to a destination and compare several options.  The trip may involve and/or compare multiple modes of transport. The traveler may define preferences up front and choose how to sort the options presented. The traveler might wish to refine the details of some or all of the trip legs prior to finalizing the selection. The proposed route might be visually displayed to the traveler, as in the illusrtation, to assist in selecting among the presented options.|
-|Illustration|![](TripIllustration.png)_Route Options for Dulles Airport to Washington Monument_|
+|Use case |Plan a multi-modal trip|
+|Summary|A traveler wants to identify options for travelling from an origin to a destination given a set of personal preferences and the likely duration of such a trip using different modes of travel.|
+|Description|A traveler wishes to plan a trip from an origin to a destination and compare several options.  The trip may involve and/or compare multiple modes of transport. The traveler may define preferences up front and choose how to sort the options presented. The traveler might wish to refine the details of some or all of the trip legs prior to finalizing the selection. The proposed route might be visually displayed to the traveler, as in the illusrtation, to assist in selecting among the presented options.|
+|Illustration|![](TripIllustration.png)_Route Options for Los Angeles Airport (LAX) to Hollywood Sign_|
 |<span style="background:yellow">Business rules/Assumptions</span>|<ul><li>Traveler has access to a device that can interface with the system</li><li>Traveler has proper access credentials</li><li>Personally identifiable information should not be revealed to unauthorized parties</li></ul>|
 |<span style="background:yellow">Technology constraints</span>|
-|Goal|[Improve] transportation efficiency|
+|Goal|[Improve] transportation efficiency<br />[Improve] traveler expectations|
 |<span style="background:yellow">Keywords</span>|planning, route, transportation, transport|
 |<span style="background:yellow">Geographic scope|City|
 |<span style="background:yellow">Temporal scope</span>||
@@ -268,25 +280,26 @@ The usage view includes the following correspondence rules with other views and 
 |<span style="background:yellow">Extensions|Reserve a multi-modal trip|
 |<span style="background:yellow">Inclusions|<ul><li>Obtain road network conditions</li><li>Obtain transit and fare schedules</li><li>Obtain transit information</li><li>Request shared use asset</li></ul>|
 |Use Case diagram|![Trip Planning Use Case](TripPlanningUseCase.png)_Trip Planning Use Case_|
-|Scenarios|Main Flow|
+|Scenarios|[Main Flow](#MainFlow)|
 |Information requirements|<ul><li>Origin</li><li>Destination</li><li>Traveler Preferences</li><li>Departure Time</li><li>Arrival Time</li><li>[Route](http://citydata.utoronto.ca/index.php/Ogc:Route), [Route](http://citydata.utoronto.ca/index.php/NavigationRoute)</li></ul>|
 |Issues||
-|References|<ul><li>[ISO 14813-1:2015](https://www.iso.org/standard/57393.html)</li><li>[ARC-IT 9.0: Infrastructure-Provided Trip Planning and Route Guidance](https://local.iteris.com/arc-it/html/servicepackages/sp163.html#tab-3)</li>|
-|Version|2020-11-25|
-|Modification History|Version 0.0.1-D|
+|References|<ul><li>[ISO 14813-1:2015](https://www.iso.org/standard/57393.html) (defines subdomain/service)</li><li><span style="background:yellow">[ARC-IT 9.0: Infrastructure-Provided Trip Planning and Route Guidance](https://local.iteris.com/arc-it/html/servicepackages/sp163.html#tab-3) (sample physical view)</span></li></ul>|
+|Version|2021-01-12 (0.0.2-D)|
+|Modification History|[0.0.1-D]() Original<br />0.0.2-D Edits to clarify and correct content|
 |Status|draft|
-|Application notes||
-|Information Flow Class Diagram|TBD|
+|Notes||
+|Information Flow Class Diagram|TBD (link)|
+|Specifications|<li>[SAE J2353](https://www.sae.org/standards/content/j2353_201906/) (defines data for traveler information) </li>|
 |Licanese information|[W3C Document License](https://www.w3.org/Consortium/Legal/2015/doc-license)|
 
 There is one scenario for this example:
 
 |Field|Description|Conformance|
 |-----|-----------|-----------|
-|Scenario Name|Main Flow|
+|Scenario Name|<a id="MainFlow">Main Flow</a>|
 |Pre-conditions|Traveler has signed into their account, if needed|
 |Triggers|Traveler wishes to view trip options|
-|Event Flow|<ol><li>Traveler inputs details of trip request through user interface</li><li>User interface optionally logs into user account at Traveler Information Center and/or provides user profile information</li><li>User interface device sends the specific trip request to a Transportation information Center</li><li>Transporation Information Center responds to the User Interface Decvice with a list of alternate trip plans</li><li>User interface presents the alternate tripl plans to the traveler</li><li>The traveler optionally selects one of the trips and authorizes charges</li><li>The User Interface Device reserves the trip with the Transportation Information Center</li></ol>|
+|Event Flow|<ol><li>Traveler inputs details of trip request through user interface</li><li>User interface optionally logs into user account at Traveler Information Center and/or provides user profile information</li><li>User interface device sends the specific trip request to a Transportation information Center</li><li>Transporation Information Center responds to the User Interface Decvice with a list of alternate trip plans</li><li>User interface presents the alternate trip plans to the traveler</li><li>The traveler optionally selects one of the trips and authorizes charges</li><li>The User Interface Device reserves the trip with the Transportation Information Center</li></ol>|
 |Post-conditions|Trip details selected|
 |Exceptions|<ul><li>Traveler might revise preferences after seeing alternative trip plans.</li><li> Transportation Information Center might not be able to identify a viable route.</li></ul>|
 |Interaction diagram|![](TripPlanningSequence.png)|
@@ -301,14 +314,11 @@ There is one scenario for this example:
 
 #### Overview
 
-The Information Viewpoint frames how stakeholder concerns related to
-information will be addressed, especially those related to the
-structure, semantics, ownership, latency, and retention of information.\
+The Information Viewpoint frames how stakeholder concerns related to information will be addressed, especially those related to the structure, semantics, ownership, latency, and retention of information.
 
 #### Stakeholders
 
-The Information Viewpoint considers concerns from the following
-stakeholders:
+The Information Viewpoint considers concerns from the following stakeholders:
 
 1. Data custodians
 2. Data stewards
@@ -326,10 +336,7 @@ stakeholders:
 
 #### Concerns
 
-The following table identifies the stakeholder concerns considered in
-the development of this viewpoint frames. Each concern is categorized
-into a generalized topic area and includes a reference to the model kind
-where the concern is addressed. 
+The following table identifies the stakeholder concerns considered in the development of this viewpoint frames. Each concern is categorized into a generalized topic area and includes a reference to the model kind where the concern is addressed. 
 
 |Topic|Concern|Addressed by Model Kind|
 -----|-------|-----------------------|
@@ -337,15 +344,15 @@ Data Definition|What are the definitions of the major business terms?|Vocabulary
 Data Definition|How do business terms relate to one another?|Ontology|
 Data Definition|What does each data element mean?|Data Dictionary: Definition|
 Data Definition|How does each data element relate to other data elements? (including dynamic metadata)|Logical Data Model|
-Data Definition|Does the data have safety-of-life implications?|Data Dictionary: Usage|
+Data Definition|<span style="background:yellow">Does the data have safety-of-life implications?|Data Dictionary: Usage|
 Data Definition|What, if any, state behavior relationships are there for data and classes?|State Machine|
 Data Definition|What is the representational form of the data within data exchanges? |Physical Data Model|
-Data Definition|How is data transformed from one data exchange format into another?|Logical Data Model: Physical Representation|
+Data Definition|<span style="background:yellow">How is data transformed from one data exchange format into another?|Logical Data Model: Physical Representation|
 Data Definition|How can the information view be extended to support additional domain or implementation-specific data?|Operations on Views|
 Data Definition|What are the key sources for the data definition?|Data Dictionary: |
-Data Standardization|What interface standards include this data element?|Correspondence rule|
+Data Standardization|<span style="background:yellow">What interface standards include this data element?|Correspondence rule|
 Data Standardization|What functions use this data element?|Correspondence rule: users|
-Data Standardization|What known gaps/overlaps exist between the defined use cases and the existing data definitions?|Correspondence rule: issues|
+Data Standardization|<span style="background:yellow">What known gaps/overlaps exist between the defined use cases and the existing data definitions?|Correspondence rule: issues|
 Data Quality|What are the constraints on data values?|Logical data model: Data element specification|
 Data Integrity|How are inputs from multiple sources handled?|Logical data model: Class Model ??|
 Data Availability|What data is required and under what conditions?|Correspondence rule|
@@ -368,14 +375,14 @@ Data Evolution|What was the last change to the data definition?|Correspondence r
 This viewpoint does not attempt to frame the following stakeholder
 concerns:
 
--   What operations can be supported for each data element or class?\
+-   What operations can be supported for each data element or class?
 -   How is data accessed/exchanged with internal and external systems?
 -   How are access control rights are maintained (e.g., removing rights
     for a terminated employee)?
 -   What are the physical infrastructure requirements (e.g., for data
     storage)?
 -   What are the costs involved in deploying, operating and maintaining
-    the data?\
+    the data?
 -   What potential legal liability is associated with maintaining data
     stores?
 -   How are data sources located?
@@ -387,7 +394,7 @@ data? (e.g., GDPR)
 - Does the data represent sensitive information (e.g., personally
 identifiable information)?
 - What level of data access control is needed?
-- How is data access controlled?|
+- How is data access controlled?
 - What cybersecurity and data privacy standards apply? (NITS WP-692 Item
 15)
 - What are the data accuracy requirements?
@@ -429,17 +436,11 @@ controlled?
 - What responsibilities does a data consumer have?
 - How are ownership and usage rights controlled, expressed, and exchanged?
 
-These issues are left for domain, solution, or implementation-specific
-documentation.\
+These issues are left for domain, solution, or implementation-specific documentation.
 
 #### Model Kinds
 
-According to ISO/IEC/IEEE 42010, concerns are framed by viewpoints by
-using one or more model kinds, where a model kind establishes the
-conventions for a type of modeling. The model kind governs the
-development of a model, which addresses some portion of the stakeholder
-concerns that are framed by the viewpoint. The Information Viewpoint
-consists of the following model kinds:\
+The Information Viewpoint consists of the following model kinds:
 
 -   Vocabulary Model Kind
 -   Ontology Model Kind
@@ -457,30 +458,31 @@ Model Kinds not included at present:
 
 #### Vocabulary Model Kind
 
-The Vocabulary Model Kind is used to provide formal definitions of key
-business terms. Formal definitions should be developed according to the
-principles defined in ISO 704. 
+The Vocabulary Model Kind is used to provide formal definitions of key business terms. Formal definitions should be developed according to the principles defined in ISO 704. 
 
-Roughly equivalent to IEEE 2413 semantic model kind
+NOTE: This is roughly equivalent to IEEE 2413 semantic model kind
 
 ##### Conventions
 
 The Vocabulary Model Kind is presented as a template providing the following static metadata for each entry.
 
 -   Term
--   English Definition
+-   Definition
 
 Optional static metadata for each entity and relationship includes\
 
 -   Preferred Synonym(s)
 -   Admitted Synonym(s)
--   Deprecated Synonym(s)\
+-   Deprecated Synonym(s)
 -   Note(s)
--   Example(s)\
+-   Example(s)
 
 ##### Operations
 
 ##### Correspondence Rules
+
+##### Example
+
 
 
 #### Ontology Model Kind\
