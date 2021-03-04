@@ -159,7 +159,7 @@ Information flow class diargams
 |Use case |Name of use case <span style="background:yellow">We could perhaps combine the domain, subdomain, and use case into one hierarchical field</span>||page name|
 |Summary|Short description (\<= 280 characters)||**(to add - see above)**|
 |Description|A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed.|'usage scenario'|
-|Illustration|An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events.|Optional|supplementary figure upload|
+|Illustration|An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events.|Optional|supplementary figure upload?|
 |<span style="background:yellow">Business rules/Assumptions</span>|Constraints as specified by the stakeholders||**(to add - specific format?)**Q: what concern (above) does this address?
 | 
 |<span style="background:yellow">Technology constraints</span>||**(to add - specific format?)** Q: what concern (above) does this address?
@@ -174,7 +174,7 @@ Information flow class diargams
 |<span style="background:yellow">Extensions|Areas where the services can be extended with optional features||**(to add)** Not sure how to interpret this; optional?|
 |<span style="background:yellow">Inclusions|Additional services that are included in the listed services and extensions||**(to add)** Not sure how to interpret this; optional?|
 |<span style="background:yellow">Use Case diagram</span>|UML use case diagram|| 'supplementary figures'|
-|Scenarios|Name of scenario (reference to scenario table)<span style="background:yellow">Do we need more than the main flow for our limited purposes?</span>|| unclear on this field |
+|Scenarios|Name of scenario (reference to scenario table)<span style="background:yellow">Do we need more than the main flow for our limited purposes?</span>|| agree, not sure if this is necessary (currently not addressed) |
 |Information requirements|Should eventually become hyperlinks to the defined data concepts||'required classes', 'required object properties', 'required data properties' currently auto-populated based on use cases listed on corresponding term (e.g. class listing) pages|
 |Issues|Primarily to track issues during development|| **(to add)** format TBD?|
 |References|Source materials used to develop this use case||**(to add)** free text?|
