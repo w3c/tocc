@@ -423,7 +423,7 @@ Define a UML class diagram profile
 
 #### Logical Data Model Kind\
 
-<span style="color:red"> [MK comment: unclear on this; currently not addressed? Where is the LDD defined? ]</span>
+<span style="color:red"> [MK comment: unclear on this; currently not explicitly addressed, but the ontology model would contain information on the relationships between different classes. Where is the LDD defined? What is the definition of a business entity? ]</span>
 
 The Logical Data Model Kind is used to specify relationships among
 entries contained within the LDD. \
@@ -456,6 +456,8 @@ business entity with the option to override this link to another class
 or LDD entry.
 
 #### Data Dictionary Model Kind\
+
+<span style="color:red">[MK comment: unclear on the relationship between the data concepts (classes) defined here and the business terms defined in the ontology model]</span>
 
 The Data Dictionary Model Kind is used to specify static metadata about
 data concepts. Data concepts include:
