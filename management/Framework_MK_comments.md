@@ -121,7 +121,7 @@ Example stakeholders might include [Rozanski]:
 
 #### Concerns
 
-|Concern|Addressed by Model Kind|Wiki Status|
+|Concern|Addressed by Model Kind|Wiki Notes|
 |-------|-----------------------|-----------|
 |What are the use cases that are driving the data definitions?| Use Case Specification: name, summary, description, and illustration| 'page name', 'usage scenario', 'supplementary figures'; addressed, but currently no separate summary and description fields **(to add - free text field)** |
 |Is the use case definition collaboratory or copyrighted elsewhere?|License information| 'other licensing notes'|
@@ -154,11 +154,11 @@ Information flow class diargams
 
 |Field|Description|Conformance|Wiki Notes|
 |-----|-----------|-----------|----------|
-|Domain|Major domain (e.g., ITS)|**(to add - see above)**|
-|Subdomain|Area of domain that this use case represents (e.g., Vehicle safety)|**(to add - see above)**|
+|Domain|Major domain (e.g., ITS)||**(to add - see above)**|
+|Subdomain|Area of domain that this use case represents (e.g., Vehicle safety)||**(to add - see above)**|
 |Use case |Name of use case <span style="background:yellow">We could perhaps combine the domain, subdomain, and use case into one hierarchical field</span>||page name|
 |Summary|Short description (\<= 280 characters)||**(to add - see above)**|
-|Description|A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed.|'usage scenario'|
+|Description|A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed.||'usage scenario'|
 |Illustration|An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events.|Optional|supplementary figure upload?|
 |<span style="background:yellow">Business rules/Assumptions</span>|Constraints as specified by the stakeholders||**(to add - specific format?)**Q: what concern (above) does this address?
 | 
