@@ -210,9 +210,50 @@ concerns:
 #### Operations on Views
 
 #### Correspondence Rules
-<span style="color:red">[MK: removed what appeared to be duplicate content]</span>
 
-<span style="color:green">CP: The example seems to be gone?</span>
+#### Example
+|Field|Value|
+|-----|-----------|
+|Domain|ITS|
+|Subdomain|Traveller information:Multi-modal trip planning|
+|Use case |Plan a multi-modal trip||
+|Summary|A traveler wants to travel from an origin to a destination using the most efficient route given his/her preferences.|
+|Description|A traveler wishes to plan and possible reserve a trip from an origin to a destination and compare several options.  The trip may involve and/or compare multiple modes of transport. The traveler may define preferences up front and choose how to sort the options presented. The traveler might wish to refine the details of some or all of the trip legs prior to finalizing the selection. The proposed route might be visually displayed to the traveler, as in the illusrtation, to assist in selecting among the presented options.|
+|Illustration|![](TripIllustration.png)_Route Options for Dulles Airport to Washington Monument_|
+|<span style="background:yellow">Business rules/Assumptions</span>|<ul><li>Traveler has access to a device that can interface with the system</li><li>Traveler has proper access credentials</li><li>Personally identifiable information should not be revealed to unauthorized parties</li></ul>|
+|<span style="background:yellow">Technology constraints</span>|
+|Goal|[Improve] transportation efficiency|
+|<span style="background:yellow">Keywords</span>|planning, route, transportation, transport|
+|<span style="background:yellow">Geographic scope|City|
+|<span style="background:yellow">Temporal scope</span>||
+|<span style="background:yellow">Technical scope|This use case focuses on the travelers access point with the traveler and the Transporation Information Center being external actors. How the Transporation Information Center obtains static and real-time information about the transporation network is outside the scope of this use case.|
+|Participants|<ul><li>[Traveler](https://local.iteris.com/arc-it/html/physobjects/physobj64.html)</li><li>[Traveler Support Equipment](https://local.iteris.com/arc-it/html/physobjects/physobj72.html)</li><li>[Personal Information Device](https://local.iteris.com/arc-it/html/physobjects/physobj23.html)</li><li>[Transportation Information Center](https://local.iteris.com/arc-it/html/physobjects/physobj17.html)</li></ul>|
+|Other Stakeholders|<ul><li>Traffic management operators</li><li>Transit operators</li><li>Shared use vehicle providers</li></ul>|
+|<span style="background:yellow">Extensions|Reserve a multi-modal trip|
+|<span style="background:yellow">Inclusions|<ul><li>Obtain road network conditions</li><li>Obtain transit and fare schedules</li><li>Obtain transit information</li><li>Request shared use asset</li></ul>|
+|Use Case diagram|![Trip Planning Use Case](TripPlanningUseCase.png)_Trip Planning Use Case_|
+|Scenarios|Main Flow|
+|Information requirements|<ul><li>Origin</li><li>Destination</li><li>Traveler Preferences</li><li>Departure Time</li><li>Arrival Time</li><li>[Route](http://citydata.utoronto.ca/index.php/Ogc:Route), [Route](http://citydata.utoronto.ca/index.php/NavigationRoute)</li></ul>|
+|Issues||
+|References|<ul><li>[ISO 14813-1:2015](https://www.iso.org/standard/57393.html)</li><li>[ARC-IT 9.0: Infrastructure-Provided Trip Planning and Route Guidance](https://local.iteris.com/arc-it/html/servicepackages/sp163.html#tab-3)</li>|
+|Version|2020-11-25|
+|Modification History|Version 0.0.1-D|
+|Status|draft|
+|Application notes||
+|Information Flow Class Diagram|TBD|
+|Licanese information|[W3C Document License](https://www.w3.org/Consortium/Legal/2015/doc-license)|
+
+There is one scenario for this example:
+
+|Field|Description|Conformance|
+|-----|-----------|-----------|
+|Scenario Name|Main Flow|
+|Pre-conditions|Traveler has signed into their account, if needed|
+|Triggers|Traveler wishes to view trip options|
+|Event Flow|<ol><li>Traveler inputs details of trip request through user interface</li><li>User interface optionally logs into user account at Traveler Information Center and/or provides user profile information</li><li>User interface device sends the specific trip request to a Transportation information Center</li><li>Transporation Information Center responds to the User Interface Decvice with a list of alternate trip plans</li><li>User interface presents the alternate tripl plans to the traveler</li><li>The traveler optionally selects one of the trips and authorizes charges</li><li>The User Interface Device reserves the trip with the Transportation Information Center</li></ol>|
+|Post-conditions|Trip details selected|
+|Exceptions|<ul><li>Traveler might revise preferences after seeing alternative trip plans.</li><li> Transportation Information Center might not be able to identify a viable route.</li></ul>|
+|Interaction diagram|![](TripPlanningSequence.png)|
 
 #### Notes
 
