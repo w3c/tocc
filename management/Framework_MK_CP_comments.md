@@ -122,11 +122,10 @@ Example stakeholders might include [Rozanski]:
 #### Concerns
 
 <span style="color:green">CP: general comment - we should align terminology between this document and the wiki.</span>
-<span style="color:green">CP: </span>
 
 |Concern|Addressed by Model Kind|Wiki Notes|
 |-------|-----------------------|-----------|
-|What are the use cases that are driving the data definitions?| Use Case Specification: name, summary, description, and illustration| 'page name', 'usage scenario', 'supplementary figures'; addressed, but currently no separate summary and description fields **(to add - free text field)** <span style="color:green">CP: name > page name, summary > usage scenario?, description > ?, illustraion > supplementary figures</span>|
+|What are the use cases that are driving the data definitions?| Use Case Specification: name, summary, description, and illustration| 'page name', 'usage scenario', 'supplementary figures'; addressed, but currently no separate summary and description fields **(to add - free text field)** <span style="color:green">CP: name - page name, summary - usage scenario?, description - ?, illustration - supplementary figures</span>|
 |Is the use case definition collaboratory or copyrighted elsewhere?|License information| 'other licensing notes' <span style="color:green">CP: also 'scenario licensing'</span>|
 |What is the context of this use case?|Use Case Specification: domain, sub-domain, goal| **(to add - format TBD)** Q: how will we structure this? Are we going to provide a predefined list of domains? (I think we had discussed specifying something like this previously). Q: does goal define context? <span style="color:green">CP: not available - what is free text, what is from controlled vocabularies?</span>|
 |Who are the stakeholders for this use case?|Use Case Specification: actors and other stakeholders| 'actors' |
