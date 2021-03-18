@@ -123,36 +123,36 @@ Example stakeholders might include [Rozanski]:
 
 |Concern|Addressed by Model Kind|
 |-------|-----------------------|
-|What are the use cases that are driving the data definitions?|Use Case Specification: use case, summary, description, and illustration|
-|Is the use case definition collaboratory or copyrighted elsewhere?|Use Case Specification: license information|
-|What is the context of this use case?|Use Case Specification: domain, sub-domain, goal|
-|Who are the stakeholders for this use case?|Use Case Specification: participants and other stakeholders|
-|What data needs to be provided by participants?|Use Case Specification: information requirements<br /><br /><span style="background:yellow">Do we really need to separate input/output? Where do we declare our system boundary? I propose that each use case should define its own system boundary as narrow as possible. For example, in the case of "Routes for Travellers" the suggested route is likely to consider current traffic conditions. The current traffic conditions could be determined by a number of means (e.g., sensors in the field, video image processing, Bluetooth travel times, cellular-based travel times), each of which have slighly different architectures. From the point of this use case, it doesn't matter - the only thing that is important is that a "Transporation Information Center" provides current network conditions and how that data is obtained is irrelavent. A different use case might need more details and would define a different system boundary </span>|
-|What data needs to be provided to participants?|Use Case Specification: information requirements<br />Information Flow Class Diagram|
+|What are the use cases that are driving the data definitions?|Use Case Specification: Name, Summary, Description, and Figures|
+|Is the use case definition collaboratory or copyrighted elsewhere?|Use Case Specification: Use Case Licensing|
+|What is the context of this use case?|Use Case Specification: Name (shown in structure), Description|
+|Who are the participants for this use case?|Use Case Specification: Actors|
+|What data needs to be exchanged among participants?|Use Case Specification: Information Requirements<br /><span style="background:yellow">Use Case Specification: Required Classes<br />Use Case Specification: Required Object Properties<br />Use Case Specification: Required Data Properties<br />Unclear how the above can be traced meaningfully (i.e., class to property relationships</span><br />Use Case Specification: Figures|
 |<span style="background:yellow">What data needs to be generated/accessed internally to the smart city system?</span>|TBD<br /><br /><span style="background:yellow">If we define internal flows, we need to define internal elements and this is no longer a use case specification - but perhaps what we are trying to achieve is primarily standardizing data among major system components. Thus, perhaps we need at least a high-level deployment viewpoint that at least identifies the major system components that we will consider in our analysis. Actually, the best way to handle this within the scope of our environment is to define a separate use case where the boundary changes so that one of the component systems is defined as an actor.</span>|
-|What are the flow of events for each scenario associated with each use case?|Use Case Specification: scenarios<br />Scenario Specification|
-|What are the outstanding issues with this use case?|Use Case Specification:issues, notes|
-|What is the source of this use case?|Use Case Specification:references|
-|What standards/specifications exist related to this use case?|Use case specification:specifications|
-|How has this use case evolved over time?|Use Case Specification:Modification history, version|
-|What is the approval status of this use case?|Use Case Specification:status||
+|What are the flow of events for each scenario associated with each use case?|Use Case Specification: Basic Flow of Events<br />Use Case Specification: Flow Exceptions|
+|What are the outstanding issues with this use case?|Use Case Specification:Issues|
+|What is the source of this use case?|Use Case Specification:Reference(s)|
+|What standards/specifications exist related to this use case?|Use Case Specification:Implementations|
+|How has this use case evolved over time?|Use Case Specification:Page History|
+|What is the approval status of this use case?|Use Case Specification:Status||
 
 #### Concerns not addressed
 
 This viewpoint does not attempt to frame the following stakeholder
 concerns:
 
-<span style="background:yellow">Any?</span>
+- What non-participating stakeholders exist for this use case?
 
 ####Model Kinds
 
-The Usage Viewpoint includes three model kinds:
+The Usage Viewpoint includes two defined model kinds:
 
-- Use case model kind
-- Scenario model kind
+- Use case Specification model kind
 - Information flow class diagram model kind
 
-Each use case shall be associated with one use case model. Each use case model shall be associated with one or more scenario models, which provide additional details about the use case; scenario models are generally specific to a single use case. Each use case model may be associated with zero or more information flow class diagram models, which depict the information from the CDM that is used by the use case; information flow class diagram models are often associated with multiple use cases. 
+Each use case shall be associated with one use case specification model. Each use case specification model may include supplemental figures, which can include zero or more information flow class diagram models. Each information flow class diagram model depicts the information from the CDM that is used by the use case; information flow class diagram models are often associated with multiple use cases. 
+
+<span style="background:yellow">NOTE: Documenting as above implies that two use cases that use the same information will each include the same information flow class diagram as static figures. As the CDM matures, these figures will not be automatically updated. As a result, they might become dated.</span>
 
 Information flow class diagram models depict the content of the City Data Model; thus, the typical work flow is:
 
@@ -160,9 +160,9 @@ Information flow class diagram models depict the content of the City Data Model;
 2. A notional information flow class diagram is conceptualized (i.e., might not be shown within the CDMRA)
 3. The notional information flow class diagram is harmonized with the existing content of the CDM (i.e., part of the Information View); this might entail adding new data elements to the CDM, revising existing data elements, and revising the notional information flow class diagram model to conform to the revised CDM
 4. Developing a final information flow class diagram model 
-5. Linking the information flow class diagram model to the use case specification
+5. <span style="background:yellow">Linking (or with the revised flow, perhaps copying)</span> the information flow class diagram model to the use case specification
 
-Thus, initial versions of a use case model are likely not to include an information flow class diagram model or might only include a notional diagram. However, once fully specified, the use case model should provide a link to the information flow class diagram model, which will be fully consistent with the content of the CDM. The information flow class diagram model kind is a part of both the Use Case Viewpoint and the Information Viewpoint and is formally defined in the Information Viewpoint section. 
+Thus, initial versions of a use case model are likely not to include an information flow class diagram model or might only include a notional diagram. <span style="background:yellow"> (this is what we lose) However, once fully specified, the use case model should provide a link to the information flow class diagram model, which will be fully consistent with the content of the CDM.</span> The information flow class diagram model kind is a part of both the Use Case Viewpoint and the Information Viewpoint and is formally defined in the Information Viewpoint section. 
 
 
 #### Use Case Model Kind
@@ -171,34 +171,22 @@ The use case model kind provides a template that is to be used to define all use
 
 |Field|Description|Conformance|
 |-----|-----------|-----------|
-|Domain|Major domain (e.g., ITS)|
-|Subdomain|Area of domain that this use case represents - defined by domain; might be multi-level|
-|Use case |Name of use case <span style="background:yellow">We could perhaps combine the domain, subdomain, and use case into one hierarchical field</span>||
-|Summary|Short description (\<= 280 characters)|
-|Description|A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed.|
-|Illustration|An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events.|Optional|
-|<span style="background:yellow">Business rules/Assumptions</span>|Constraints as specified by the stakeholders|
-|<span style="background:yellow">Technology constraints</span>|
-|Goal|Value Proposition(s) in the form <ul><li>«Value Proposition \#1 in the form ["Verb"] "direct object"»</li><li>«Value Proposition \#2 in the form ["Verb"] "direct object"»</li><li>«Value Proposition \#3 in the form ["Verb"] "direct object"»</i></ul>Examples:<ul><li>[Improve] transportation safety</li><li>[Improve] water quality</li><li>[Reduce] wait times</li></ul>|
-|<span style="background:yellow">Keywords</span>|Listing of key terms that can be used to search for the use case|
-|<span style="background:yellow">Geographic scope|How large of an area an implementation of this use case affects|
-|<span style="background:yellow">Temporal scope</span>|The temporal duration of the use case|
-|<span style="background:yellow">Technical scope|Defines the boundaries of the system|
-|Participants|Parties that directly interact with the system for this use case|
-|Other Stakeholders|Other parties that are interested in this use case|
-|<span style="background:yellow">Extensions|Areas where the services can be extended with optional features|
-|<span style="background:yellow">Inclusions|Additional services that are included in the listed services and extensions|
-|<span style="background:yellow">Use Case diagram</span>|UML use case diagram|
-|Scenarios|Name of scenario (reference to scenario table)<span style="background:yellow">Do we need more than the main flow for our limited purposes?</span><br /><br />Alternate flows should probably only be included when they result in additional relevant data. |
-|Information requirements|This is a very high-level description, for example, "origin location, destination location, and travel preferences". Details can be hashed out later and shown in the diagrams; this can be updated later to provide correspondence linkages to the defined data concepts in the Information View|
-|Issues|Primarily to track issues during development|
-|References|Source materials used to develop this use case|
-|Version|Date|
-|Modification History|Might use github for this|
-|Status|Approval status|
-|Notes||
-|<span style="background:yellow">Information Flow Class Diagram</span>||Optional|
-|Specifications|Link to reference architectures, standards and other resources that rely upon this use case definition||
+|Use Case Name|Name of use case as a hierarchical field of the format<br /> \<Domain\>: \<Subdomains\>: \<Use Case\><br />The domain field should be one of the following strings: ???? <br />The subdmains field should indicate a hierarchical list of subdomains as defined by the domain. For example a Routing use case within ITS might have the name <br />**ITS: Traveller Information: Real-time route guidance and information: Dynamic in-vehicle route guidance using real-time information: Routing a vehicle between two known points** |Mandatory|
+|Summary|Short description (\<= 280 characters). <br />The summary should identify the goal and one or more value proposition(s) in the form **«[\<Verb\>] \<direct object\>»** <br />For example: <br />This use case describes how a user might plan a driving trip from a source to a destination. This use case focuses on ensuring the following user benefits: <ul><li>[Improve] travel efficiency</li><li>[Improve] driver expectations</li><li>[Reduce] driver confusion</li></ul>|Mandatory|
+|Description|A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed.|Mandatory|
+|Figures|An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events.|Optional|
+|Actors|Parties that directly interact with the system for this use case|Mandatory|
+|Basic Flow of Events|The sequence of events that occur during the normal flow of this use case with any notes|Mandatory|
+|Flow Exceptions|Highlighted alternative flow of events that reveal the need for additional data to be exchanged among the actors of the use case|Optional|
+|Information Requirements|This is a very high-level description, for example, "origin location, destination location, and travel preferences". Details can be hashed out later and shown in the diagrams; this can be updated later to provide correspondence linkages to the defined data concepts in the Information View. While not technically required to define a use case, this field should be populated prior to beginning work on the data definitions|Optional|
+|Required Classes|Links to CDM <span style="background:yellow">Should this be linked with the following two so that we say something like "Vehicle.speed" with both Vehicle and speed linked to their respective attributes so that the reader understands that the "speed" attribute is describing "Vehicle"?</span>. Should eventually be populated once CDM contains data for use case.|Optional|
+|Required Object Properties|Links to CDM. Should eventually be populated once CDM contains data for use case.|Optional|
+|Required Data Properties|Links to CDM. Should eventually be populated once CDM contains data for use case.|Optional|
+|Issues|Primarily to track issues during development <span style="background:yellow">Link to github issues?</span>|Optional|
+|Reference(s)|Source materials used to develop this use case|Optional|
+|Status|Approval status|Mandatory|
+|Notes|Free text|Optional|
+|Specifications|Link to reference architectures, standards and other resources that rely upon this use case definition|Optional|
 |License information|Indicate the owner and provide a reference to the copyright information|Mandatory|
 
 ##### Operations for Use Case Models
@@ -206,43 +194,16 @@ The use case model kind provides a template that is to be used to define all use
 When initially creating a use case model, the following fields shall be populated, as a minimum, prior to considering the use case definition complete:
 
 - Domain
-- Subdomain
-- Use case
 - Summary 
 - Description
-- Goal
-- Participants
-- Other stakeholders
-- At least one scenario
+- Actors
+- Basic flow of events
+- Status
+- License information
 
 ##### Correspondence Rules for Use Case Models
 
-Each use case model shall correspond to at least one scenario model. All corresponding scenario models shall be linked via the Scenarios field of the use case model.
-
-#### Scenario Model Kind
-
-|Field|Description|Conformance|
-|-----|-----------|-----------|
-|Use case|Link to the use case model|
-|Scenario name|Name of scenario|
-|Pre-conditions|Any conditions that must be true prior to this scenario occuring|
-|Triggers|Event(s) that cause this scenario to occur|
-|Event flow|The sequence of events that occur during this scenario|
-|Post-conditions|Any conditions that must be true after the completion of this scenario|
-|Exceptions|Highlighted, potential undesirable outcomes identifying positions within the flow of events where they can occur <span style="background:yellow">Perhaps we roll this table into the main table and use this field to explain any data that might be needed in alternate flows?</span>|
-|Interaction diagram|<span style="background:yellow">This is really a deployment view model kind</span>|
-
-##### Operations for Scenario Models
-
-All of the fields of the scenario model should be populated upon creating the model, but in some cases, some information might not apply. At a minimum, the following fields should be populated for all scenarios:
-
-- Use case
-- Scenario name
-- Event flow
-
-##### Correspondence Rules for Scenario Models
-
-Each scenario model shall be associated with at least (and typically only) one use case model. The use case model(s) shall be linked via the Use Case field of the scenario model.
+Each use case model shoulud eventually be linked to the CDM data concepts that are needed to implement the Information Requirements defined bty the use case. These linkages are stored within CDM by associating each required data concept to the use case(s) that use them.
 
 #### Operations for Usage Views
 
@@ -253,7 +214,7 @@ When creating a new usage view, care should be taken to create a system where us
 The usage view includes the following correspondence rules with other views and resources:
 
 - The domain and subdomain values used within each use case model should be selected from pre-defined lists
-- Participants and other stakeholders should be defined in a separately maintained list
+- Actors should be defined in a separately maintained list
 - The source should cite a publicly available document
 - The specicifications shall cite an entry in the specification view
 - The information flow class diagram shall be a diagram showing only those elements from the Information View that are relevant to this use case
