@@ -17,7 +17,7 @@ The CDMRA formally defines the CDM; the other components of the CDMRA are only d
 
 ### Purpose of the CDM
 
-The CDM A city data model enables city software applications to share information, plan, coordinate, and execute city tasks, and support decision making, by providing a precise, unambiguous representation of information and knowledge commonly shared within and across city services.
+A city data model enables city software applications to share information, plan, coordinate, and execute city tasks, and support decision making, by providing a precise, unambiguous representation of information and knowledge commonly shared within and across city services.
 
 ### Scope of services covered by the CDMRA (and CDM)
 
