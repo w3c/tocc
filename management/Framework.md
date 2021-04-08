@@ -120,6 +120,9 @@ Example stakeholders might include [Rozanski]:
 -   Users
 
 #### Concerns
+The following table provides an overview of the staekholder concerns addressed by this viewpoint along with a specific reference to the model kind (and field) or correspondence rule that addresses the concern.
+
+`Text presented as code indicates items that have not yet reached consensus.`
 
 |Concern|Addressed by Model Kind|
 |-------|-----------------------|
@@ -127,14 +130,14 @@ Example stakeholders might include [Rozanski]:
 |Is the use case definition collaboratory or copyrighted elsewhere?|Use Case Specification: Use Case Licensing|
 |What is the context of this use case?|Use Case Specification: Name (shown in structure), Description|
 |Who are the participants for this use case?|Use Case Specification: Actors|
-|What data needs to be exchanged among participants?|Use Case Specification: Information Requirements<br /><span style="background:yellow">Use Case Specification: Required Classes<br />Use Case Specification: Required Object Properties<br />Use Case Specification: Required Data Properties<br />Unclear how the above can be traced meaningfully (i.e., class to property relationships</span><br />Use Case Specification: Figures|
-|<span style="background:yellow">What data needs to be generated/accessed internally to the smart city system?</span>|TBD<br /><br /><span style="background:yellow">If we define internal flows, we need to define internal elements and this is no longer a use case specification - but perhaps what we are trying to achieve is primarily standardizing data among major system components. Thus, perhaps we need at least a high-level deployment viewpoint that at least identifies the major system components that we will consider in our analysis. Actually, the best way to handle this within the scope of our environment is to define a separate use case where the boundary changes so that one of the component systems is defined as an actor.</span>|
-|What are the flow of events for each scenario associated with each use case?|Use Case Specification: Basic Flow of Events<br />Use Case Specification: Flow Exceptions|
+|What data needs to be exchanged among participants?|Use Case Specification: Information Requirements<br />`Use Case Specification: Required Classes`<br />`Use Case Specification: Required Object Properties`<br />`Use Case Specification: Required Data Properties`<br />`Unclear how the above can be traced meaningfully` `(i.e., class to property relationships)`<br />Use Case Specification: Figures|
+|`What data needs to be generated/accessed` <br />`internally to the smart city system?`|`If we define internal flows, we need to define internal`<br /> `elements and this is no longer a use case specification - `<br />`but perhaps what we are trying to achieve is primarily `<br />`standardizing data among major system components. Thus, `<br />`perhaps we need at least a high-level deployment viewpoint `<br />`that at least identifies the major system components that `<br />`we will consider in our analysis. Actually, the best way `<br />`to handle this within the scope of our environment is to `<br />`define a separate use case where the boundary changes so `<br />`that one of the component systems is defined as an actor.`|
+|What are the flow of events for each scenario associated with each use case?|Use Case Specification: Basic Flow of Events<br />Use Case Specification:Flow Exceptions|
 |What are the outstanding issues with this use case?|Use Case Specification:Issues|
 |What is the source of this use case?|Use Case Specification:Reference(s)|
-|What standards/specifications exist related to this use case?|Use Case Specification:Implementations|
+|What standards/specifications exist related to this use case?|Use Case Specification:Specifications|
 |How has this use case evolved over time?|Use Case Specification:Page History|
-|What is the approval status of this use case?|Use Case Specification:Status||
+|What is the approval status of this use case?|Use Case Specification:Status|
 
 #### Concerns not addressed
 
@@ -145,14 +148,15 @@ concerns:
 
 ####Model Kinds
 
-The Usage Viewpoint includes two defined model kinds:
+The usage viewpoint includes two defined model kinds:
 
-- Use case Specification model kind
-- Information flow class diagram model kind
+- Use case specification model kind
+- **Information flow class diagram model kind**
 
 Each use case shall be associated with one use case specification model. Each use case specification model may include supplemental figures, which can include zero or more information flow class diagram models. Each information flow class diagram model depicts the information from the CDM that is used by the use case; information flow class diagram models are often associated with multiple use cases. 
 
-<span style="background:yellow">NOTE: Documenting as above implies that two use cases that use the same information will each include the same information flow class diagram as static figures. As the CDM matures, these figures will not be automatically updated. As a result, they might become dated.</span>
+`NOTE: Documenting as above implies that two use cases that use the same`
+`information will each include the same information flow class diagram as` `static figures. As the CDM matures, these figures will not be automatically` `updated. As a result, they might become dated.`
 
 Information flow class diagram models depict the content of the City Data Model; thus, the typical work flow is:
 
@@ -160,56 +164,59 @@ Information flow class diagram models depict the content of the City Data Model;
 2. A notional information flow class diagram is conceptualized (i.e., might not be shown within the CDMRA)
 3. The notional information flow class diagram is harmonized with the existing content of the CDM (i.e., part of the Information View); this might entail adding new data elements to the CDM, revising existing data elements, and revising the notional information flow class diagram model to conform to the revised CDM
 4. Developing a final information flow class diagram model 
-5. <span style="background:yellow">Linking (or with the revised flow, perhaps copying)</span> the information flow class diagram model to the use case specification
+5. `Linking (or with the revised flow, perhaps copying) the information flow` `class diagram model to the use case specification`
 
-Thus, initial versions of a use case model are likely not to include an information flow class diagram model or might only include a notional diagram. <span style="background:yellow"> (this is what we lose) However, once fully specified, the use case model should provide a link to the information flow class diagram model, which will be fully consistent with the content of the CDM.</span> The information flow class diagram model kind is a part of both the Use Case Viewpoint and the Information Viewpoint and is formally defined in the Information Viewpoint section. 
+Thus, initial versions of a use case model are likely not to include an information flow class diagram model or might only include a notional diagram.  However, once fully specified, the use case model should provide `a link to the information flow class diagram model, which will be fully consistent` `with the content of the CDM.` The information flow class diagram model kind is a part of both the Use Case Viewpoint and the Information Viewpoint and is formally defined in the Information Viewpoint section. 
 
 
 #### Use Case Model Kind
 
 The use case model kind provides a template that is to be used to define all use cases defined within the Usage View. The template is defined as follows:
 
+**Boldface text indicates items that have been approved but are not yet reflected in the online tool.** _Italicized text indicates items that equate to existing online tool fields where some minor change is still needed (e.g., name change of field)._ `Text presented as code indicates items that have not yet reached consensus.`
+
 |Field|Description|Conformance|
 |-----|-----------|-----------|
-|Use Case Name|Name of use case as a hierarchical field of the format<br /> \<Domain\>: \<Subdomains\>: \<Use Case\><br />The domain field should be one of the following strings: ???? <br />The subdmains field should indicate a hierarchical list of subdomains as defined by the domain. For example a Routing use case within ITS might have the name <br />**ITS: Traveller Information: Real-time route guidance and information: Dynamic in-vehicle route guidance using real-time information: Routing a vehicle between two known points** |Mandatory|
-|Summary|Short description (\<= 280 characters). <br />The summary should identify the goal and one or more value proposition(s) in the form **«[\<Verb\>] \<direct object\>»** <br />For example: <br />This use case describes how a user might plan a driving trip from a source to a destination. This use case focuses on ensuring the following user benefits: <ul><li>[Improve] travel efficiency</li><li>[Improve] driver expectations</li><li>[Reduce] driver confusion</li></ul>|Mandatory|
-|Description|A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed.|Mandatory|
-|Figures|An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events.|Optional|
+| _Use Case Name_ |Name of use case as a hierarchical field of the format<br /> \<Domain\>: \<Subdomains\>: \<Use Case\><br />The domain field should be one of the following strings: **????** <br />The subdomains field should indicate a hierarchical list of subdomains as defined by the domain.  |Mandatory|
+| **Summary** |Short description (\<= 280 characters). <br />The summary should identify the goal and one or more value proposition(s) in the form **«[\<Verb\>] \<direct object\>»** <br />For example: <br />This use case describes how a user might plan a driving trip from a source to a destination. This use case focuses on ensuring the following user benefits: <ul><li>[Improve] travel efficiency</li><li>[Improve] driver expectations</li><li>[Reduce] driver confusion</li></ul>|Mandatory|
+| _Description_ |A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed.|Mandatory|
+| _Figures_ |An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events.|Optional|
 |Actors|Parties that directly interact with the system for this use case|Mandatory|
 |Basic Flow of Events|The sequence of events that occur during the normal flow of this use case with any notes|Mandatory|
-|Flow Exceptions|Highlighted alternative flow of events that reveal the need for additional data to be exchanged among the actors of the use case|Optional|
-|Information Requirements|This is a very high-level description, for example, "origin location, destination location, and travel preferences". Details can be hashed out later and shown in the diagrams; this can be updated later to provide correspondence linkages to the defined data concepts in the Information View. While not technically required to define a use case, this field should be populated prior to beginning work on the data definitions|Optional|
-|Required Classes|Links to CDM <span style="background:yellow">Should this be linked with the following two so that we say something like "Vehicle.speed" with both Vehicle and speed linked to their respective attributes so that the reader understands that the "speed" attribute is describing "Vehicle"?</span>. Should eventually be populated once CDM contains data for use case.|Optional|
+| **Flow Exceptions** |Highlighted alternative flow of events that reveal the need for additional data to be exchanged among the actors of the use case|Optional|
+| **Information Requirements** |This is a very high-level description, for example, "origin location, destination location, and travel preferences". Details can be hashed out later and shown in the diagrams; this can be updated later to provide correspondence linkages to the defined data concepts in the Information View. While not technically required to define a use case, this field should be populated prior to beginning work on the data definitions|Optional|
+|Required Classes|Links to CDM `Should this be linked with the following two so that we say something` `like "Vehicle.speed" with both Vehicle and speed linked to their` `respective attributes so that the reader understands that the` `"speed" attribute is describing "Vehicle"?.` Should eventually be populated once CDM contains data for use case.|Optional|
 |Required Object Properties|Links to CDM. Should eventually be populated once CDM contains data for use case.|Optional|
 |Required Data Properties|Links to CDM. Should eventually be populated once CDM contains data for use case.|Optional|
-|Issues|Primarily to track issues during development <span style="background:yellow">Link to github issues?</span>|Optional|
-|Reference(s)|Source materials used to develop this use case|Optional|
-|Status|Approval status|Mandatory|
-|Notes|Free text|Optional|
-|Specifications|Link to reference architectures, standards and other resources that rely upon this use case definition|Optional|
-|License information|Indicate the owner and provide a reference to the copyright information|Mandatory|
+| **Issues** |Primarily to track issues during development `Perhaps link to github issues?`|Optional|
+| **Reference(s)** |Source materials used to develop this use case|Optional|
+|`Version`|`The date, version number, and status of the use case in the form` `YYYY-MM-DD #.#.#-S; See governance for details` `Do we need both version and status?`|Mandatory|
+| **Status** |Approval status|Mandatory|
+| **Specifications** |Link to reference architectures, standards and other resources that rely upon this use case definition|Optional|
+| _License information_ |Indicate the owner and provide a reference to the copyright information|Mandatory|
 
-##### Operations for Use Case Models
+##### `Operations for Use Case Models`
 
 When initially creating a use case model, the following fields shall be populated, as a minimum, prior to considering the use case definition complete:
 
-- Domain
+- Name
 - Summary 
 - Description
 - Actors
 - Basic flow of events
+- Version
 - Status
 - License information
 
-##### Correspondence Rules for Use Case Models
+##### `Correspondence Rules for Use Case Models`
 
 Each use case model shoulud eventually be linked to the CDM data concepts that are needed to implement the Information Requirements defined bty the use case. These linkages are stored within CDM by associating each required data concept to the use case(s) that use them.
 
-#### Operations for Usage Views
+#### `Operations for Naming Use Cases`
 
-When creating a new usage view, care should be taken to create a system where use cases can be catalogued in a manner that users can easily search and find use cases of interest. This should likely be done by standardizing the list of domains and subdomains. For example, in the case of the ITS domain, use cases should be categorized according to the services groupings defined in ISO 14813-1.
+Use cases should be named so that users can easily search and find use cases within a long list. This document recommends using a standard list of subdomains for each domain. For example, in the case of the ITS domain, use cases should be categorized according to the services groupings defined in ISO 14813-1.
 
-#### Correspondence Rules for Usage Views
+#### `Correspondence Rules for Usage Views`
 
 The usage view includes the following correspondence rules with other views and resources:
 
@@ -220,56 +227,29 @@ The usage view includes the following correspondence rules with other views and 
 - The information flow class diagram shall be a diagram showing only those elements from the Information View that are relevant to this use case
 - The interaction diagram of the scenario model might also be contained within a deployment or similar view of another reference architecture
 
-#### Example
+#### `Example`
 |Field|Value|
 |-----|-----------|
-|Domain|ITS|
-|Subdomain|Traveller information:Multi-modal trip planning|
-|Use case |Plan a multi-modal trip|
-|Summary|A traveler wants to identify options for travelling from an origin to a destination given a set of personal preferences and the likely duration of such a trip using different modes of travel.|
+|Use Case Name|ITS: Traveller Information: Real-time route guidance and information: Dynamic in-vehicle route guidance using real-time information: Routing a vehicle between two known points|
+|Summary|A traveler wants to identify options for travelling from an origin to a destination given a set of personal preferences and the likely duration of such a trip using different modes of travel.<ul><li>[Improve] transportation efficiency</li><li>[Improve] traveler expectations</li></ul>|
 |Description|A traveler wishes to plan a trip from an origin to a destination and compare several options.  The trip may involve and/or compare multiple modes of transport. The traveler may define preferences up front and choose how to sort the options presented. The traveler might wish to refine the details of some or all of the trip legs prior to finalizing the selection. The proposed route might be visually displayed to the traveler, as in the illusrtation, to assist in selecting among the presented options.|
-|Illustration|![](TripIllustration.png)_Route Options for Los Angeles Airport (LAX) to Hollywood Sign_|
-|<span style="background:yellow">Business rules/Assumptions</span>|<ul><li>Traveler has access to a device that can interface with the system</li><li>Traveler has proper access credentials</li><li>Personally identifiable information should not be revealed to unauthorized parties</li></ul>|
-|<span style="background:yellow">Technology constraints</span>|
-|Goal|[Improve] transportation efficiency<br />[Improve] traveler expectations|
-|<span style="background:yellow">Keywords</span>|planning, route, transportation, transport|
-|<span style="background:yellow">Geographic scope|City|
-|<span style="background:yellow">Temporal scope</span>||
-|<span style="background:yellow">Technical scope|This use case focuses on the travelers access point with the traveler and the Transporation Information Center being external actors. How the Transporation Information Center obtains static and real-time information about the transporation network is outside the scope of this use case.|
-|Participants|<ul><li>[Traveler](https://local.iteris.com/arc-it/html/physobjects/physobj64.html)</li><li>[Traveler Support Equipment](https://local.iteris.com/arc-it/html/physobjects/physobj72.html)</li><li>[Personal Information Device](https://local.iteris.com/arc-it/html/physobjects/physobj23.html)</li><li>[Transportation Information Center](https://local.iteris.com/arc-it/html/physobjects/physobj17.html)</li></ul>|
-|Other Stakeholders|<ul><li>Traffic management operators</li><li>Transit operators</li><li>Shared use vehicle providers</li></ul>|
-|<span style="background:yellow">Extensions|Reserve a multi-modal trip|
-|<span style="background:yellow">Inclusions|<ul><li>Obtain road network conditions</li><li>Obtain transit and fare schedules</li><li>Obtain transit information</li><li>Request shared use asset</li></ul>|
-|Use Case diagram|![Trip Planning Use Case](TripPlanningUseCase.png)_Trip Planning Use Case_|
-|Scenarios|[Main Flow](#MainFlow)|
-|Information requirements|<ul><li>Origin</li><li>Destination</li><li>Traveler Preferences</li><li>Departure Time</li><li>Arrival Time</li><li>[Route](http://citydata.utoronto.ca/index.php/Ogc:Route), [Route](http://citydata.utoronto.ca/index.php/NavigationRoute)</li></ul>|
-|Issues||
+|Figures|![](TripIllustration.png)<br />_Figure 1: Route Options for Los Angeles Airport (LAX) to Hollywood Sign_<br />![Trip Planning Use Case](TripPlanningUseCase.png)<br />_Figure 2: Trip Planning Use Case_<br />![](TripPlanningSequence.png)<br />_Figure 3: Use case sequence diagram_|
+|Actors|<ul><li>[Traveler](https://local.iteris.com/arc-it/html/physobjects/physobj64.html)</li><li>[`Traveler Support Equipment`](https://local.iteris.com/arc-it/html/physobjects/physobj72.html)</li><li>[`Personal Information Device`](https://local.iteris.com/arc-it/html/physobjects/physobj23.html)</li><li>[Transportation Information Center](https://local.iteris.com/arc-it/html/physobjects/physobj17.html)</li></ul>|
+|Basic Flow of Events|<ol><li>Traveler signs into their account, if needed</li><li>Traveler inputs details of trip request through user interface</li><li>User interface optionally logs into user account at Traveler Information Center and/or provides user profile information</li><li>User interface device sends the specific trip request to a Transportation information Center</li><li>Transporation Information Center responds to the User Interface Decvice with a list of alternate trip plans</li><li>User interface presents the alternate trip plans to the traveler</li><li>The traveler optionally selects one of the trips and authorizes charges</li><li>The User Interface Device reserves the trip with the Transportation Information Center</li></ol>|
+|Flow Exceptions|<ul><li>Traveler might revise preferences after seeing alternative trip plans.</li><li> Transportation Information Center might not be able to identify a viable route.</li></ul>|
+|Information requirements|<ul><li>IN<ul><li>Origin</li><li>Destination</li><li>Traveler Preferences (optional)</li><li>Desired departure time (optional)</li><li>Desired arrival time (optional)</li></ul></li><li>OUT<ul><li>List of route alternatives</li></ul></li></ul>|
+|Required Classes|<ul><li>[OGC:Route](http://citydata.utoronto.ca/index.php/Ogc:Route), [NavigationRoute](http://citydata.utoronto.ca/index.php/NavigationRoute)</li></ul>|
+|Required Object Properties||
+|Required Data Properties||
+|Issues|The data for this use case has not been defined yet.|
 |References|<ul><li>[ISO 14813-1:2015](https://www.iso.org/standard/57393.html) (defines subdomain/service)</li><li><span style="background:yellow">[ARC-IT 9.0: Infrastructure-Provided Trip Planning and Route Guidance](https://local.iteris.com/arc-it/html/servicepackages/sp163.html#tab-3) (sample physical view)</span></li></ul>|
-|Version|2021-01-12 (0.0.2-D)|
-|Modification History|[0.0.1-D]() Original<br />0.0.2-D Edits to clarify and correct content|
+|Version|2021-01-12 (0.0.3-D)|
 |Status|draft|
-|Notes||
-|Information Flow Class Diagram|TBD (link)|
 |Specifications|<li>[SAE J2353](https://www.sae.org/standards/content/j2353_201906/) (defines data for traveler information) </li>|
 |Licanese information|[W3C Document License](https://www.w3.org/Consortium/Legal/2015/doc-license)|
 
-There is one scenario for this example:
-
-|Field|Description|Conformance|
-|-----|-----------|-----------|
-|Scenario Name|<a id="MainFlow">Main Flow</a>|
-|Pre-conditions|Traveler has signed into their account, if needed|
-|Triggers|Traveler wishes to view trip options|
-|Event Flow|<ol><li>Traveler inputs details of trip request through user interface</li><li>User interface optionally logs into user account at Traveler Information Center and/or provides user profile information</li><li>User interface device sends the specific trip request to a Transportation information Center</li><li>Transporation Information Center responds to the User Interface Decvice with a list of alternate trip plans</li><li>User interface presents the alternate trip plans to the traveler</li><li>The traveler optionally selects one of the trips and authorizes charges</li><li>The User Interface Device reserves the trip with the Transportation Information Center</li></ol>|
-|Post-conditions|Trip details selected|
-|Exceptions|<ul><li>Traveler might revise preferences after seeing alternative trip plans.</li><li> Transportation Information Center might not be able to identify a viable route.</li></ul>|
-|Interaction diagram|![](TripPlanningSequence.png)|
-
-
-
 #### Notes
-
-#### Sources
+\<Any?\>
 
 ### Information Viewpoint
 
@@ -297,7 +277,13 @@ The Information Viewpoint considers concerns from the following stakeholders:
 
 #### Concerns
 
-The following table identifies the stakeholder concerns considered in the development of this viewpoint frames. Each concern is categorized into a generalized topic area and includes a reference to the model kind where the concern is addressed. 
+The following table identifies the stakeholder concerns considered in the development of this viewpoint. Each concern is categorized into a generalized topic area and includes a reference to the model kind where the concern is addressed. 
+
+`What data do we consider to be in scope of the CDMRA?`
+`- Major business terms (i.e., object model classes); all, some, none?`
+`- Data elements (i.e., class attributes); all, some, none?`
+`- Associations (i.e., class associations); all, some, none?`
+`- Metadata (i.e., details about data concepts); all, some, none?`
 
 |Topic|Concern|Addressed by Model Kind|
 -----|-------|-----------------------|
@@ -305,15 +291,11 @@ Data Definition|What are the definitions of the major business terms?|Vocabulary
 Data Definition|How do business terms relate to one another?|Ontology|
 Data Definition|What does each data element mean?|Data Dictionary: Definition|
 Data Definition|How does each data element relate to other data elements? (including dynamic metadata)|Logical Data Model|
-Data Definition|<span style="background:yellow">Does the data have safety-of-life implications?|Data Dictionary: Usage|
 Data Definition|What, if any, state behavior relationships are there for data and classes?|State Machine|
 Data Definition|What is the representational form of the data within data exchanges? |Physical Data Model|
-Data Definition|<span style="background:yellow">How is data transformed from one data exchange format into another?|Logical Data Model: Physical Representation|
 Data Definition|How can the information view be extended to support additional domain or implementation-specific data?|Operations on Views|
 Data Definition|What are the key sources for the data definition?|Data Dictionary: |
-Data Standardization|<span style="background:yellow">What interface standards include this data element?|Correspondence rule|
 Data Standardization|What functions use this data element?|Correspondence rule: users|
-Data Standardization|<span style="background:yellow">What known gaps/overlaps exist between the defined use cases and the existing data definitions?|Correspondence rule: issues|
 Data Quality|What are the constraints on data values?|Logical data model: Data element specification|
 Data Integrity|How are inputs from multiple sources handled?|Logical data model: Class Model ??|
 Data Availability|What data is required and under what conditions?|Correspondence rule|
@@ -396,6 +378,10 @@ controlled?
 - What responsibilities does a data provider have?
 - What responsibilities does a data consumer have?
 - How are ownership and usage rights controlled, expressed, and exchanged?
+- Does the data have safety-of-life implications?
+- How is data transformed from one data exchange format into another?
+- What known gaps/overlaps exist between the defined use cases and the existing data definitions?
+- What interface standards include this data element?
 
 These issues are left for domain, solution, or implementation-specific documentation.
 
@@ -530,34 +516,34 @@ of the metadata item are allowed.\
 |  Metadata|                     Class|   Data Object|   Value Domain|   Information Object|
 |-----------------------------|--------|--------------|---------------|---------------------|
   Data Concept Type|            M|       M|             M|              M|
-  Identifier|                   M|       M|             M|              M|
+  ~~Identifier~~|                   M|       M|             M|              M|
   Version|                      M|       M|             M|              M|
-  Revision|                     M|       M|             M|              M|
+  ~~Revision~~|                     M|       M|             M|              M|
   Name|                         M|       M|             M|              M|
   Definition|                   M|       M|             M|              M|
   Note(s)|                      O|       O|             O|              O|
-  Inspiration|                  O|       O|             O|              O|
-  Business Entity|              O|       N/A|            N/A|             N/A
+  ~~Inspiration~~|                  O|       O|             O|              O|
+  ~~Business Entity~~|              O|       N/A|            N/A|             N/A
   Generalized Class(es)|        O|       N/A|            N/A|             N/A
-  Abstract                      M|       N/A|            N/A|             N/A
+  ~~Abstract~~|                     M|       N/A|            N/A|             N/A
   Property(ies)|                O|       N/A|            O|              N/A
   State Machine|                O|       N/A|            N/A|             N/A
-  Parent Class                  N/A|      M|             N/A|             N/A
-  Multiplicity                  N/A|      M|             N/A|             N/A
-  Accuracy|                     N/A|      ?|             N/A|             N/A
-  Aging Rate                    N/A|      ?|             N/A|             N/A
-  Value Domain                  N/A|      M|             N/A|             N/A
-  Reverse Association Role|     N/A|      O|             N/A             N/A
-  Usage: service(s)|            N/A|      M|             N/A             M
-  Usage: external link(s)|      N/A|      O|             N/A             O|
-  Physical Representation(s)|   N/A|      O|             O|              N/A
-  Datatype                      N/A|      N/A|            M|              N/A
-  Format                        N/A|      N/A|            O|              N/A
-  Unit of Measure               N/A|      N/A|            O|              N/A
-  Valid Value Rule              N/A|      N/A|            O|              N/A
+  Parent Class|                 N/A|      M|             N/A|             N/A
+  Multiplicity|                 N/A|      M|             N/A|             N/A
+  ~~Accuracy~~|                     N/A|      ?|             N/A|             N/A
+  ~~Aging Rate~~|                    N/A|      ?|             N/A|             N/A
+  ~~Value Domain~~|                  N/A|      M|             N/A|             N/A
+  ~~Reverse Association Role~~|     N/A|      O|             N/A             N/A
+  ~~Usage: service(s)~~|            N/A|      M|             N/A             M
+  ~~Usage: external link(s)~~|      N/A|      O|             N/A             O|
+  ~~Physical Representation(s)~~|   N/A|      O|             O|              N/A
+  ~~Datatype~~|                      N/A|      N/A|            M|              N/A
+  ~~Format~~|                        N/A|      N/A|            O|              N/A
+  ~~Unit of Measure~~|               N/A|      N/A|            O|              N/A
+  ~~Valid Value Rule~~|              N/A|      N/A|            O|              N/A
   Constraint                    N/A|      O|             O|              N/A
-  Precursor(s)                  O|       O|             O|              N/A
-  Successor(s)                  O|       O|             O|              N/A
+  ~~Precursor(s)~~|                  O|       O|             O|              N/A
+  ~~Successor(s)~~|                  O|       O|             O|              N/A
   Data Elements(s)|             N/A |    N/A |          N/A |           M|
   Information Flow(s)|          N/A |    N/A |          N/A |           M|
 
