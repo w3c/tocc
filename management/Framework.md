@@ -387,7 +387,7 @@ These issues are left for domain, solution, or implementation-specific documenta
 
 #### Model Kinds
 
-The Information Viewpoint consists of the following model kinds:
+The Information Viewpoint consists of the following model kinds ([MK comment: I think we opted to omit some of these]):
 
 -   Vocabulary Model Kind
 -   Ontology Model Kind
@@ -444,6 +444,8 @@ small number of) RDF/XML file(s) while there will be a large number of ontology 
 UML class diagrams should be limited to no more than 20 classes.
 
 Define a UML class diagram profile
+
+[MK comment: we also need to document the use of patterns as discussed at our last meeting (1/Apr/2021). Does this fit into the Information view? If so, is it part of the Ontology Model or something separate?]
 
 ##### Operations
 
