@@ -12,3 +12,7 @@ With participants from ISO JTC1 SmartCities, ISO TC204 Intelligent Transportatio
 Corresponding mailing list
 
 https://lists.w3.org/Archives/Public/public-transportation-data/
+
+Meeting minutes
+
+https://www.w3.org/services/meeting-minutes?channel=transportation&num=200
