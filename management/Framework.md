@@ -48,8 +48,8 @@ The Use Case View also includes hyperlinks into the Information View, which prov
 
 1. Detailed definitions of each data concept required by the use case (the City Data Model)
 2. Diagrams depicting how this data relates to other data (e.g., data that might not be used by the specific use case)
-3. Links to each use case that uses each data element
-4. Identification of interface specifications within the Interface View that define how the data is implemented in real-world interfaces
+3. Links to each use case that uses each data element `CP: Links to use cases are provided for classes, but not for properties / data elements. Also, this is not a link from the Use Case View into the Information View, but the other direction.`
+4. Identification of interface specifications within the Interface View that define how the data is implemented in real-world interfaces `CP: unclear what this is and if this is represented in the Wiki; are these the specifications linked to the use case?`
 5. Links to outside resources that provide additional context for the data (e.g., external reference architectures)
 
 The various parts of the CDMRA are summarized in Figure 1.
@@ -88,6 +88,8 @@ wisdom
 
 text\
 
+`CP: "data concept" is also used above and should also be defined`
+
 ## Framework
 
 The framework specification contained in this specification conforms to an *architecture framework* as specified in [ISO 42010](ISO42010). Specifically, the document identifies a set of *viewpoints*, each of which is designed to address a specific set of *concerns* held by *stakeholders*. The viewpoints are defined using *model kinds*, which specify modeling conventions to be used for specific presentations of the data. 
@@ -106,6 +108,8 @@ The Interface Specification Viewpoint was developed based on the needs of the CD
 
 ### Usage Viewpoint
 
+`CP: Usage Viewpoint vs Use Case Viewpoint - both are used; as are View and Viewpoint`
+
 #### Overview
 
 The Usage Viewpoint defines the conventions for capturing how city data might be used to meet the needs of various system actors. 
@@ -120,24 +124,24 @@ Example stakeholders might include [Rozanski]:
 -   Users
 
 #### Concerns
-The following table provides an overview of the staekholder concerns addressed by this viewpoint along with a specific reference to the model kind (and field) or correspondence rule that addresses the concern.
+The following table provides an overview of the stakeholder concerns addressed by this viewpoint along with a specific reference to the model kind (and field) or correspondence rule that addresses the concern.
 
 `Text presented as code indicates items that have not yet reached consensus.`
 
 |Concern|Addressed by Model Kind|
 |-------|-----------------------|
 |What are the use cases that are driving the data definitions?|Use Case Specification: Name, Summary, Description, and Figures|
-|Is the use case definition collaboratory or copyrighted elsewhere?|Use Case Specification: Use Case Licensing|
+|Is the use case definition collaboratory or copyrighted elsewhere?|Use Case Specification: Scenario Licensing, Use Case Specification: Other Licensing Notes|
 |What is the context of this use case?|Use Case Specification: Name (shown in structure), Description|
 |Who are the participants for this use case?|Use Case Specification: Actors|
 |What data needs to be exchanged among participants?|Use Case Specification: Information Requirements<br />`Use Case Specification: Required Classes`<br />`Use Case Specification: Required Object Properties`<br />`Use Case Specification: Required Data Properties`<br />`Unclear how the above can be traced meaningfully` `(i.e., class to property relationships)`<br />Use Case Specification: Figures|
 |`What data needs to be generated/accessed` <br />`internally to the smart city system?`|`If we define internal flows, we need to define internal`<br /> `elements and this is no longer a use case specification - `<br />`but perhaps what we are trying to achieve is primarily `<br />`standardizing data among major system components. Thus, `<br />`perhaps we need at least a high-level deployment viewpoint `<br />`that at least identifies the major system components that `<br />`we will consider in our analysis. Actually, the best way `<br />`to handle this within the scope of our environment is to `<br />`define a separate use case where the boundary changes so `<br />`that one of the component systems is defined as an actor.`|
-|What are the flow of events for each scenario associated with each use case?|Use Case Specification: Basic Flow of Events<br />Use Case Specification:Flow Exceptions|
-|What are the outstanding issues with this use case?|Use Case Specification:Issues|
-|What is the source of this use case?|Use Case Specification:Reference(s)|
-|What standards/specifications exist related to this use case?|Use Case Specification:Specifications|
-|How has this use case evolved over time?|Use Case Specification:Page History|
-|What is the approval status of this use case?|Use Case Specification:Status|
+|What are the flow of events for each scenario associated with each use case?|Use Case Specification: Basic Flow of Events<br />Use Case Specification: Flow Exceptions|
+|What are the outstanding issues with this use case?|Use Case Specification: Issues|
+|What is the source of this use case?|Use Case Specification: Reference(s)|
+|What standards/specifications exist related to this use case?|Use Case Specification: Specifications|
+|How has this use case evolved over time?|Use Case Specification: Page History|
+|What is the approval status of this use case?|Use Case Specification: Status|
 
 #### Concerns not addressed
 
@@ -146,17 +150,16 @@ concerns:
 
 - What non-participating stakeholders exist for this use case?
 
-####Model Kinds
+#### Model Kinds
 
 The usage viewpoint includes two defined model kinds:
 
-- Use case specification model kind
+- Use case model kind
 - **Information flow class diagram model kind**
 
 Each use case shall be associated with one use case specification model. Each use case specification model may include supplemental figures, which can include zero or more information flow class diagram models. Each information flow class diagram model depicts the information from the CDM that is used by the use case; information flow class diagram models are often associated with multiple use cases. 
 
-`NOTE: Documenting as above implies that two use cases that use the same`
-`information will each include the same information flow class diagram as` `static figures. As the CDM matures, these figures will not be automatically` `updated. As a result, they might become dated.`
+`NOTE: Documenting as above implies that two use cases that use the same information will each include the same information flow class diagram as static figures. As the CDM matures, these figures will not be automatically updated. As a result, they might become dated.`
 
 Information flow class diagram models depict the content of the City Data Model; thus, the typical work flow is:
 
@@ -164,9 +167,9 @@ Information flow class diagram models depict the content of the City Data Model;
 2. A notional information flow class diagram is conceptualized (i.e., might not be shown within the CDMRA)
 3. The notional information flow class diagram is harmonized with the existing content of the CDM (i.e., part of the Information View); this might entail adding new data elements to the CDM, revising existing data elements, and revising the notional information flow class diagram model to conform to the revised CDM
 4. Developing a final information flow class diagram model 
-5. `Linking (or with the revised flow, perhaps copying) the information flow` `class diagram model to the use case specification`
+5. `Linking (or with the revised flow, perhaps copying) the information flow class diagram model to the use case specification`
 
-Thus, initial versions of a use case model are likely not to include an information flow class diagram model or might only include a notional diagram.  However, once fully specified, the use case model should provide `a link to the information flow class diagram model, which will be fully consistent` `with the content of the CDM.` The information flow class diagram model kind is a part of both the Use Case Viewpoint and the Information Viewpoint and is formally defined in the Information Viewpoint section. 
+Thus, initial versions of a use case model are likely not to include an information flow class diagram model or might only include a notional diagram.  However, once fully specified, the use case model should provide `a link to the information flow class diagram model, which will be fully consistent with the content of the CDM.` The information flow class diagram model kind is a part of both the Use Case Viewpoint and the Information Viewpoint and is formally defined in the Information Viewpoint section. 
 
 
 #### Use Case Model Kind
@@ -177,13 +180,13 @@ The use case model kind provides a template that is to be used to define all use
 
 |Field|Description|Conformance|
 |-----|-----------|-----------|
-| _Use Case Name_ |Name of use case as a hierarchical field of the format<br /> \<Domain\>: \<Subdomains\>: \<Use Case\><br />The domain field should be one of the following strings: **????** <br />The subdomains field should indicate a hierarchical list of subdomains as defined by the domain.  |Mandatory|
+| _Use Case Name_ |Name of use case as a hierarchical field of the format<br /> \<Domain\>: \<Subdomains\>: \<Use Case\><br />The domain field should be one of the following strings: `????` <br />The subdomains field should indicate a hierarchical list of subdomains as defined by the domain. `CP: the page name is just a string, so the hierarchy would "just" be a naming convention and the domains/sub-domains are not represented in the Wiki as resources?` |Mandatory|
 | **Summary** |Short description (\<= 280 characters). <br />The summary should identify the goal and one or more value proposition(s) in the form **«[\<Verb\>] \<direct object\>»** <br />For example: <br />This use case describes how a user might plan a driving trip from a source to a destination. This use case focuses on ensuring the following user benefits: <ul><li>[Improve] travel efficiency</li><li>[Improve] driver expectations</li><li>[Reduce] driver confusion</li></ul>|Mandatory|
-| _Description_ |A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed.|Mandatory|
-| _Figures_ |An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events.|Optional|
-|Actors|Parties that directly interact with the system for this use case|Mandatory|
-|Basic Flow of Events|The sequence of events that occur during the normal flow of this use case with any notes|Mandatory|
-| **Flow Exceptions** |Highlighted alternative flow of events that reveal the need for additional data to be exchanged among the actors of the use case|Optional|
+| _Description_ |A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed. `CP: Why is this in italics, not bold?`|Mandatory|
+| _Figures_ |An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events. `CP: Why is this in italics, not bold?`|Optional|
+|Actors|Parties that directly interact with the system for this use case. `CP: Should this be bold?`|Mandatory|
+|Basic Flow of Events|The sequence of events that occur during the normal flow of this use case with any notes. `CP: Should this be bold?`|Mandatory|
+| **Flow Exceptions** |Highlighted alternative flow of events that reveal the need for additional data to be exchanged among the actors of the use case.|Optional|
 | **Information Requirements** |This is a very high-level description, for example, "origin location, destination location, and travel preferences". Details can be hashed out later and shown in the diagrams; this can be updated later to provide correspondence linkages to the defined data concepts in the Information View. While not technically required to define a use case, this field should be populated prior to beginning work on the data definitions|Optional|
 |Required Classes|Links to CDM `Should this be linked with the following two so that we say something` `like "Vehicle.speed" with both Vehicle and speed linked to their` `respective attributes so that the reader understands that the` `"speed" attribute is describing "Vehicle"?.` Should eventually be populated once CDM contains data for use case.|Optional|
 |Required Object Properties|Links to CDM. Should eventually be populated once CDM contains data for use case.|Optional|
@@ -200,7 +203,7 @@ The use case model kind provides a template that is to be used to define all use
 When initially creating a use case model, the following fields shall be populated, as a minimum, prior to considering the use case definition complete:
 
 - Name
-- Summary 
+- Summary
 - Description
 - Actors
 - Basic flow of events
@@ -210,7 +213,7 @@ When initially creating a use case model, the following fields shall be populate
 
 ##### `Correspondence Rules for Use Case Models`
 
-Each use case model shoulud eventually be linked to the CDM data concepts that are needed to implement the Information Requirements defined bty the use case. These linkages are stored within CDM by associating each required data concept to the use case(s) that use them.
+Each use case model should eventually be linked to the CDM data concepts that are needed to implement the Information Requirements defined bty the use case. These linkages are stored within CDM by associating each required data concept to the use case(s) that use them.
 
 #### `Operations for Naming Use Cases`
 
@@ -223,7 +226,7 @@ The usage view includes the following correspondence rules with other views and 
 - The domain and subdomain values used within each use case model should be selected from pre-defined lists
 - Actors should be defined in a separately maintained list
 - The source should cite a publicly available document
-- The specicifications shall cite an entry in the specification view
+- The specifications shall cite an entry in the specification view
 - The information flow class diagram shall be a diagram showing only those elements from the Information View that are relevant to this use case
 - The interaction diagram of the scenario model might also be contained within a deployment or similar view of another reference architecture
 
@@ -246,9 +249,9 @@ The usage view includes the following correspondence rules with other views and 
 |Version|2021-01-12 (0.0.3-D)|
 |Status|draft|
 |Specifications|<li>[SAE J2353](https://www.sae.org/standards/content/j2353_201906/) (defines data for traveler information) </li>|
-|Licanese information|[W3C Document License](https://www.w3.org/Consortium/Legal/2015/doc-license)|
+|License information|[W3C Document License](https://www.w3.org/Consortium/Legal/2015/doc-license)|
 
-#### Notes
+#### `Notes`
 \<Any?\>
 
 ### Information Viewpoint
@@ -285,31 +288,33 @@ The following table identifies the stakeholder concerns considered in the develo
 `- Associations (i.e., class associations); all, some, none?`
 `- Metadata (i.e., details about data concepts); all, some, none?`
 
+ `CP: All rows below without a comment can include the concern only as part of the description.`
+
 |Topic|Concern|Addressed by Model Kind|
------|-------|-----------------------|
-Data Definition|What are the definitions of the major business terms?|Vocabulary|
-Data Definition|How do business terms relate to one another?|Ontology|
-Data Definition|What does each data element mean?|Data Dictionary: Definition|
-Data Definition|How does each data element relate to other data elements? (including dynamic metadata)|Logical Data Model|
+|-----|-------|-----------------------|
+Data Definition|What are the definitions of the major business terms?|Vocabulary `CP: Class: Class Description, Definition`|
+Data Definition|How do business terms relate to one another?|Ontology `CP: Only Sub-Class relationship, although the class diagrams will include implicit relationships`|
+Data Definition|What does each data element mean?|Data Dictionary: Definition `CP: Object/Data Property: Definition, Description`|
+Data Definition|How does each data element relate to other data elements? (including dynamic metadata)|Logical Data Model `CP: Only Sub-Property relationship`|
 Data Definition|What, if any, state behavior relationships are there for data and classes?|State Machine|
 Data Definition|What is the representational form of the data within data exchanges? |Physical Data Model|
 Data Definition|How can the information view be extended to support additional domain or implementation-specific data?|Operations on Views|
 Data Definition|What are the key sources for the data definition?|Data Dictionary: |
-Data Standardization|What functions use this data element?|Correspondence rule: users|
-Data Quality|What are the constraints on data values?|Logical data model: Data element specification|
+Data Standardization|What functions use this data element? `CP: "functions" seems to be a new concept that has not been introduced before?`|Correspondence rule: users|
+Data Quality|What are the constraints on data values?|Logical data model: Data element specification `CP: Class: Formal Definition`|
 Data Integrity|How are inputs from multiple sources handled?|Logical data model: Class Model ??|
 Data Availability|What data is required and under what conditions?|Correspondence rule|
 Data Lifecycle|Who produces/writes the data?|Correspondence rule|
 Data Lifecycle|Who consumes/reads the data?|Correspondence rule|
 Data Conformance|What metadata must be supported and under what conditions?|Correspondence rule|
 Data Conformance|What auditing trails are required?|Correspondence rule|
-Data Evolution|How has the data model changed over time?|Correspondence rule|
+Data Evolution|How has the data model changed over time?|Correspondence rule `CP: Class: Page history`|
 Data Evolution|How does each data element relate to older versions?|Logical data model: Data element specification|
 Data Evolution|What service was the data originally designed for?|Correspondence rule|
 Data Evolution|What is the evolutionary history of the data element?|Correspondence rule|
-Data Evolution|What is the status of the data definition?|Logical data model: Data element specification|
-Data Evolution|When was the definition last modified?|Logical data model: Data element specification|
-Data Evolution|What was the last change to the data definition?|Correspondence rule|
+Data Evolution|What is the status of the data definition?|Logical data model: Data element specification `CP: Definition Status`|
+Data Evolution|When was the definition last modified?|Logical data model: Data element specification `CP: Class: Page history`|
+Data Evolution|What was the last change to the data definition?|Correspondence rule `CP: Class: Page history`|
 
 
 
@@ -318,7 +323,7 @@ Data Evolution|What was the last change to the data definition?|Correspondence r
 This viewpoint does not attempt to frame the following stakeholder
 concerns:
 
--   What operations can be supported for each data element or class?
+-   What operations can be supported for each data element or class? `CP: how is this related to the "functions" mentioned above?`
 -   How is data accessed/exchanged with internal and external systems?
 -   How are access control rights are maintained (e.g., removing rights
     for a terminated employee)?
@@ -387,7 +392,7 @@ These issues are left for domain, solution, or implementation-specific documenta
 
 #### Model Kinds
 
-The Information Viewpoint consists of the following model kinds ([MK comment: I think we opted to omit some of these]):
+The Information Viewpoint consists of the following model kinds ([MK comment: I think we opted to omit some of these]) `CP: We also need to discuss, how the model kinds are represented in the Wiki. Are these all mapped to Classes, Object and Data Properties and certain pages/fields of the page will then be only relevant for certain views?`:
 
 -   Vocabulary Model Kind
 -   Ontology Model Kind
@@ -441,11 +446,13 @@ The Ontology Model Kind is used to specify relationships among key business term
 The Ontology Model Kind is graphically represented using UML class diagrams and formally defined using RDF/XML (or perhaps we want to use the Functional-Style syntax defined in the OWL2 specification as it is more concise?). It is expected that there will be one (or perhaps a
 small number of) RDF/XML file(s) while there will be a large number of ontology diagrams.
 
+`CP: Can we avoid XML and use one of the more readable options like Turtle?`
+
 UML class diagrams should be limited to no more than 20 classes.
 
 Define a UML class diagram profile
 
-[MK comment: we also need to document the use of patterns as discussed at our last meeting (1/Apr/2021). Does this fit into the Information view? If so, is it part of the Ontology Model or something separate?]
+[MK comment: we also need to document the use of patterns as discussed at our last meeting (1/Apr/2021). Does this fit into the Information view? If so, is it part of the Ontology Model or something separate?] `CP: +1. In my understanding, it is part of the Information Viewpoint.`
 
 ##### Operations
 
