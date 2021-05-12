@@ -60,35 +60,80 @@ _Figure 1: City Data Model and Reference Architecture Overview_
 
 ## Terms and definitions
 
-data
+The development and uses of the CDMRA crosses several domains, with different stakeholder groups familiar with their own vocabulary. For example, an entity that describes a group of objects that exhibit similar characteristics might be called a:
 
-general term - we prefer data element or data instance to be precise\
+- unary predicate in First Order Logic (FOL)
+- concept in Description Logic (DL) and 
+- class in Web Ontology Language (OWL), Unified Modeling Language (UML), and in the vocabulary of ISO 11179 (Metadata registries)
+- entity in entity-relationship diagrams and 
+- table in database terminology
+- aggregate business information entity (ABIE) in UN/CEFACT (https://unece.org/DAM/cefact/codesfortrade/CCTS/CCTS-Version3.pdf)
 
-data model
+The CDMRA is heavily based on OWL and the Ontology Definition Metamodel (ODM), which itself is based on UML; therefore the CDMRA typically adopts the terms used by these standards to the extent practical. Synonyms from other communities are noted in the definitions below along with explanantions on how different terms might have slightly different meanings. In some cases, we have also adopted terms from other communities to try to be as precise as possible.
 
-definition
+<dt>architecture</dt>
 
-data instance\
+<dt>architecture description</dt>
 
-realization of a data element
+<dt>architecture framework</dt>
 
-data element
+<dt>architecture model</dt>
 
-definition of a property of a class with a abstract syntax
+<dt>architecture model kind</dt>
 
-information
+<dt>architecture view</dt>
 
-text
+<dt>architecture viewpoint</dt>
 
-knowledge
+<dt>association</dt>
 
-text
+<dt>association role</dt>
+<dd>property of a specific class that is represented with another defined class</dd>
 
-wisdom
+<dt>attribute</dt>
+<dd>property of a specific class that is expressed as an elemental characteristic within a diagram</dd>
+<dd>NOTE: An attribute may optionally be associated with a syntax.</dd>
+<dd>NOTE: An attribute syntax might reference another defined class; in this case, the same property might be represented as an association role within another class diagram.</dd>
+<dd>Synonyms: data element, data element concept</dd>
+<dd>NOTE: A data element is associated with a "representational form" (i.e., at least a syntax) while a data element concept is not associated with a syntax. Within the scope of the CDMRA, the association is optional.</dd>
 
-text\
+<dt>city data model</dt>
+<dd>**Highlight that this is a different type of model than architecture model**</dd>
 
-`CP: "data concept" is also used above and should also be defined`
+<dt>class</dt>
+<dd>set of ideas, abstractions or things in the real world that are identified with explicit boundaries and meaning and whose properties and behaviour follow the same rules </dd>
+<dd>Source: ISO 11179-1:2015</dd>
+<dd>Synonyms: unary predicate, concept, entity, table, aggregate business information entity</dd>
+
+<dt>class diagram</dt>
+
+<dt>concern</dt>
+
+<dt>data concept</dt>
+<dd>Any of a class, property, attribute, or association role</dd>
+
+<dt>data model</dt>
+
+<dt>generalization</dt>
+
+<dt>inheritance</dt>
+
+<dt>instance</dt>
+
+<dt>ontology</dt>
+<dd>formal explicit description of concepts in a domain of discourse</dd>
+
+<dt>pattern</dt>
+
+<dt>property</dt>
+
+<dt>relationship</dt>
+
+<dt>specialization</dt>
+
+<dt>stakeholder</dt>
+
+
 
 ## Framework
 
@@ -233,7 +278,7 @@ The usage view includes the following correspondence rules with other views and 
 #### `Example`
 |Field|Value|
 |-----|-----------|
-|Use Case Name|ITS: Traveller Information: Real-time route guidance and information: Dynamic in-vehicle route guidance using real-time information: Routing a vehicle between two known points|
+|Use Case Name|<a name="UCexample">ITS: Traveller Information: Real-time route guidance and information: Dynamic in-vehicle route guidance using real-time information: Routing a vehicle between two known points</a>|
 |Summary|A traveler wants to identify options for travelling from an origin to a destination given a set of personal preferences and the likely duration of such a trip using different modes of travel.<ul><li>[Improve] transportation efficiency</li><li>[Improve] traveler expectations</li></ul>|
 |Description|A traveler wishes to plan a trip from an origin to a destination and compare several options.  The trip may involve and/or compare multiple modes of transport. The traveler may define preferences up front and choose how to sort the options presented. The traveler might wish to refine the details of some or all of the trip legs prior to finalizing the selection. The proposed route might be visually displayed to the traveler, as in the illusrtation, to assist in selecting among the presented options.|
 |Figures|![](TripIllustration.png)<br />_Figure 1: Route Options for Los Angeles Airport (LAX) to Hollywood Sign_<br />![Trip Planning Use Case](TripPlanningUseCase.png)<br />_Figure 2: Trip Planning Use Case_<br />![](TripPlanningSequence.png)<br />_Figure 3: Use case sequence diagram_|
@@ -282,39 +327,35 @@ The Information Viewpoint considers concerns from the following stakeholders:
 
 The following table identifies the stakeholder concerns considered in the development of this viewpoint. Each concern is categorized into a generalized topic area and includes a reference to the model kind where the concern is addressed. 
 
-`What data do we consider to be in scope of the CDMRA?`
-`- Major business terms (i.e., object model classes); all, some, none?`
-`- Data elements (i.e., class attributes); all, some, none?`
-`- Associations (i.e., class associations); all, some, none?`
-`- Metadata (i.e., details about data concepts); all, some, none?`
-
- `CP: All rows below without a comment can include the concern only as part of the description.`
 
 |Topic|Concern|Addressed by Model Kind|
 |-----|-------|-----------------------|
-Data Definition|What are the definitions of the major business terms?|Vocabulary `CP: Class: Class Description, Definition`|
-Data Definition|How do business terms relate to one another?|Ontology `CP: Only Sub-Class relationship, although the class diagrams will include implicit relationships`|
-Data Definition|What does each data element mean?|Data Dictionary: Definition `CP: Object/Data Property: Definition, Description`|
-Data Definition|How does each data element relate to other data elements? (including dynamic metadata)|Logical Data Model `CP: Only Sub-Property relationship`|
-Data Definition|What, if any, state behavior relationships are there for data and classes?|State Machine|
-Data Definition|What is the representational form of the data within data exchanges? |Physical Data Model|
-Data Definition|How can the information view be extended to support additional domain or implementation-specific data?|Operations on Views|
-Data Definition|What are the key sources for the data definition?|Data Dictionary: |
-Data Standardization|What functions use this data element? `CP: "functions" seems to be a new concept that has not been introduced before?`|Correspondence rule: users|
-Data Quality|What are the constraints on data values?|Logical data model: Data element specification `CP: Class: Formal Definition`|
-Data Integrity|How are inputs from multiple sources handled?|Logical data model: Class Model ??|
-Data Availability|What data is required and under what conditions?|Correspondence rule|
-Data Lifecycle|Who produces/writes the data?|Correspondence rule|
-Data Lifecycle|Who consumes/reads the data?|Correspondence rule|
-Data Conformance|What metadata must be supported and under what conditions?|Correspondence rule|
-Data Conformance|What auditing trails are required?|Correspondence rule|
-Data Evolution|How has the data model changed over time?|Correspondence rule `CP: Class: Page history`|
-Data Evolution|How does each data element relate to older versions?|Logical data model: Data element specification|
-Data Evolution|What service was the data originally designed for?|Correspondence rule|
-Data Evolution|What is the evolutionary history of the data element?|Correspondence rule|
-Data Evolution|What is the status of the data definition?|Logical data model: Data element specification `CP: Definition Status`|
-Data Evolution|When was the definition last modified?|Logical data model: Data element specification `CP: Class: Page history`|
-Data Evolution|What was the last change to the data definition?|Correspondence rule `CP: Class: Page history`|
+Data Definition|What are the definitions of the major business terms (classes) used within the CDM?|Class: Definition (English), Specification (Manchester Syntax)|
+Data Definition|How do classes relate to one another?|Class: UML class diagram, Specification, Object properties|
+Data Definition|What are the known attributes of a class?|Class: UML class diagram, Specification, Data properties|
+Data Definition|What is the meaning of each property?|Object/Data Property: Definition (English), Specification (DL)|
+Data Definition|What is the meaning of each data element (i.e., property of a specific class)?|Object/Data Property (specialized to class, as needed): Definition (English), Specification (DL)|
+Data Definition|What, if any, state behavior relationships are there for data and classes?|Class: State Machine Diagram|
+Data Definition|What is the preferred abstract syntax of the data element? |Data Property: Syntax|
+Data Definition|How can the information view be extended to support additional domain or implementation-specific data?|See Operations on Views within this viewpoint specification|
+Data Definition|What are the key sources for the definition?|Class/Object Property/Data Property: Source(s)|
+Data Standardization|What use cases use this data?|Class/Object Property/Data Property: Use Cases|
+Data Quality|What are the constraints on data values?|Data Property: Definition, Specification|
+Data Integrity|How are inputs from multiple sources handled?|`How do we want to handle this?`|
+Data Availability|What data is required and under what conditions?|`Move to not addressed?`|
+Data Lifecycle|Who produces/writes the data?|`Delete? Indirectly addressed by link to use case view`|
+Data Lifecycle|Who consumes/reads the data?|`Delete? Indirectly addressed by link to use case view`|
+Data Conformance|What metadata must be supported and under what conditions?|`Delete?`|
+Data Conformance|What auditing trails are required?|`Delete?`|
+Data Evolution|How has the data model changed over time?|Class/Object Property/Data Property: Page history|
+Data Evolution|How does each data element relate to older versions?|`Delete?`|
+Data Evolution|What use case was the data originally designed for?|Class/Object Property/Data Property: Page history|
+Data Evolution|What is the evolutionary history of the data element?|`Delete?`|
+Data Evolution|What is the status of the data definition?|Class/Object Property/Data Property: Status|
+Data Evolution|When was the definition last modified?|Class/Object Property/Data Property: Page history|
+Data Evolution|What was the last change to the data definition?|Class/Object Property/Data Property: Page history|
+
+`What about links to the Interface specifications?`
 
 
 
@@ -394,353 +435,217 @@ These issues are left for domain, solution, or implementation-specific documenta
 
 The Information Viewpoint consists of the following model kinds ([MK comment: I think we opted to omit some of these]) `CP: We also need to discuss, how the model kinds are represented in the Wiki. Are these all mapped to Classes, Object and Data Properties and certain pages/fields of the page will then be only relevant for certain views?`:
 
--   Vocabulary Model Kind
--   Ontology Model Kind
--   Logical Data Model Kind
--   Data Dictionary Model Kind
--   State Machine Model Kind
--   Physical Data Model Kind
+-   Class Specification Model Kind
+-   Property Specification Model Kind
+-   City Data Model Kind
 
-Model Kinds not included at present:
+`Model Kinds not included at present:`
 
--   Data Ownership Model Kind
--   Information Lifecycle Model Kind
--   Timeliness and Latency Model Kind
--   Archive and Retention Model Kind
+-   `Data Ownership Model Kind`
+-   `Information Lifecycle Model Kind`
+-   `Timeliness and Latency Model Kind`
+-   `Archive and Retention Model Kind`
 
-#### Vocabulary Model Kind
+#### Class Specification Model Kind
 
-The Vocabulary Model Kind is used to provide formal definitions of key business terms. Formal definitions should be developed according to the principles defined in ISO 704. 
-
-NOTE: This is roughly equivalent to IEEE 2413 semantic model kind
+The class specifiaction model kind is a template that is used to provide formal definitions of each class within the CDM. 
 
 ##### Conventions
 
-The Vocabulary Model Kind is presented as a template providing the following static metadata for each entry.
+The template for the class specification is defined as follows; all information is presented in a table other than the Class Name, which is used as the page title:
 
--   Term
--   Definition
+**Boldface text indicates items that have been approved but are not yet reflected in the online tool.** _Italicized text indicates items that equate to existing online tool fields where some minor change is still needed (e.g., name change of field)._ `Text presented as code indicates items that have not yet reached consensus.`
 
-Optional static metadata for each entity and relationship includes\
+|Field|Description|Conformance|
+|-----|-----------|-----------|
+| Class Name |Name of class within its defined context<br /> \<Context\>::\<Name\><br />The context and name should be in UpperCamelCase. |Mandatory|
+| _Definition_ |Textual definition of the class in English|Mandatory|
+| _Specification_ |Formalized Manchester Syntax representation of the definition|Optional|
+| _Subject Area Class Diagram_ |Link(s) to class diagram(s) that depicts the object properties (i.e., associations) and data properties (i.e., attributes) that have been defined for the class in the harmonized CDM. |Optional|
+|State Machine Diagram|Depiction of the defined states for objects of the class and teh allowed transitions between states|Optional|
+|State Machine Description|Textual description of the state machine diagram|Conditional (required if state machine defined)|
+|Use Cases|Link(s) to use case(s) where this data concept is used |Conditional (if exists)|
+|Sources|The source(s) considered when developing the class|Optional|
+| Status |Status of the data concept per the states defined in the Governance document.|Mandatory|
+| Specializations |Classes that further specialize this class|Conditional (if exists)|
 
--   Preferred Synonym(s)
--   Admitted Synonym(s)
--   Deprecated Synonym(s)
--   Note(s)
--   Example(s)
 
-##### Operations
+##### `Operations for Class Specifiactions`
 
-##### Correspondence Rules
+When initially creating a class specification, the following fields shall be populated, as a minimum, prior to considering the specification complete:
+
+- Name
+- Definition
+- Status
+
+##### `Correspondence Rules for UClass Specifications`
+
+Each class specification should eventually be linked to:
+
+- The use case(s) that rely upon the class
+- The generalized classes from which the class is derived
+- The specialized classes that derive from the class
+- The properties that have been identified for the class
 
 ##### Example
+***
+###ITS::NavigationRoute
 
+|Field|Value|
+|-----|-----|
+|Definition|[Route]() used to define a traveller's path from an origin to a destination over a potentially multi-modal journey|
+|Generalization|[Route]()|
+|Properties|[start]() : [RouteNode]()<br />[end]() : [RouteNode]()<br />[journeyPreferences]() : [RoutePreferences]()<br />`"segments" is inherited from Route`|
+|Add'l Specifications|`e.g., DisjointClasses: NavigationRoute and Detour`|
+|Subject Area Class Diagram|![Class Model - Hybrid](NavigationRoutePreferred.png)<br />_Figure 4: Class Model - Hybrid_<br />![Class Model - Hybrid](NavigationRouteAttributes.png)<br />_Figure 4: Class Model - Hybrid_<br />![Class Model - Hybrid](NavigationRouteAssocClasses.png)<br />_Figure 4: Class Model - Hybrid_|
+|State Machine Diagram||
+|State Machine Description||
+|Use Cases|[ITS: Traveller Information: Real-time route guidance and information: Dynamic in-vehicle route guidance using real-time information: Routing a vehicle between two known points](#UCexample)|
+|Sources|SAE J2353|
+|Status|draft|
+|Specializations|DrivingNavigationRoute<br />PublicTransportNavigationRoute<br />MultimodalNavigationRoute|
+***
+#### Property Specifiaction Model Kind
 
+The property specifiaction model kind is a template that is used to provide formal definitions of each property within the CDM. 
 
-#### Ontology Model Kind\
+##### Conventions
 
+The template for the property specification is defined as follows:
+
+**Boldface text indicates items that have been approved but are not yet reflected in the online tool.** _Italicized text indicates items that equate to existing online tool fields where some minor change is still needed (e.g., name change of field)._ `Text presented as code indicates items that have not yet reached consensus.`
 The Ontology Model Kind is used to specify relationships among key business terms. It is roughly equivalent to IEEE 2413 semantic model kind.
 
-##### Conventions\
 
-The Ontology Model Kind is graphically represented using UML class diagrams and formally defined using RDF/XML (or perhaps we want to use the Functional-Style syntax defined in the OWL2 specification as it is more concise?). It is expected that there will be one (or perhaps a
-small number of) RDF/XML file(s) while there will be a large number of ontology diagrams.
+|Field|Description|Conformance|
+|-----|-----------|-----------|
+| _Property Name_ |Fully-qualified name of property (i.e., indicating any specializations)<br /> The name should be in lowerCamelCase. |Mandatory|
+| _Definition_ |Textual definition of the property in English|Mandatory|
+| _Specification_ |Formalized Manchester Syntax representation of the definition|Optional|
+| _Syntax_ |Link(s) to class(es) (for object properties) or elemental syntax (for data properties) that can be used to represent this property, in rough preferred order |Optional|
+| _Use Cases_ |Link(s) to use case(s) where this property is used|Optional|
+| _Used by_ |Link(s) to classes that include this property|Optional|
+| _Sources_ |The source(s) considered when developing the class|Optional|
+| _Status_ |Status of the data concept per the states defined in the Governance document.|Mandatory|
+| _Specializations_ |Properties that further specialize this property|Optional|
 
-`CP: Can we avoid XML and use one of the more readable options like Turtle?`
+##### Operations
 
-UML class diagrams should be limited to no more than 20 classes.
+When initially creating a property specification, the following fields shall be populated, as a minimum, prior to considering the specification complete:
 
-Define a UML class diagram profile
+- Name
+- Definition
+- Status
 
-[MK comment: we also need to document the use of patterns as discussed at our last meeting (1/Apr/2021). Does this fit into the Information view? If so, is it part of the Ontology Model or something separate?] `CP: +1. In my understanding, it is part of the Information Viewpoint.`
+##### Correspondence Rules
+
+Each property specification should eventually be linked to:
+
+- The use case(s) that rely upon the property
+- The generalized property from which the property is derived
+- The specialized properties that derive from the property
+
+#### City Data Model Kind
+
+The City Data Model Kind defines the conventions and rules for the City Data Model (CDM), which is a single logical data model that incorporates all of the data concepts contained within the CDMRA into a single coherent model. Due to the scope and size of this model, it is envisioned that virtually all systems that incorprate data defined by the CDM will simplify the model into a physical data model to meet practical system needs (e.g., for coding, processing, and memory efficiency).
+
+While the City Data Model Kind is intended to be instantiated with a single model, the model kind includes three types of diagrams and it is expected that the model will include multiple instances of each type of diagram kind. These relationships are shown in Figure X.
+
+Figure X 
+
+##### Conventions
+
+All three of the diagrams used by the City Data Model Kind shall conform to the conventions of the Unified Modeling Language (UML) class diagram and to the Ontology Definition Metamodel (ODM) version 1.1 profile for the Web Ontology Language (OWL) (i.e., Section 14 of ODM v1.1).
+
+Properties may be depicted in any of the three formats allowed by ODM v1.1 (i.e., an attribute, an association role, or an association class). In most cases, except when displaying relationships among properties, the preferred format is to show data properties as attributes and object properties as associations.
+
+The model is portrayed using three diagram kinds:
+
+- Subject area class diagrams, which focus on a class and its attributes and relationships 
+- Information flow class diagrams, which focus on the data used in an information flow of a use case
+- Interface specification traceability diagrams, which focus on how the data contained in the CDM relates to data defined in interface specifications
+
+##### Operations
+
+CDM diagrams should generally contain no more than twenty classes to promote understandability of the diagram.
+
+##### Correspondence Rules
+
+Each class contained within a CDM diagram shall be associated with a Class specification model.
+
+Each property (i.e., attribute, association role, or association class) within a CDM class diagram shall be associated with a Property specification model.
+
+### Interface Specification Viewpoint
+
+#### Overview
+
+The Interface Specification Viewpoint frames how stakeholder concerns related to implementations will be addressed, especially those related to understanding how data defined in interface specifications relate to the CDM and how data defined in the CDM is used in standards.
+
+#### Stakeholders
+
+The Interface Specification Viewpoint considers concerns from the following stakeholders:
+
+1. Data custodians
+2. Data stewards
+3. Designers, developers, and integrators
+4. System managers
+5. Users, including
+	1.  End users
+	2.  Field support users
+	3.  System operators
+	4.  Administrative users
+	5. Maintainers
+	6. Testers
+	7. Standardization bodies
+	8. Privacy advocates
+
+#### Concerns
+
+The following table identifies the stakeholder concerns considered in the development of this viewpoint. Each concern is categorized into a generalized topic area and includes a reference to the model kind where the concern is addressed. 
+
+
+|Concern|Addressed by Model Kind|
+|-------|-----------------------|
+|What interface specifications use the data covered by the CDM?||
+|How can data be transformed between the formats defined by an interface specification and the CDM?||
+|Where is the data in my interface specification covered by the CDM?||
+
+
+#### Concerns not addressed
+
+#### Interface Specification Model Kind
+
+The interface specification model kind records basic information about each interface specification referenced by the CDMRA.
+
+Interface specifications, even when based on object-oriented models, typically have constraints that will result in differences between their models and the CDM. The CDM will tend to have multiple layers of abstraction and complexity that need to be avoided in software deployments for practical reasons. There may also be differences due to differences in presentation needs, accuracy needs, legacy issues, etc. These differences necessitate a mapping between the defined interface specifications and a common logical model. By mapping all interface specifications to a common logical model, data transformations can more easily be achieved among any two interface specifications.
+
+
+##### Conventions
+
+The template for the interface specification is defined as follows:
+
+**Boldface text indicates items that have been approved but are not yet reflected in the online tool.** _Italicized text indicates items that equate to existing online tool fields where some minor change is still needed (e.g., name change of field)._ `Text presented as code indicates items that have not yet reached consensus.`
+The Ontology Model Kind is used to specify relationships among key business terms. It is roughly equivalent to IEEE 2413 semantic model kind.
+
+
+|Field|Description|Conformance|
+|-----|-----------|-----------|
+| _Interface Specification Name_ |Name of the specification. |Optional|
+| _Interface Specification Identifier_ |Identifier for the specification. |Conditional (required if name not provided)|
+| _Description_ |Short explanation of the interface specification, such as an abstract |Mandatory|
+| _Classes used_ |Links to classes in the CDM that have been traced to the interface specification|Optional|
+| _Properties used_ |Links to properties in the CDM that have been traced to the interface specification|Optional|
+| _Interface Traceability Diagrams_ |Link(s) to the interface raceability diagrams of the CDM that depict the specific trace relationships|Optional|
 
 ##### Operations
 
 ##### Correspondence Rules
 
-
-#### Logical Data Model Kind\
-
-The Logical Data Model Kind is used to specify relationships among
-entries contained within the LDD. \
- UML class diagram; three variations\
-
--   Class focus
--   Information flow focus (Information flow model kind of IEEE 2413)\
--   Component - Information flow focus
-
-Attributes to be considered (somewhere)\
-
--   Does the data need to be stored with supplemental authentication
-    information? E.g., an RSU might broadcast a MAP message to vehicles,
-    but that MAP message must be signed by a mapping authority\
-
-##### Conventions
-
-Data element specification includes:\
-
--   Definition \
--   See ISO 14817-1\
-
-##### Operations
-
-##### Correspondence Rules
-Each business entity shall trace to one entry within the Logical Data
-Dictionary (LDD). The tool should default to having the link point to a
-class in the Logical Data Dictionary having the identical name of the
-business entity with the option to override this link to another class
-or LDD entry.
-
-#### Data Dictionary Model Kind\
-
-The Data Dictionary Model Kind is used to specify static metadata about
-data concepts. Data concepts include:
-
--   Class
--   Data object: characteristic of a class with an explicit value
-    domain
--   Value domain: expression of the range of values that a
-    characteristic can have
--   Information object: logical grouping of data elements that is useful
-    for information storage or transfer
-
-NOTE: A data object might be elemental in nature and represent a single
-indivisible concept (e.g., Vehicle.speed:measure-mps), in which case it
-is a data element. Alternatively, a data object might represent a
-composition of information (e.g., Vehicle.position:GeoLocation3D, which
-includes a latitude, longitude, and elevation), in which case it
-represents an association role to another class.\
-
-##### Conventions
-
-Data concept specifications can include the following static metadata
-based on type. Within the table, an "M" indicates that the metadata is
-mandatory, an "O" indicates that it is optional, and a "N/A" indicates
-that it is not applicable to the type of data concept. Metadata items
-that are shown in italics indicate that the values represent
-correspondences to another architectural element. Metadata options that
-are shown with an optional plural name indicate that multiple instances
-of the metadata item are allowed.\
-
-|  Metadata|                     Class|   Data Object|   Value Domain|   Information Object|
-|-----------------------------|--------|--------------|---------------|---------------------|
-  Data Concept Type|            M|       M|             M|              M|
-  ~~Identifier~~|                   M|       M|             M|              M|
-  Version|                      M|       M|             M|              M|
-  ~~Revision~~|                     M|       M|             M|              M|
-  Name|                         M|       M|             M|              M|
-  Definition|                   M|       M|             M|              M|
-  Note(s)|                      O|       O|             O|              O|
-  ~~Inspiration~~|                  O|       O|             O|              O|
-  ~~Business Entity~~|              O|       N/A|            N/A|             N/A
-  Generalized Class(es)|        O|       N/A|            N/A|             N/A
-  ~~Abstract~~|                     M|       N/A|            N/A|             N/A
-  Property(ies)|                O|       N/A|            O|              N/A
-  State Machine|                O|       N/A|            N/A|             N/A
-  Parent Class|                 N/A|      M|             N/A|             N/A
-  Multiplicity|                 N/A|      M|             N/A|             N/A
-  ~~Accuracy~~|                     N/A|      ?|             N/A|             N/A
-  ~~Aging Rate~~|                    N/A|      ?|             N/A|             N/A
-  ~~Value Domain~~|                  N/A|      M|             N/A|             N/A
-  ~~Reverse Association Role~~|     N/A|      O|             N/A             N/A
-  ~~Usage: service(s)~~|            N/A|      M|             N/A             M
-  ~~Usage: external link(s)~~|      N/A|      O|             N/A             O|
-  ~~Physical Representation(s)~~|   N/A|      O|             O|              N/A
-  ~~Datatype~~|                      N/A|      N/A|            M|              N/A
-  ~~Format~~|                        N/A|      N/A|            O|              N/A
-  ~~Unit of Measure~~|               N/A|      N/A|            O|              N/A
-  ~~Valid Value Rule~~|              N/A|      N/A|            O|              N/A
-  Constraint                    N/A|      O|             O|              N/A
-  ~~Precursor(s)~~|                  O|       O|             O|              N/A
-  ~~Successor(s)~~|                  O|       O|             O|              N/A
-  Data Elements(s)|             N/A |    N/A |          N/A |           M|
-  Information Flow(s)|          N/A |    N/A |          N/A |           M|
-
-##### Signer - metadata to be added for each information transfer(?)\
-
-This identifies the physical object that has the authority to issue the
-information object (i.e., which indicates who should sign the
-information object).  \
-
-##### Inspiration
-
-Identifies the This includes both the identifier and name of a service
-that uses the information as well as an assessment of how
-safety-critical the information is.\
-
-##### Usage: service
-
-This includes both the identifier and name of a service that uses the
-information as well as an assessment of how safety-critical the
-information is.\
-
-##### Usage: external link
-
-This provides a link to an external resource that identifies an
-architectural element that relies upon this information; it is coupled
-with an assessment of how safety-critical the information is within the
-context of that usage. Examples of external resources that might use
-information defined within the information view include:\
-
--   A functional view process
--   A functional view data store\
--   A deployment view information flow (e.g., which might identify
-    sources and sinks for the flow)\
-
-##### Physical Representation\
-
-This includes both the name of a corresponding data element contained in
-a Physical Data Model coupled with a (preferably mathematical)
-definition of how to transform the Physical Data Model data element into
-the Logical Data Model data element.\
-
-##### Operations
-
-
-
-#### Information structure model kind
-
-SysML Internal Block Diagram\
- IEEE 2413\
-
-#### State Machine Model Kind
-
-The State Machine Model Kind is used to specify the behavior of a class
-as it transitions among various states.
-
-##### Conventions
-
-The state machine shall be defined using a UML State Machine diagram
-accompanied by text explaining the bahavior of the class within each
-state and the characteristics of each state transition. \
-
-##### Operation
-
-\
-
-##### Correspondence Rules
-
-\
- \
-
-#### Physical Data Model
-
-UML Class Diagram\
- Information flow based\
-
-##### Conventions
-
-##### Operations
-
-##### Correspondence Rules
-
-Each element of the PDM should trace to a element of the Logical Data
-model with a justification for any transormation that needs to occur\
-
-#### Data Ownership Model Kind
-
-[[Rozanski]] provides the following \
-
-RozanskiAndWoods-Architecture-Description-Template
-
-If data is owned by more than one entity or part of the system, define
-who owns which pieces of the data and explain how any resulting problems
-will be handled.
-
-In the example below, it can be seen that there are issues with entity 4
-which can be updated by System D which is not the owner. The AD should
-explain how this inconsistency will be managed.
-
-**Entity**
-
-**System A**
-
-**System B**
-
-**System C**
-
-**System D**
-
-**entity 1**
-
-MASTER
-
-r/o copy
-
-reader
-
-reader
-
-**entity 2**
-
-reader
-
-MASTER
-
-none
-
-reader
-
-**entity 3**
-
-none
-
-reader
-
-MASTER
-
-reader
-
-**entity 4**
-
-MASTER
-
-none
-
-none
-
-reader\
- updater\
- deleter
-
-#### Information Lifecycle Model Kind
-
-#### Timeliness and Latency Model Kind\
-
-If information needs to be copied around the system or is updated
-regularly, explain how timeliness and latency requirements will be
-addressed.\
-
-#### Archive and Retention
-
-Explain how will archive and retention requirements will be met by the
-system.\
+Elements from the interface specifiaction should correspond to elements of the CDM.
 
 #### Operations on Views
 
 #### Correspondence Rules
-
-All information referenced in other views shall be consistent with the
-content of the Information View.\
-
-All information referenced in other views should be traced to elements
-within the Information View. The "should" within this statement allows
-for the preferred development process where use cases are defined prior
-to developing the detailed data definitions. \
-
-Primary\
- Information is produced by functions\
- Data (of Information) is consumed by the logical structure of functions
-(per RA for Space Data Systems)\
- \
- Secondary\
- Enterprise, Functional, Physical, and Communication Viewpoints might
-all reference data that might need to be stored in the system; when
-these links are needed, there will be information flows in the Physical
-View. We could include hyperlinks to these other views - but more likely
-(esp. given the connection between two systems) the link from the Smart
-City Data Model will be only to the Information Flows of remote
-Communication Views and the local Use Case View.\
 
 #### Examples
 
@@ -779,6 +684,10 @@ Reference not found.
 
 **[Zachman]** <br />
 [Zachman Framework.](https://www.zachman.com/images/ZI_PIcs/ZF3.0.jpg) Published. URL: https://www.zachman.com/images/ZI_PIcs/ZF3.0.jpg
+
+
+ODM: https://www.omg.org/spec/ODM/1.1/PDF  Section 14.2
+
 
 ### A.2 Informative references
 
