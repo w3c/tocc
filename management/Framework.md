@@ -48,8 +48,8 @@ The Use Case View also includes hyperlinks into the Information View, which prov
 
 1. Detailed definitions of each data concept required by the use case (the City Data Model)
 2. Diagrams depicting how this data relates to other data (e.g., data that might not be used by the specific use case)
-3. Links to each use case that uses each data element `CP: Links to use cases are provided for classes, but not for properties / data elements. Also, this is not a link from the Use Case View into the Information View, but the other direction.`
-4. Identification of interface specifications within the Interface View that define how the data is implemented in real-world interfaces `CP: unclear what this is and if this is represented in the Wiki; are these the specifications linked to the use case?`
+3. Links to each use case that uses each class/property `CP: Links to use cases are provided for classes, but not for properties / data elements. Also, this is not a link from the Use Case View into the Information View, but the other direction.`
+4. Identification of interface specifications within the Interface Specification View that define how the data is implemented in real-world interfaces `CP: unclear what this is and if this is represented in the Wiki; are these the specifications linked to the use case?`
 5. Links to outside resources that provide additional context for the data (e.g., external reference architectures)
 
 The various parts of the CDMRA are summarized in Figure 1.
@@ -228,9 +228,9 @@ The use case model kind provides a template that is to be used to define all use
 | _Use Case Name_ |Name of use case as a hierarchical field of the format<br /> \<Domain\>: \<Subdomains\>: \<Use Case\><br />The domain field should be one of the following strings: `????` <br />The subdomains field should indicate a hierarchical list of subdomains as defined by the domain. `CP: the page name is just a string, so the hierarchy would "just" be a naming convention and the domains/sub-domains are not represented in the Wiki as resources?` |Mandatory|
 | **Summary** |Short description (\<= 280 characters). <br />The summary should identify the goal and one or more value proposition(s) in the form **«[\<Verb\>] \<direct object\>»** <br />For example: <br />This use case describes how a user might plan a driving trip from a source to a destination. This use case focuses on ensuring the following user benefits: <ul><li>[Improve] travel efficiency</li><li>[Improve] driver expectations</li><li>[Reduce] driver confusion</li></ul>|Mandatory|
 | _Description_ |A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed. `CP: Why is this in italics, not bold?`|Mandatory|
-| _Figures_ |An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events. `CP: Why is this in italics, not bold?`|Optional|
-|Actors|Parties that directly interact with the system for this use case. `CP: Should this be bold?`|Mandatory|
-|Basic Flow of Events|The sequence of events that occur during the normal flow of this use case with any notes. `CP: Should this be bold?`|Mandatory|
+| _Figures_ |An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events. `CP: Why is this in italics, not bold? Done`|Optional|
+|Actors|Parties that directly interact with the system for this use case. `CP: Should this be bold? Done Italics?`|Mandatory|
+|Basic Flow of Events|The sequence of events that occur during the normal flow of this use case with any notes. `CP: Should this be bold? Done`|Mandatory|
 | **Flow Exceptions** |Highlighted alternative flow of events that reveal the need for additional data to be exchanged among the actors of the use case.|Optional|
 | **Information Requirements** |This is a very high-level description, for example, "origin location, destination location, and travel preferences". Details can be hashed out later and shown in the diagrams; this can be updated later to provide correspondence linkages to the defined data concepts in the Information View. While not technically required to define a use case, this field should be populated prior to beginning work on the data definitions|Optional|
 |Required Classes|Links to CDM `Should this be linked with the following two so that we say something` `like "Vehicle.speed" with both Vehicle and speed linked to their` `respective attributes so that the reader understands that the` `"speed" attribute is describing "Vehicle"?.` Should eventually be populated once CDM contains data for use case.|Optional|
@@ -303,7 +303,7 @@ The usage view includes the following correspondence rules with other views and 
 
 #### Overview
 
-The Information Viewpoint frames how stakeholder concerns related to information will be addressed, especially those related to the structure, semantics, ownership, latency, and retention of information.
+The Information Viewpoint frames how stakeholder concerns related to information will be addressed, especially those related to the structure and semantics of information.
 
 #### Stakeholders
 
@@ -318,10 +318,7 @@ The Information Viewpoint considers concerns from the following stakeholders:
 	2.  Field support users
 	3.  System operators
 	4.  Administrative users
-	5. Maintainers
-	6. Testers
-	7. Standardization bodies
-	8. Privacy advocates
+	5. Standardization bodies
 
 #### Concerns
 
@@ -330,30 +327,28 @@ The following table identifies the stakeholder concerns considered in the develo
 
 |Topic|Concern|Addressed by Model Kind|
 |-----|-------|-----------------------|
-Data Definition|What are the definitions of the major business terms (classes) used within the CDM?|Class: Definition (English), Specification (Manchester Syntax)|
-Data Definition|How do classes relate to one another?|Class: UML class diagram, Specification, Object properties|
-Data Definition|What are the known attributes of a class?|Class: UML class diagram, Specification, Data properties|
-Data Definition|What is the meaning of each property?|Object/Data Property: Definition (English), Specification (DL)|
-Data Definition|What is the meaning of each data element (i.e., property of a specific class)?|Object/Data Property (specialized to class, as needed): Definition (English), Specification (DL)|
-Data Definition|What, if any, state behavior relationships are there for data and classes?|Class: State Machine Diagram|
-Data Definition|What is the preferred abstract syntax of the data element? |Data Property: Syntax|
-Data Definition|How can the information view be extended to support additional domain or implementation-specific data?|See Operations on Views within this viewpoint specification|
-Data Definition|What are the key sources for the definition?|Class/Object Property/Data Property: Source(s)|
-Data Standardization|What use cases use this data?|Class/Object Property/Data Property: Use Cases|
-Data Quality|What are the constraints on data values?|Data Property: Definition, Specification|
-Data Integrity|How are inputs from multiple sources handled?|`How do we want to handle this?`|
-Data Availability|What data is required and under what conditions?|`Move to not addressed?`|
-Data Lifecycle|Who produces/writes the data?|`Delete? Indirectly addressed by link to use case view`|
-Data Lifecycle|Who consumes/reads the data?|`Delete? Indirectly addressed by link to use case view`|
-Data Conformance|What metadata must be supported and under what conditions?|`Delete?`|
-Data Conformance|What auditing trails are required?|`Delete?`|
-Data Evolution|How has the data model changed over time?|Class/Object Property/Data Property: Page history|
-Data Evolution|How does each data element relate to older versions?|`Delete?`|
-Data Evolution|What use case was the data originally designed for?|Class/Object Property/Data Property: Page history|
-Data Evolution|What is the evolutionary history of the data element?|`Delete?`|
+Data Definition|What are the definitions of the major business terms (classes) used within the CDM?|Class: Specification|
+Data Definition|How do classes relate to one another?|Class: Class-focused ODM diagram, Specification|
+Data Definition|What are the known attributes of a class?|Class: Class-focused ODM diagram, Specification|
+Data Definition|What is the meaning of each property?|Property: Specification|
+Data Definition|What, if any, state behavior relationships are there for classes?|Class: State Machine|
+Data Definition|What is the preferred abstract syntax of the data element? |Class: Specification: Value Restriction for Property|
+Data Quality|What are the constraints on data values?|Class: Specification: Value Restriction for Property|
+Data Standardization|What use cases use this data?|Class/Property: Use Cases|
 Data Evolution|What is the status of the data definition?|Class/Object Property/Data Property: Status|
-Data Evolution|When was the definition last modified?|Class/Object Property/Data Property: Page history|
-Data Evolution|What was the last change to the data definition?|Class/Object Property/Data Property: Page history|
+Data Evolution|How has the data model changed over time?|Class/Property: Page history|
+Data Evolution|What use case was the data originally designed for?|Class/Property: Page history|
+Data Evolution|What is the evolutionary history of the data element?|Class/Property: Page history|
+Data Evolution|When was the definition last modified?|Class/Property: Page history|
+Data Evolution|What was the last change to the data definition?|Class/Property: Page history|
+
+- How are inputs from multiple sources handled?
+- What data is required and under what conditions?
+- Who produces/writes the data?
+- Who consumes/reads the data?
+- What metadata must be supported and under what conditions?
+- What auditing trails are required?
+- How does each data element relate to older versions?
 
 `What about links to the Interface specifications?`
 
@@ -478,7 +473,10 @@ When initially creating a class specification, the following fields shall be pop
 - Definition
 - Status
 
-##### `Correspondence Rules for UClass Specifications`
+###### Customizing a Class 
+Extending a class to support additional domain or implementation-specific data
+
+##### `Correspondence Rules for Class Specifications`
 
 Each class specification should eventually be linked to:
 
@@ -488,23 +486,81 @@ Each class specification should eventually be linked to:
 - The properties that have been identified for the class
 
 ##### Example
-***
-###ITS::NavigationRoute
 
-|Field|Value|
-|-----|-----|
-|Definition|[Route]() used to define a traveller's path from an origin to a destination over a potentially multi-modal journey|
-|Generalization|[Route]()|
-|Properties|[start]() : [RouteNode]()<br />[end]() : [RouteNode]()<br />[journeyPreferences]() : [RoutePreferences]()<br />`"segments" is inherited from Route`|
-|Add'l Specifications|`e.g., DisjointClasses: NavigationRoute and Detour`|
-|Subject Area Class Diagram|![Class Model - Hybrid](NavigationRoutePreferred.png)<br />_Figure 4: Class Model - Hybrid_<br />![Class Model - Hybrid](NavigationRouteAttributes.png)<br />_Figure 4: Class Model - Hybrid_<br />![Class Model - Hybrid](NavigationRouteAssocClasses.png)<br />_Figure 4: Class Model - Hybrid_|
-|State Machine Diagram||
-|State Machine Description||
-|Use Cases|[ITS: Traveller Information: Real-time route guidance and information: Dynamic in-vehicle route guidance using real-time information: Routing a vehicle between two known points](#UCexample)|
-|Sources|SAE J2353|
-|Status|draft|
-|Specializations|DrivingNavigationRoute<br />PublicTransportNavigationRoute<br />MultimodalNavigationRoute|
+The following text provides an example of how a Class Specifiaction might appear within the CDMRA. Terms shown as hyperlinks would be linked to other appropriate pages within the CDMRA; however, as this is just an example, those links are not active. 
+
 ***
+### ITS::NavigationRoute
+
+<pre> <b>Contents</b>
+<a>Class Diagram</a>
+<a>Specification</a>
+<a>State Machine</a>
+<a>Use Case References</a>
+<a>CDM References</a>
+<a>Interface Specification References</a>
+<a>Status</a>
+</pre>
+
+#### Class Diagram
+![Class Model - Hybrid](NavigationRoutePreferred.png)
+
+#### Annotation
+
+|Property       |Value Restriction                      |
+|---------------|---------------------------------------|
+|[rdfs:comment]()| Route used to define a traveller's path from an origin|
+|[rdfs:label]()||
+
+https://www.w3.org/TR/owl2-syntax/#Annotation_Properties
+seeAlso
+isDefinedBy
+versionInfo
+priorVersion
+backwardCompaticbleWith
+incompatibleWith
+*deprecated
+
+
+#### Specification
+
+|Property       |Value Restriction                      |
+|---------------|---------------------------------------|
+|[rdfs:subClassOf]()|[Route]()|
+|[start]()      |exactly 1 [RouteNode]()|
+|[end]()        |exactly 1 [RouteNode]()|
+|[journeyPreferences]()|exactly 1 [RoutePreferences]()|
+
+#### State Machine 
+
+There is no state machine defined for this class.
+
+#### Use Case References
+
+This class is refereced by the following use cases:
+
+- [ITS: Traveller Information: Real-time route guidance and information: Dynamic in-vehicle route guidance using real-time information: Routing a vehicle between two known points](#UCexample)|
+
+#### CDM References
+
+This class is refereced by the following other elements of the CDM:
+
+- [DrivingNavigationRoute]()
+- [PublicTransportNavigationRoute]()
+- [MultimodalNavigationRoute]()
+
+####Interface Specification References
+
+This class has been associated with the following interface specification items:
+
+- [SAE J2353]() - Route 
+
+####Status
+
+draft
+***
+
+
 #### Property Specifiaction Model Kind
 
 The property specifiaction model kind is a template that is used to provide formal definitions of each property within the CDM. 
@@ -544,6 +600,58 @@ Each property specification should eventually be linked to:
 - The use case(s) that rely upon the property
 - The generalized property from which the property is derived
 - The specialized properties that derive from the property
+
+##### Example
+
+
+The following text provides an example of how a Property Specifiaction might appear within the CDMRA. Terms shown as hyperlinks would be linked to other appropriate pages within the CDMRA; however, as this is just an example, those links are not active. 
+
+***
+### hasStartWaypoint
+<pre> <b>Contents</b>
+<a>Specification</a>
+<a>Use Case References</a>
+<a>CDM References</a>
+<a>Interface Specification References</a>
+<a>Status</a>
+</pre>
+
+#### Annotations
+
+|Characteristic |Value (if applicable)                  |
+|---------------|---------------------------------------|
+|[rdfs:comments]()|The point at which a journey has, does, or is estimated to begin|
+
+#### Specification
+
+|Characteristic |Value (if applicable)                  |
+|---------------|---------------------------------------|
+|[subPropertyOf]()|[properPartOf]()|
+
+#### Use Case References
+
+This property is refereced by the following use cases:
+
+- [ITS: Traveller Information: Real-time route guidance and information: Dynamic in-vehicle route guidance using real-time information: Routing a vehicle between two known points](#UCexample)|
+
+#### CDM References
+
+This property is refereced by the following other elements of the CDM:
+
+- [NavigationRoute]()
+
+####Interface Specification References
+
+This class has been associated with the following interface specification items:
+
+- [SAE J2353]() - Route 
+
+####Status
+
+draft
+***
+
+
 
 #### City Data Model Kind
 
@@ -632,12 +740,20 @@ The Ontology Model Kind is used to specify relationships among key business term
 |-----|-----------|-----------|
 | _Interface Specification Name_ |Name of the specification. |Optional|
 | _Interface Specification Identifier_ |Identifier for the specification. |Conditional (required if name not provided)|
+|Reference||
+|Type|Interface,data specification|
 | _Description_ |Short explanation of the interface specification, such as an abstract |Mandatory|
+|License||
+|Other License Notes||
 | _Classes used_ |Links to classes in the CDM that have been traced to the interface specification|Optional|
 | _Properties used_ |Links to properties in the CDM that have been traced to the interface specification|Optional|
 | _Interface Traceability Diagrams_ |Link(s) to the interface raceability diagrams of the CDM that depict the specific trace relationships|Optional|
 
 ##### Operations
+
+Update the governance document to show that drafts can have PNG/JPG diagrams of figures embedded while approved items need to be entered into a central model that is linked to.
+
+Use Enterprise Architect as the central model (with exports to XMI)
 
 ##### Correspondence Rules
 
