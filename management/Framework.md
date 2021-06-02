@@ -225,23 +225,24 @@ The use case model kind provides a template that is to be used to define all use
 
 |Field|Description|Conformance|
 |-----|-----------|-----------|
-| _Use Case Name_ |Name of use case as a hierarchical field of the format<br /> \<Domain\>: \<Subdomains\>: \<Use Case\><br />The domain field should be one of the following strings: `????` <br />The subdomains field should indicate a hierarchical list of subdomains as defined by the domain. `CP: the page name is just a string, so the hierarchy would "just" be a naming convention and the domains/sub-domains are not represented in the Wiki as resources?` |Mandatory|
+| **Use Case Name** |Name of use case as a hierarchical field of the format<br /> \<Domain\>: \<Subdomains\>: \<Use Case\><br />The domain field should be one of the following strings: `????` <br />The subdomains field should indicate a hierarchical list of subdomains as defined by the domain. `CP: the page name is just a string, so the hierarchy would "just" be a naming convention and the domains/sub-domains are not represented in the Wiki as resources?` <br/> `MK: using user-defined, structured and restricted text to name the pages is not straightforward to implement. Instead, in the wiki we can implement separate domain and sub-domain fields (based on what will be some predefined lists) for the use cases.`|Mandatory|
+| **Domain** | `MK: this is hard-coded in the wiki form for now. Should be doable with semantic forms extension`| Mandatory|
 | **Summary** |Short description (\<= 280 characters). <br />The summary should identify the goal and one or more value proposition(s) in the form **«[\<Verb\>] \<direct object\>»** <br />For example: <br />This use case describes how a user might plan a driving trip from a source to a destination. This use case focuses on ensuring the following user benefits: <ul><li>[Improve] travel efficiency</li><li>[Improve] driver expectations</li><li>[Reduce] driver confusion</li></ul>|Mandatory|
-| _Description_ |A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed. `CP: Why is this in italics, not bold?`|Mandatory|
-| _Figures_ |An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events. `CP: Why is this in italics, not bold? Done`|Optional|
-|Actors|Parties that directly interact with the system for this use case. `CP: Should this be bold? Done Italics?`|Mandatory|
-|Basic Flow of Events|The sequence of events that occur during the normal flow of this use case with any notes. `CP: Should this be bold? Done`|Mandatory|
+| **_Description_** |A more extended description of the use case. The purpose of the CDMRA is to develop the data model, as such, the description does not need to provide full details, but it should provide sufficient context to provide insight into the data that needs to be exchanged and processed. `CP: Why is this in italics, not bold?`|Mandatory|
+| **_Figures_** |An illustration that might assist the user in better understanding the scenario. The illustration should be explained by either the description or the flow of events. `CP: Why is this in italics, not bold? Done`|Optional|
+|**Actors**|Parties that directly interact with the system for this use case. `CP: Should this be bold? Done Italics?`|Mandatory|
+|**Basic Flow of Events**|The sequence of events that occur during the normal flow of this use case with any notes. `CP: Should this be bold? Done`|Mandatory|
 | **Flow Exceptions** |Highlighted alternative flow of events that reveal the need for additional data to be exchanged among the actors of the use case.|Optional|
 | **Information Requirements** |This is a very high-level description, for example, "origin location, destination location, and travel preferences". Details can be hashed out later and shown in the diagrams; this can be updated later to provide correspondence linkages to the defined data concepts in the Information View. While not technically required to define a use case, this field should be populated prior to beginning work on the data definitions|Optional|
-|Required Classes|Links to CDM `Should this be linked with the following two so that we say something` `like "Vehicle.speed" with both Vehicle and speed linked to their` `respective attributes so that the reader understands that the` `"speed" attribute is describing "Vehicle"?.` Should eventually be populated once CDM contains data for use case.|Optional|
-|Required Object Properties|Links to CDM. Should eventually be populated once CDM contains data for use case.|Optional|
-|Required Data Properties|Links to CDM. Should eventually be populated once CDM contains data for use case.|Optional|
+|**Required Classes**|Links to CDM `Should this be linked with the following two so that we say something` `like "Vehicle.speed" with both Vehicle and speed linked to their` `respective attributes so that the reader understands that the` `"speed" attribute is describing "Vehicle"?.` Should eventually be populated once CDM contains data for use case.|Optional|
+|**Required Object Properties**|Links to CDM. Should eventually be populated once CDM contains data for use case.|Optional|
+|**Required Data Properties**|Links to CDM. Should eventually be populated once CDM contains data for use case.|Optional|
 | **Issues** |Primarily to track issues during development `Perhaps link to github issues?`|Optional|
 | **Reference(s)** |Source materials used to develop this use case|Optional|
 |`Version`|`The date, version number, and status of the use case in the form` `YYYY-MM-DD #.#.#-S; See governance for details` `Do we need both version and status?`|Mandatory|
 | **Status** |Approval status|Mandatory|
 | **Specifications** |Link to reference architectures, standards and other resources that rely upon this use case definition|Optional|
-| _License information_ |Indicate the owner and provide a reference to the copyright information|Mandatory|
+| **License information** |Indicate the owner and provide a reference to the copyright information|Mandatory|
 
 ##### `Operations for Use Case Models`
 
@@ -453,16 +454,18 @@ The template for the class specification is defined as follows; all information 
 
 |Field|Description|Conformance|
 |-----|-----------|-----------|
-| Class Name |Name of class within its defined context<br /> \<Context\>::\<Name\><br />The context and name should be in UpperCamelCase. |Mandatory|
-| _Definition_ |Textual definition of the class in English|Mandatory|
-| _Specification_ |Formalized Manchester Syntax representation of the definition|Optional|
+| **Class Name** |Name of class within its defined context<br /> \<Context\>::\<Name\><br />The context and name should be in UpperCamelCase. `MK: included in description on class creation page` |Mandatory|
+| **_Definition_** |Textual definition of the class in English `MK: "Description" field` |Mandatory|
+| **_Specification_** |Formalized Manchester Syntax representation of the definition|Optional|
 | _Subject Area Class Diagram_ |Link(s) to class diagram(s) that depicts the object properties (i.e., associations) and data properties (i.e., attributes) that have been defined for the class in the harmonized CDM. |Optional|
 |State Machine Diagram|Depiction of the defined states for objects of the class and teh allowed transitions between states|Optional|
 |State Machine Description|Textual description of the state machine diagram|Conditional (required if state machine defined)|
-|Use Cases|Link(s) to use case(s) where this data concept is used |Conditional (if exists)|
-|Sources|The source(s) considered when developing the class|Optional|
-| Status |Status of the data concept per the states defined in the Governance document.|Mandatory|
-| Specializations |Classes that further specialize this class|Conditional (if exists)|
+|**Use Cases**|Link(s) to use case(s) where this data concept is used  `MK: "required by use cases"`|Conditional (if exists)|
+|**Sources**|The source(s) considered when developing the class|Optional|
+| **Status** |Status of the data concept per the states defined in the Governance document.|Mandatory|
+| **Specializations** |Classes that further specialize this class `MK: "subclasses"`|Conditional (if exists)|
+
+`MK: need to look into separate fields for diagrams`
 
 
 ##### `Operations for Class Specifiactions`
@@ -561,7 +564,7 @@ draft
 ***
 
 
-#### Property Specifiaction Model Kind
+#### Property Specification Model Kind
 
 The property specifiaction model kind is a template that is used to provide formal definitions of each property within the CDM. 
 
@@ -575,15 +578,15 @@ The Ontology Model Kind is used to specify relationships among key business term
 
 |Field|Description|Conformance|
 |-----|-----------|-----------|
-| _Property Name_ |Fully-qualified name of property (i.e., indicating any specializations)<br /> The name should be in lowerCamelCase. |Mandatory|
-| _Definition_ |Textual definition of the property in English|Mandatory|
-| _Specification_ |Formalized Manchester Syntax representation of the definition|Optional|
-| _Syntax_ |Link(s) to class(es) (for object properties) or elemental syntax (for data properties) that can be used to represent this property, in rough preferred order |Optional|
-| _Use Cases_ |Link(s) to use case(s) where this property is used|Optional|
+| **Property Name** |Fully-qualified name of property (i.e., indicating any specializations)<br /> The name should be in lowerCamelCase. `MK: note that we can only enforce this in the display of the page name. Mediawiki does not allow for pages that begin with lower case letters` |Mandatory|
+| **_Definition_** |Textual definition of the property in English|Mandatory|
+| **_Specification_** |Formalized Manchester Syntax representation of the definition|Optional|
+| _Syntax_ |Link(s) to class(es) (for object properties) or elemental syntax (for data properties) that can be used to represent this property, in rough preferred order `MK: unclear on this field` |Optional|
+| _**Use Cases**_ |Link(s) to use case(s) where this property is used|Optional|
 | _Used by_ |Link(s) to classes that include this property|Optional|
 | _Sources_ |The source(s) considered when developing the class|Optional|
-| _Status_ |Status of the data concept per the states defined in the Governance document.|Mandatory|
-| _Specializations_ |Properties that further specialize this property|Optional|
+| **_Status_** |Status of the data concept per the states defined in the Governance document.|Mandatory|
+| **_Specializations_** |Properties that further specialize this property `MK: "subObject Properties"`|Optional|
 
 ##### Operations
 
