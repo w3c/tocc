@@ -18,9 +18,9 @@ This document provides a brief overview of the key pages used to modify the disp
 * [Data Property Form](http://citydata.utoronto.ca/index.php/Form:Data_Property_Definition)
 
 ## Other relevant pages
-* Supplementary figures
-* Annotations
-* Manchester Syntax
-* Licensing
-* Specifications
-* Properties
+* [Supplementary figures](http://citydata.utoronto.ca/index.php/Template:Supplementary_Figures)
+* [Annotations](http://citydata.utoronto.ca/index.php/Template:Annotation_Specification)
+* [Manchester Syntax](http://citydata.utoronto.ca/index.php/Template:Manchester_Specification)
+* [Licensing](http://citydata.utoronto.ca/index.php/Category:License)
+* [Specifications](http://citydata.utoronto.ca/index.php/Category:SpecificationElement)
+* [Properties](http://citydata.utoronto.ca/index.php/Special:Properties)
