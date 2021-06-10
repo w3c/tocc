@@ -22,5 +22,5 @@ This document provides a brief overview of the key pages used to modify the disp
 * [Annotations](http://citydata.utoronto.ca/index.php/Template:Annotation_Specification)
 * [Manchester Syntax](http://citydata.utoronto.ca/index.php/Template:Manchester_Specification)
 * [Licensing](http://citydata.utoronto.ca/index.php/Category:License)
-* [Specifications](http://citydata.utoronto.ca/index.php/Category:SpecificationElement)
+* [Specifications](http://citydata.utoronto.ca/index.php/Category:Specification)
 * [Properties](http://citydata.utoronto.ca/index.php/Special:Properties)
