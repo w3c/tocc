@@ -24,3 +24,7 @@ This document provides a brief overview of the key pages used to modify the disp
 * [Licensing](http://citydata.utoronto.ca/index.php/Category:License)
 * [Specifications](http://citydata.utoronto.ca/index.php/Category:Specification)
 * [Properties](http://citydata.utoronto.ca/index.php/Special:Properties)
+* [Version](http://citydata.utoronto.ca/index.php/Special:Version)
+
+## Notes
+* The Mediawiki is currently installed on an EC2 instance (named "collab_mediawiki") running on Mark's EIL aws account.
