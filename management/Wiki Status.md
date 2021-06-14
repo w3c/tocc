@@ -20,7 +20,7 @@ well (e.g. and, or ...)
 * add CDM References field (per class example), to identify classes
 that reference the page in their manchester syntax spec.
 * [DONE] All pages: modify supplementary figures template/form to include Captions
-* Class diagram description
+* [DONE] Class diagram description
 * State machine diagram description
 * [NEW] need to fix Manchester specification and annocations specification format
 
