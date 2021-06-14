@@ -25,6 +25,9 @@ This document provides a brief overview of the key pages used to modify the disp
 * [Specifications](http://citydata.utoronto.ca/index.php/Category:Specification)
 * [Properties](http://citydata.utoronto.ca/index.php/Special:Properties)
 * [Version](http://citydata.utoronto.ca/index.php/Special:Version)
+* [Account Request Approval](http://citydata.utoronto.ca/index.php/Special:ConfirmAccounts)
+* [Special Pages](http://citydata.utoronto.ca/index.php/Special:SpecialPages): useful for general wiki management tasks (account/access management, etc)
 
 ## Notes
 * The Mediawiki is currently installed on an EC2 instance (named "collab_mediawiki") running on Mark's EIL aws account.
+* Details about the installation (including access credentials) have been provided via e-mail (Collaborative Standards Development Wiki Overview.docx)
