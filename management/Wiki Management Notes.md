@@ -30,4 +30,4 @@ This document provides a brief overview of the key pages used to modify the disp
 
 ## Notes
 * The Mediawiki is currently installed on an EC2 instance (named "collab_mediawiki") running on Mark's EIL aws account.
-* Details about the installation (including access credentials) have been provided via e-mail (Collaborative Standards Development Wiki Overview.docx)
+* Details about the installation (including access credentials) have been provided via e-mail (City Data Model Wiki Overview.docx)
