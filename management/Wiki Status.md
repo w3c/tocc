@@ -5,7 +5,7 @@
 -> Note: see Governance doc
 * Decide whether to introduce an official version numbering system (in
 addition to status and mediawiki documented versions)
-* Add to Category:License as required (i.e. create new pages labelled as [[Category:License]] to capture additional types of licensing (e.g. content from ISO)
+* Add to pages to [Category:License](http://citydata.utoronto.ca/index.php/Category:License) as required (i.e. create new pages labelled as [[Category:License]] to capture additional types of licensing (e.g. content from ISO)
 
 ## Class page:
 * [DONE] use dropdown list for "subclass of" and "has subclass" fields
@@ -22,13 +22,13 @@ that reference the page in their manchester syntax spec.
 * [DONE] All pages: modify supplementary figures template/form to include Captions
 * [DONE] Class diagram description
 * State machine diagram description
-* [NEW] need to fix Manchester specification and annocations specification format
+* [NEW] need to fix Manchester specification and annotations specification format
 
 ## Object Property page:
-* Incorporate above additions for Object Property pages
+* Incorporate above additions/revisions for Object Property pages
 
 ## Data Property page:
-* Incorporate above additions for Data Property pages
+* Incorporate above additions/revisions for Data Property pages
 
 
 ## Other:
