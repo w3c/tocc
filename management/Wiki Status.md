@@ -17,12 +17,14 @@ Description (text definition) field?
 * [DONE] test Manchester syntax spec to allow for arbitrary statements as
 well (e.g. and, or ...)
 * [DONE] add Interface Specification Requirements field (per class example)
-* add CDM References field (per class example), to identify classes
-that reference the page in their manchester syntax spec.
+* [TO DO] add CDM References field (per class example), to identify classes
+	* Temporary solution: include a "What Links Here" list to show all references
+that reference the page in their manchester syntax spec. (Note: this likely requires use of semantic mediawiki properties)
 * [DONE] All pages: modify supplementary figures template/form to include Captions
+	* Note: likely possible to embed figures into main structure of the forms/templates using the embedded template approach adopted for Manchester and annotations specification
 * [DONE] Class diagram description
 * State machine diagram description
-* [NEW] need to fix Manchester specification and annotations specification format
+* [DONE] need to fix Manchester specification and annotations specification format to enable repeating rows
 
 ## Object Property page:
 * Incorporate above additions/revisions for Object Property pages
