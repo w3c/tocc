@@ -18,8 +18,9 @@ Description (text definition) field?
 well (e.g. and, or ...)
 * [DONE] add Interface Specification Requirements field (per class example)
 * [TO DO] add CDM References field (per class example), to identify classes
-	* Temporary solution: include a "What Links Here" list to show all references
-that reference the page in their manchester syntax spec. (Note: this likely requires use of semantic mediawiki properties)
+	* Temporary solution: include a "What Links Here" list to show all references to the page.
+	* A cleaner solution likely requires use of semantic mediawiki properties
+	* Neither solution is capable of capturing references made with complex value statements (e.g. involving conjunctions, disjunctions, or nested property restrictions)
 * [DONE] All pages: modify supplementary figures template/form to include Captions
 	* Note: likely possible to embed figures into main structure of the forms/templates using the embedded template approach adopted for Manchester and annotations specification
 * [DONE] Class diagram description
