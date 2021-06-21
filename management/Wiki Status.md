@@ -28,10 +28,10 @@ well (e.g. and, or ...)
 * [DONE] need to fix Manchester specification and annotations specification format to enable repeating rows
 
 ## Object Property page:
-* Incorporate above additions/revisions for Object Property pages
+* [DONE] Incorporate above additions/revisions for Object Property pages
 
 ## Data Property page:
-* Incorporate above additions/revisions for Data Property pages
+* [DONE] Incorporate above additions/revisions for Data Property pages
 
 
 ## Other:
