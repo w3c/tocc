@@ -18,7 +18,7 @@ Description (text definition) field?
 well (e.g. and, or ...)
 * [DONE] add Interface Specification Requirements field (per class example)
 * [TO DO] add CDM References field (per class example), to identify classes
-	* Temporary solution: include a "What Links Here" list to show all references to the page.
+	* [DONE] Temporary solution: include a "What Links Here" list to show all references to the page.
 	* A cleaner solution likely requires use of semantic mediawiki properties
 	* Neither solution is capable of capturing references made with complex value statements (e.g. involving conjunctions, disjunctions, or nested property restrictions)
 * [DONE] All pages: modify supplementary figures template/form to include Captions
@@ -38,7 +38,8 @@ well (e.g. and, or ...)
 * set-up email for Mediawiki tasks (e.g. account confirmation)
 * website security certificates
 * update content/documentation (e.g. Main page, About,...) to reflect governance & framework documents
-* delete all earlier versions of pages
+* [DONE] delete all earlier versions of pages
+	* Except http://citydata.utoronto.ca/index.php/Tpso:Arc, http://citydata.utoronto.ca/index.php/AccessesArc (were used for testing purposes) 
 * [DONE] share mediawiki set-up notes/documentation (sent e-mail to Mark Fox)
 * [DONE] set-up access to EC2 instance (sent e-mail to Mark Fox)
 * [DONE] create an Admin Guide page with pointers to the key templates/forms
